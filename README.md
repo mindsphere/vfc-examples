@@ -5,7 +5,7 @@
 [![Forum](https://img.shields.io/badge/mindsphere-community-%23009999.svg)](https://community.plm.automation.siemens.com/t5/Developer-Space/bd-p/MindSphere-platform-forum)
 
 
-## Siemens API Notice
+## Example Overview
 Current examples in this repository
 - hello world
 
