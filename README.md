@@ -7,7 +7,19 @@
 
 ## Example Overview
 Current examples in this repository
-- hello world 2
+- creation of custom API endpoints
+- commanding MQTT devices connected via IoT Extension
+
+
+## Prerequisites
+All application examples shown in this respository require the *Visual Flow Creator* MindSphere Application. 
+Ensure that
+- [Visual Flow Creator is provisioined to your MindSphere tenant](https://www.dex.siemens.com/mindsphere/applications/visual-flow-creator)
+- [you have access to Visual Flow Creator](https://documentation.mindsphere.io/resources/html/visualflow-creator/en-US/108812512779.html)
+
+If you can see Visual Flow Creator on your Tenant Launchpad, you're ready to start developments. 
+
+![image](./VFC.png)
 
 ## Siemens API Notice
 
