@@ -1,5 +1,4 @@
 # Example Name
-
 This flow demonstrates how ...
 
 ## Prerequisites
@@ -20,7 +19,6 @@ This flow demonstrates how ...
 
 
 ## Result
-
 
 ## See also
 - [some futher stuff nice to know](https://cumulocity.com/guides/reference/device-control/)
