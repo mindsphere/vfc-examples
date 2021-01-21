@@ -3,11 +3,11 @@
 This flow demonstrates how you can use Visual Flow Creator to trigger sending of a command to a device connected to MindSphere via IoT Extension. 
 Every time the flow is triggered, the command specified in the payload is send to the device linked using the device-ID.
 
+![image](./doc/commandMqttDevice.png)
+
 ## Prerequisites
 - [access to Visual Flow Creator](xxx)
 - [access to IoT Extension](xxx)
-
-![image](./docu_pictures/commandMqttDevice.png)
 
 ## Setup & Configuration
 

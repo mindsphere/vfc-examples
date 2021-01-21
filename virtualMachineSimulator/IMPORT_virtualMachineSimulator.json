@@ -1,0 +1,85 @@
+[
+    {
+        "id": "3cdca25b.29cf1e",
+        "type": "comment",
+        "z": "46afa01f.016bd",
+        "name": "Virtual Machine Simulation",
+        "info": "- generate some simulation data for a virtual machine  ",
+        "sticky": 1,
+        "x": 340,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "e885fa0.0bc2508",
+        "type": "function",
+        "z": "46afa01f.016bd",
+        "name": "simulate virtual machine",
+        "func": "var totalProductCounter = 150;\nvar random      = Math.floor(Math.random() * 101);\nvar StateMsg    = {payload : {}};\nvar CounterMsg  = {payload : {}};\n\nvar prevTotalCounter    = context.get('prevTotalCounter')   || 0;\nvar prevGoodCounter     = context.get('prevGoodCounter')    || 0;\nvar prevBadCounter      = context.get('prevBadCounter')     || 0;\n\n//reset product counter \nif(prevTotalCounter > totalProductCounter) {\n    prevTotalCounter    = 0;\n    prevGoodCounter     = 0;\n    prevBadCounter      = 0;\n}\n\n\nStateMsg.payload = {\n    \"Available\" : \"false\",\n    \"E_Stop\" : \"false\",\n    \"Fault\" : \"false\",\n    \"Power_Off\" : \"false\",\n    \"State\" : \"-1\",\n};\n\nif(random < 90) {\n    StateMsg.payload.Available = true;  \n    StateMsg.payload.State = 1;\n}\nelse if(random == 90) {\n    StateMsg.payload.Power_Off = true; \n    StateMsg.payload.State = 3;\n}\nelse if(random <= 95) {\n    StateMsg.payload.Fault = true;\n    StateMsg.payload.State = 2;\n}\nelse {\n    StateMsg.payload.E_Stop = true; \n    StateMsg.payload.State = 4;\n}\n\n\nif(StateMsg.payload.Available === true) {\n    var produced = Math.ceil(Math.random() * 6);\n    prevTotalCounter += produced;\n    if(random <= 5) {\n        prevBadCounter += produced;\n    }\n    else {\n        prevGoodCounter += produced;\n    }\n}\n\nCounterMsg.payload = {\n    \"Product_Counter\" : prevTotalCounter,\n    \"Good_Counter\" : prevGoodCounter,\n    \"Bad_Counter\" : prevBadCounter,\n};\n\ncontext.set('prevTotalCounter', prevTotalCounter);\ncontext.set('prevGoodCounter', prevGoodCounter);\ncontext.set('prevBadCounter', prevBadCounter);\n\nreturn [StateMsg, CounterMsg];",
+        "outputs": "2",
+        "noerr": 0,
+        "x": 480,
+        "y": 240,
+        "wires": [
+            [
+                "5dd5301c.bdae6"
+            ],
+            [
+                "25167cbb.7c60a4"
+            ]
+        ],
+        "_type": "node"
+    },
+    {
+        "id": "76cea489.bdb21c",
+        "type": "inject",
+        "z": "46afa01f.016bd",
+        "name": "every 5s",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "10",
+        "repeatEnd": "0",
+        "endTime": "0",
+        "crontab": "",
+        "once": false,
+        "properties": "",
+        "timezone": "utc",
+        "betweentimesunit": "m",
+        "enableRuleEngine": false,
+        "showNextExecution": false,
+        "x": 220,
+        "y": 240,
+        "wires": [
+            [
+                "e885fa0.0bc2508"
+            ]
+        ]
+    },
+    {
+        "id": "25167cbb.7c60a4",
+        "type": "write timeseries",
+        "z": "46afa01f.016bd",
+        "name": "Virtual Machine - Counter",
+        "topic": "<selectMachine>/Simulation_Counter",
+        "topicLabel": "Virtual Machine/Simulation_Counter",
+        "assetName": "Virtual Machine",
+        "x": 770,
+        "y": 260,
+        "wires": [],
+        "_type": "node"
+    },
+    {
+        "id": "5dd5301c.bdae6",
+        "type": "write timeseries",
+        "z": "46afa01f.016bd",
+        "name": "Virtual Machine - States",
+        "topic": "<selectMachine>/Simulation_States",
+        "topicLabel": "Virtual Machine/Simulation_States",
+        "assetName": "Virtual Machine",
+        "x": 770,
+        "y": 220,
+        "wires": [],
+        "_type": "node"
+    }
+]

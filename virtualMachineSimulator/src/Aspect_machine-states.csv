@@ -1,0 +1,8 @@
+"Available";"BOOLEAN";"1";""
+"E_Stop";"BOOLEAN";"1";""
+"Error_Code";"INT";"1";""
+"Fault";"BOOLEAN";"1";""
+"Messages";"BIG_STRING";"1";"50000"
+"NotifierAlarm";"BOOLEAN";"1";""
+"Power_Off";"BOOLEAN";"1";""
+"State";"INT";"1";""

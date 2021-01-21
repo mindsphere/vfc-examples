@@ -6,20 +6,24 @@
 
 
 ## Example Overview
-Current examples in this repository
+Current examples in this repository for Visual Flow Creator (VFC):
 - creation of custom API endpoints
 - commanding MQTT devices connected via IoT Extension
 
-
 ## Prerequisites
 All application examples shown in this respository require the *Visual Flow Creator* MindSphere Application. 
-Ensure that
-- [Visual Flow Creator is provisioined to your MindSphere tenant](https://www.dex.siemens.com/mindsphere/applications/visual-flow-creator)
-- [you have access to Visual Flow Creator](https://documentation.mindsphere.io/resources/html/visualflow-creator/en-US/108812512779.html)
+To use them, ensure that
+- VFC is available in your MindSphere tenant ([VFC in MindSphere Store](https://www.dex.siemens.com/mindsphere/applications/visual-flow-creator))
+![image](./MindSphere_Launchpad_VFC.png)
+- you have *admin* or *user* access to VFC ([VFC user role settings](https://documentation.mindsphere.io/resources/html/visualflow-creator/en-US/108812512779.html))
+![image](./VFC_roles.png)
 
-If you can see Visual Flow Creator on your Tenant Launchpad, you're ready to start developments. 
+If you can see Visual Flow Creator on your Launchpad, you're ready to start developments. 
 
-![image](./VFC.png)
+## Import of Examples
+To import any of the examples shown in this repository, launch the VFC. In the menu, select *Import* and paste the JSON template as found in the application examples. 
+Drop the nodes in the editor and save the just imported flow.  
+![image](./How_To_Import.gif)
 
 ## Siemens API Notice
 

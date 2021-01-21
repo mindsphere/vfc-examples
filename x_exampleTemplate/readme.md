@@ -1,10 +1,12 @@
 # Example Name
-This flow demonstrates how ...
+Using this flow, you can xxx
+
+
+
+![image](./doc/FlowOverview.png)
 
 ## Prerequisites
-- [if other than VFC stuff needed](xxx)
-
-![image](./docu_pictures/FlowOverview.png)
+- [some futher stuff ](https://mindsphere.io)
 
 ## Setup & Configuration
 
@@ -21,11 +23,7 @@ This flow demonstrates how ...
 ## Result
 
 ## See also
-- [some futher stuff nice to know](https://cumulocity.com/guides/reference/device-control/)
-- [Integrate an MQTT Device via IoT Extension](https://developer.mindsphere.io/howto/howto-mqtt-mciot.html)
-- [:shopping_cart: MindSphere Store: Visual Flow Creator](https://www.dex.siemens.com/mindsphere/applications/visual-flow-creator?viewState=DetailView&cartID=&portalUser=&store=&cclcl=en_US)
-- [:shopping_cart: MindSphere Store: IoT Extension](mindsphere.io/store)
-
+- [some futher stuff nice to know](www.google.com)
 
 
 
