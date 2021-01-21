@@ -1,0 +1,70 @@
+[
+    {
+        "id": "d7e45377.0bd91",
+        "type": "comment",
+        "z": "cc37014d.14a9c",
+        "name": "Public API endpoint to read asset data",
+        "info": "- last 15min of selected asset data is feedback as JSON object\n- endpoint: https://<tenantName>-visualflowcreator.eu1.mindsphere.io/public/<tenantName>/machinedata/v1",
+        "sticky": 1,
+        "x": 450,
+        "y": 100,
+        "wires": [],
+        "_type": "node"
+    },
+    {
+        "id": "79cfd4b8.669b9c",
+        "type": "http in",
+        "z": "cc37014d.14a9c",
+        "name": "[GET] /machinedata/v1",
+        "endpoint": "/machinedata/v1",
+        "method": "get",
+        "upload": false,
+        "access": "key",
+        "key": "",
+        "users": "",
+        "x": 200,
+        "y": 180,
+        "wires": [
+            [
+                "7327953f.63fb9c"
+            ]
+        ],
+        "_type": "node"
+    },
+    {
+        "id": "e09e25e4.470548",
+        "type": "http response",
+        "z": "cc37014d.14a9c",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 770,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "7327953f.63fb9c",
+        "type": "read timeseries",
+        "z": "cc37014d.14a9c",
+        "name": "read last 15min of machine data",
+        "topic": "",
+        "topicLabel": "",
+        "assetName": "",
+        "period": "15",
+        "offset": "0",
+        "mode": "relative",
+        "from": "",
+        "datetimepickerFrom": "",
+        "to": "",
+        "datetimepickerTo": "",
+        "timezoneoffset": 0,
+        "x": 490,
+        "y": 180,
+        "wires": [
+            [
+                "e09e25e4.470548"
+            ]
+        ],
+        "_type": "node"
+    }
+]
