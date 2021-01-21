@@ -25,5 +25,5 @@ This flow demonstrates a simple getting-started example on how to provide machin
 ![image](./setup_selectAssetToRead.png)
 4.  Save the flow 
 
-:cloud: :heavy_check_mark: You're ready to access the service via the URL shown in the *HTTP IN* node
+:cloud: :heavy_check_mark: You're ready to access the service via the URL shown in the *HTTP IN* node - enjoy!
 
