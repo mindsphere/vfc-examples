@@ -6,13 +6,13 @@ Every time the flow is triggered, the command specified in the payload is send t
 ![image](./doc/commandMqttDevice.png)
 
 ## Prerequisites
-- [access to Visual Flow Creator](xxx)
-- [access to IoT Extension](xxx)
+- Access to Visual Flow Creator
+- Access to IoT Extension
 
 ## Setup & Configuration
 
 ### Setup in IoT Extension
-1. Create a device account to be used from IoT Extensions manually ([see Manage users]([xxx](https://documentation.mindsphere.io/resources/html/mindconnect-iot-extension/en-US/120385099019.html))) or via the [Device Integration](https://cumulocity.com/guides/device-sdk/rest/#device-integration) process for automatically obtained device credentials. Note that you will need this credentials later in VFC as well. 
+1. Create a device account to be used from IoT Extensions manually ([see Manage users](https://documentation.mindsphere.io/resources/html/mindconnect-iot-extension/en-US/120385099019.html)) or via the [Device Integration](https://cumulocity.com/guides/device-sdk/rest/#device-integration) process for automatically obtained device credentials. Note that you will need this credentials later in VFC as well. 
 2. Connect to IoT Extension via your MQTT client of choice. The detailed process is described [here](https://developer.mindsphere.io/howto/howto-mqtt-mciot.html)
 3. Follow the process to [create your MQTT device](https://cumulocity.com/guides/device-sdk/mqtt-examples/#hello-mqtt) by sending ```100,My first MQTT device,MqttDeviceType``` to ```s/us``` topic. Once you can see the device showing up in your device list, you're ready for the next step. 
    ![image](./doc/create_MQTT_device.png)
@@ -50,7 +50,7 @@ Follow the device logic to now acknowledge this command and use it for your appl
 - [Device Control for IoT Extension](https://cumulocity.com/guides/reference/device-control/)
 - [GitHub: Cumulocity MQTT client examples](https://github.com/SoftwareAG/c8y_hw_mqtt)
 - [:shopping_cart: MindSphere Store: Visual Flow Creator](https://www.dex.siemens.com/mindsphere/applications/visual-flow-creator?viewState=DetailView&cartID=&portalUser=&store=&cclcl=en_US)
-- [:shopping_cart: MindSphere Store: IoT Extension](mindsphere.io/store)
+- [:shopping_cart: MindSphere Store: IoT Extension](https://mindsphere.io/store)
 
 
 

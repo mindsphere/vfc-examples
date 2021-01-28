@@ -1,0 +1,204 @@
+[{
+    "id": "8f12e86e.fc4c",
+    "type": "asset-type",
+    "z": "bf4ef0cb.2b46e8",
+    "name": "",
+    "topic": "[MobilePhone]/Acceleration/x",
+    "assetType": "free4h1w.mobilephone",
+    "asset": "",
+    "exclude": "",
+    "aspect": "Acceleration",
+    "variable": "x",
+    "x": 240,
+    "y": 180,
+    "wires": [
+        ["a334ede2.883c2"]
+    ],
+    "_type": "node"
+}, {
+    "id": "72e48473.3782dc",
+    "type": "comment",
+    "z": "bf4ef0cb.2b46e8",
+    "name": "",
+    "info": "select all assets of this type",
+    "sticky": 1,
+    "x": 310,
+    "y": 140,
+    "wires": [],
+    "_type": "node"
+}, {
+    "id": "9d1feea5.530c48",
+    "type": "create event",
+    "z": "bf4ef0cb.2b46e8",
+    "name": "",
+    "asset": "",
+    "assetName": "",
+    "severity": "40",
+    "acknowledged": "false",
+    "source": "VFC rule test",
+    "description": "VFC rule triggered",
+    "x": 910,
+    "y": 360,
+    "wires": [],
+    "_type": "node"
+}, {
+    "id": "efde183f.4a7a88",
+    "type": "filter2",
+    "z": "bf4ef0cb.2b46e8",
+    "name": "my rule",
+    "lambda": "element.x > 30",
+    "x": 600,
+    "y": 180,
+    "wires": [
+        ["9dd878e6.d1f218"]
+    ],
+    "_type": "node"
+}, {
+    "id": "9dd878e6.d1f218",
+    "type": "function",
+    "z": "bf4ef0cb.2b46e8",
+    "name": "",
+    "func": "msg.asset = msg.topic.split('/')[0];\nreturn msg;",
+    "outputs": 1,
+    "noerr": 0,
+    "x": 480,
+    "y": 360,
+    "wires": [
+        ["27c8a409.05bcd4", "80b538c6.7f079"]
+    ],
+    "_type": "node"
+}, {
+    "id": "d10d784d.7c141",
+    "type": "inject",
+    "z": "bf4ef0cb.2b46e8",
+    "name": "Trigger",
+    "topic": "",
+    "payload": "",
+    "payloadType": "date",
+    "repeat": "",
+    "crontab": "",
+    "once": false,
+    "properties": "",
+    "timezone": "utc",
+    "betweentimesunit": "m",
+    "enableRuleEngine": false,
+    "x": 110,
+    "y": 180,
+    "wires": [
+        ["8f12e86e.fc4c"]
+    ],
+    "_type": "node"
+}, {
+    "id": "a334ede2.883c2",
+    "type": "read timeseries",
+    "z": "bf4ef0cb.2b46e8",
+    "name": "",
+    "topic": "",
+    "topicLabel": "",
+    "assetName": "",
+    "period": "60",
+    "offset": "0",
+    "mode": "relative",
+    "from": "",
+    "datetimepickerFrom": "",
+    "to": "",
+    "datetimepickerTo": "",
+    "timezoneoffset": 0,
+    "x": 400,
+    "y": 180,
+    "wires": [
+        ["efde183f.4a7a88"]
+    ],
+    "_type": "node"
+}, {
+    "id": "60954bf3.6cbbec",
+    "type": "send email",
+    "z": "bf4ef0cb.2b46e8",
+    "name": "",
+    "recipients": "",
+    "subject": "Example rule per asset type has been triggered",
+    "message": "Your rule has been triggered:\n\n${payload}",
+    "mode": "subject",
+    "categoryId": "",
+    "category": "",
+    "priority": "normal",
+    "x": 910,
+    "y": 320,
+    "wires": [],
+    "_type": "node"
+}, {
+    "id": "80b538c6.7f079",
+    "type": "debug",
+    "z": "bf4ef0cb.2b46e8",
+    "name": "",
+    "active": true,
+    "console": "false",
+    "xaxis": "_time",
+    "complete": "payload",
+    "x": 670,
+    "y": 400,
+    "wires": [],
+    "_type": "node"
+}, {
+    "id": "27c8a409.05bcd4",
+    "type": "switch",
+    "z": "bf4ef0cb.2b46e8",
+    "name": "",
+    "property": "payload[0]",
+    "propertyType": "msg",
+    "rules": [{
+        "t": "nnull"
+    }],
+    "checkall": "true",
+    "outputs": 1,
+    "x": 650,
+    "y": 360,
+    "wires": [
+        ["9d1feea5.530c48"]
+    ],
+    "_type": "node"
+}, {
+    "id": "6fe9315d.1fe0e",
+    "type": "comment",
+    "z": "bf4ef0cb.2b46e8",
+    "name": "",
+    "info": "read the timeseries data",
+    "sticky": 1,
+    "x": 430,
+    "y": 220,
+    "wires": [],
+    "_type": "node"
+}, {
+    "id": "9007c78e.7ea2e",
+    "type": "comment",
+    "z": "bf4ef0cb.2b46e8",
+    "name": "",
+    "info": "define the rule\nin this case: value > 30",
+    "sticky": 1,
+    "x": 650,
+    "y": 120,
+    "wires": [],
+    "_type": "node"
+}, {
+    "id": "68612bd.76696d4",
+    "type": "comment",
+    "z": "bf4ef0cb.2b46e8",
+    "name": "",
+    "info": "extract data and fire only an event,\nif the rule has been triggred",
+    "sticky": 1,
+    "x": 580,
+    "y": 300,
+    "wires": [],
+    "_type": "node"
+}, {
+    "id": "2ca5fc2c.159afc",
+    "type": "comment",
+    "z": "bf4ef0cb.2b46e8",
+    "name": "",
+    "info": "fire an action:\ncreate an event or\nsend a email",
+    "sticky": 1,
+    "x": 930,
+    "y": 240,
+    "wires": [],
+    "_type": "node"
+}]
