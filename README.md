@@ -6,9 +6,16 @@
 
 
 ## Example Overview
+
 Current examples in this repository for Visual Flow Creator (VFC):
-- creation of custom API endpoints
-- commanding MQTT devices connected via IoT Extension
+
+| Name | Description | Complexity Rating | Prerequisites |
+| --- | --- | --- | --- | --- |
+|[Creation of custom API endpoints](./createCustomEndpoint/readme.md) | | :star: | |
+|[Command MQTT devices connected via IoT Extension](./commandMqttDevice/readme.md) | | :star: :star: | |
+|[Generate sample data](./generateSampleData/readme.md) | | :star: | |
+|[Create rule for asset type](./createRuleForAssetType/readme.md) | | :star: | |
+|[Virtual machine simulator](./virtualMachineSimulator/readme.md) | | :star: | |
 
 ## Prerequisites
 All application examples shown in this respository require the *Visual Flow Creator* MindSphere Application. 
