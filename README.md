@@ -78,4 +78,4 @@ Feel free to ask your questions in the [MindSphere Developer Forum](https://comm
 
 Or open an [issue](https://github.com/mindsphere/vfc-examples/issues) if you find a bug in our examples.
 
-You want to contribute? Your pull request is always welcome!
+You want to contribute? Your pull request is always welcome!!!
