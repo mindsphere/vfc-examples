@@ -15,7 +15,7 @@ This repository provides example flows to be used in MindSphere Visual Flow Crea
 
 If you do not have already purchased the app, you can get it in the [MindSphere Store](https://www.dex.siemens.com/mindsphere/applications/Visual-Flow-Creator). Or if you do not already have a MindSphere account, get one at [MindSphere Start](https://www.mindsphere.io/start).
 
-## How does this works
+## How does this work
 
 In the next chapter you will find example flows. There is always a readme with a short description, what this flow does.
 There is an image showing the flow to get an impression of the complexity.
