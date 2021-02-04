@@ -41,6 +41,8 @@ Please note, that the json-files are exported from another tenant. So their migh
 | --- | --- | --- | --- |
 | [TODO: Create dashboard for Fleet Manager](./createDashboardForFleetManager/readme.md) | | :star: | |
 | [TODO: Integrate external API](./integrateExternalApi/readme.md) | | :star: | |
+| [TODO: Dashboard with dynamic data layover](./dynamicDashboards/readme.md) | | :star: :star: | |
+
 
 You can add here your ideas for further examples.
 
