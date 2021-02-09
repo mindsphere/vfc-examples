@@ -41,6 +41,8 @@ Please note, that the json-files are exported from another tenant. So their migh
 | --- | --- | --- | --- |
 | [TODO: Create dashboard for Fleet Manager](./createDashboardForFleetManager/readme.md) | | :star: | |
 | [TODO: Integrate external API](./integrateExternalApi/readme.md) | | :star: | |
+| [TODO: Dashboard with dynamic data layover](./dynamicDashboards/readme.md) | | :star: :star: | |
+
 
 You can add here your ideas for further examples.
 
@@ -78,4 +80,4 @@ Feel free to ask your questions in the [MindSphere Developer Forum](https://comm
 
 Or open an [issue](https://github.com/mindsphere/vfc-examples/issues) if you find a bug in our examples.
 
-You want to contribute? Your pull request is always welcome!
+You want to contribute? Your pull request is always welcome!!!
