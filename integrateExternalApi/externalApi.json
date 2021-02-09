@@ -1,0 +1,75 @@
+[
+    {
+        "id": "9b3d196c.670518",
+        "type": "comment",
+        "z": "f91e2e34.2ae5d",
+        "name": "Procedure",
+        "info": "Double click the City node. Pick a city name for which weather information is available.\nCreate an account in https://openweathermap.org/ for free. \nThen create API Key from https://home.openweathermap.org/api_keys.\nThis example uses Current Weather API documented at: 'https://openweathermap.org/current'.",
+        "sticky": 1,
+        "x": 490,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "e4ded4eb.b27c98",
+        "type": "debug",
+        "z": "f91e2e34.2ae5d",
+        "name": "",
+        "active": true,
+        "console": "false",
+        "xaxis": "_time",
+        "complete": "false",
+        "x": 650,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "ae6137a3.572a98",
+        "type": "http request",
+        "z": "f91e2e34.2ae5d",
+        "name": "Get Weather",
+        "method": "GET",
+        "ret": "txt",
+        "url": "https://api.openweathermap.org/data/2.5/weather?q={{CITY}}&appid={{API_KEY}}",
+        "timeout": "",
+        "mindspherePath": "",
+        "useMindsphereAuth": false,
+        "isAdmin": false,
+        "secretHeaders": "",
+        "x": 450,
+        "y": 460,
+        "wires": [
+            [
+                "e4ded4eb.b27c98"
+            ]
+        ],
+        "_type": "node"
+    },
+    {
+        "id": "c6c9622d.3aa6b",
+        "type": "inject",
+        "z": "f91e2e34.2ae5d",
+        "name": "City",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "repeatEnd": "0",
+        "endTime": "0",
+        "crontab": "",
+        "once": false,
+        "properties": "[{\"name\":\"CITY\",\"value\":\"Erlangen\"},{\"name\":\"API_KEY\",\"value\":\"Replace this with API KEY\"}]",
+        "timezone": "utc",
+        "betweentimesunit": "m",
+        "enableRuleEngine": false,
+        "showNextExecution": false,
+        "x": 250,
+        "y": 460,
+        "wires": [
+            [
+                "ae6137a3.572a98"
+            ]
+        ],
+        "_type": "node"
+    }
+]
