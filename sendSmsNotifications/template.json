@@ -1,0 +1,930 @@
+[
+    {
+        "id": "191e8af3.825035",
+        "type": "comment",
+        "z": "216044f1.bc512c",
+        "name": "Send SMS Notifications",
+        "info": "This template demonstrates how you can send SMS notifications based on a VFC flow. \nIt features a version for Notification Service API in v3 and v4. \n\nSee also: \nhttps://developer.mindsphere.io/apis/advanced-notification/api-notification-api.html\n",
+        "sticky": 1,
+        "x": 370,
+        "y": 1320,
+        "wires": [],
+        "_type": "node"
+    },
+    {
+        "id": "3cd3fb9b.5fac74",
+        "type": "comment",
+        "z": "216044f1.bc512c",
+        "name": "v3",
+        "info": "adjust accordingly the notification \n- recipient (name and phone numeber)\n- message text",
+        "sticky": 1,
+        "x": 210,
+        "y": 1480,
+        "wires": [],
+        "_type": "node"
+    },
+    {
+        "id": "ccaed50.09d2628",
+        "type": "comment",
+        "z": "216044f1.bc512c",
+        "name": "v4 // PREVIEW ",
+        "info": "NOT working in VFC at the moment!!\n\nVFC will have needed scope for API endpoint from July 2021 onwards. \nPlease use v3 API version until the release or issue a custom token for usage of this endpoint. ",
+        "sticky": 1,
+        "x": 400,
+        "y": 2480,
+        "wires": [],
+        "_type": "node"
+    },
+    {
+        "id": "f17f3d21.ac935",
+        "type": "debug",
+        "z": "216044f1.bc512c",
+        "name": "ERROR",
+        "active": true,
+        "console": "false",
+        "xaxis": "_time",
+        "complete": "true",
+        "x": 1290,
+        "y": 2080,
+        "wires": [],
+        "_type": "node"
+    },
+    {
+        "id": "51ef1a04.65c834",
+        "type": "debug",
+        "z": "216044f1.bc512c",
+        "name": "debug",
+        "active": true,
+        "console": "false",
+        "xaxis": "_time",
+        "complete": "payload",
+        "x": 770,
+        "y": 2560,
+        "wires": []
+    },
+    {
+        "id": "ff936de6.d8f",
+        "type": "function",
+        "z": "216044f1.bc512c",
+        "name": "recipient details",
+        "func": "msg.payload = {\"recipientname\":\"my recipient name\",\n               \"recipientdetail\":[\n                    {\"address\":\"+49172xxxxxxx\",\"addresstypeid\":4}]\n               } \n\nreturn msg;",
+        "outputs": 1,
+        "language": "javascript",
+        "noerr": 0,
+        "x": 440,
+        "y": 1680,
+        "wires": [
+            [
+                "cb6ff9ea.7146d8"
+            ]
+        ],
+        "_type": "node"
+    },
+    {
+        "id": "590f314d.7eff9",
+        "type": "function",
+        "z": "216044f1.bc512c",
+        "name": "template text",
+        "func": "msg.payload = `<html xmlns:th=\"http://www.thymeleaf.org\" th:inline=\"text\" th:remove=\"tag\">` + \"[[${message}]]\" + `</html>`;\nreturn msg;",
+        "outputs": 1,
+        "language": "javascript",
+        "noerr": 0,
+        "x": 530,
+        "y": 1800,
+        "wires": [
+            [
+                "323cc55e.f73c9a"
+            ]
+        ],
+        "_type": "node"
+    },
+    {
+        "id": "323cc55e.f73c9a",
+        "type": "function",
+        "z": "216044f1.bc512c",
+        "name": "create mulipart content",
+        "func": "var pl = msg.payload\nnode.warn(pl)\n\nmsg.headers = {\n    \"Content-Type\": \"multipart/form-data; boundary=------------------------d74496d66958873e\"\n}\n\nmsg.payload = '--------------------------d74496d66958873e\\r\\n'+\n'Content-Disposition: form-data; name=\"templateInfo\"\\r\\n'+\n'\\r\\n'+'{\"templateParam\": [{\"paramName\": \"Name\",\"defaultValue\": \"Mindsphere User\",\"placeHolderName\": \"name\",\"paramTypeId\": 4}],\"templatesetName\": \"TemplateForSMS\",\"templateChannelAndFile\": [{\"communicationChannel\": 2,\"fileName\": \"SMS.html\"}]}\\r\\n'+\n'--------------------------d74496d66958873e\\r\\n'+\n'Content-Disposition: form-data; name=\"templateFiles\"; filename=\"SMS.html\"\\r\\n'+\n'Content-Type: application/octet-stream\\r\\n'+\n'\\r\\n'+\nmsg.payload+'\\r\\n'+\n'--------------------------d74496d66958873e--\\r\\n';\n\nreturn msg;",
+        "outputs": 1,
+        "language": "javascript",
+        "noerr": 0,
+        "x": 730,
+        "y": 1800,
+        "wires": [
+            [
+                "31c99faf.5d7fb"
+            ]
+        ],
+        "_type": "node"
+    },
+    {
+        "id": "e682af29.596a2",
+        "type": "function",
+        "z": "216044f1.bc512c",
+        "name": "category details",
+        "func": "var recipientId = msg.payload[0]\nvar templateData = JSON.parse(msg.payload[1])\nvar templatesetId = templateData.templatesetId\nvar templateId = templateData.templateList[0].templateId\n\n\nmsg.payload = {\n  \"msgCategoryName\" : \"My Category for Stefan vW\",\n  \"recipients\" : [ {\n    \"recipientId\" : recipientId\n  } ],\n  \"templates\" : [ {\n    \"templateId\" : templateId,\n    \"commChannelName\" : \"SMS\",\n    \"templatesetId\" : templatesetId\n  } ]\n}\nreturn msg;",
+        "outputs": 1,
+        "language": "javascript",
+        "noerr": 0,
+        "x": 1000,
+        "y": 1900,
+        "wires": [
+            [
+                "3c9b64fb.0df00c"
+            ]
+        ],
+        "_type": "node"
+    },
+    {
+        "id": "22f83af.a83dec6",
+        "type": "function",
+        "z": "216044f1.bc512c",
+        "name": "message details",
+        "func": "var messageCategoryId = msg.payload;\n\nvar message = \"Hello Stefan v.W.! You have successfully subscribed to the MindSphere time service. Current date and time is: \" + new Date() + \"\\n\\n Your beloved MindSphere Team\";\n\nmsg.payload = {\n    \"body\":{\"message\": message },\n    \"messageCategoryId\": messageCategoryId\n}\n\nreturn msg;",
+        "outputs": 1,
+        "language": "javascript",
+        "noerr": 0,
+        "x": 660,
+        "y": 2060,
+        "wires": [
+            [
+                "584f0156.e73de"
+            ]
+        ],
+        "_type": "node"
+    },
+    {
+        "id": "70a0b502.96ebac",
+        "type": "function",
+        "z": "216044f1.bc512c",
+        "name": "setup SMS text and recipients",
+        "func": "msg.payload =   {\n  \"message\": \"Monthly machine data analysis completed.\",\n  \"recipients\": [\n    \"+491722189537\"],\n  \"fromApplication\": \"string\"\n}\n\nreturn msg;",
+        "outputs": 1,
+        "language": "javascript",
+        "noerr": 0,
+        "x": 400,
+        "y": 2560,
+        "wires": [
+            [
+                "28c65a13.eb04f6"
+            ]
+        ],
+        "_type": "node"
+    },
+    {
+        "id": "cb6ff9ea.7146d8",
+        "type": "http request",
+        "z": "216044f1.bc512c",
+        "name": "/recipient",
+        "method": "POST",
+        "ret": "txt",
+        "url": "",
+        "timeout": "",
+        "mindspherePath": "/api/notification/v3/recipient/",
+        "useMindsphereAuth": true,
+        "isAdmin": false,
+        "secretHeaders": "",
+        "x": 620,
+        "y": 1680,
+        "wires": [
+            [
+                "bd8b0ad7.0822f8"
+            ]
+        ],
+        "_type": "node"
+    },
+    {
+        "id": "31c99faf.5d7fb",
+        "type": "http request",
+        "z": "216044f1.bc512c",
+        "name": "/template",
+        "method": "POST",
+        "ret": "txt",
+        "url": "",
+        "timeout": "",
+        "mindspherePath": "/api/notification/v3/template/",
+        "useMindsphereAuth": true,
+        "isAdmin": false,
+        "secretHeaders": "",
+        "x": 920,
+        "y": 1800,
+        "wires": [
+            [
+                "60808ecc.32a86"
+            ]
+        ],
+        "_type": "node"
+    },
+    {
+        "id": "3c9b64fb.0df00c",
+        "type": "http request",
+        "z": "216044f1.bc512c",
+        "name": "/communicationcategories",
+        "method": "POST",
+        "ret": "txt",
+        "url": "",
+        "timeout": "",
+        "mindspherePath": "/api/notification/v3/communicationcategories/",
+        "useMindsphereAuth": true,
+        "isAdmin": false,
+        "secretHeaders": "",
+        "x": 1230,
+        "y": 1900,
+        "wires": [
+            [
+                "f2aaf60a.4d3688"
+            ]
+        ],
+        "_type": "node"
+    },
+    {
+        "id": "584f0156.e73de",
+        "type": "http request",
+        "z": "216044f1.bc512c",
+        "name": "/publisher/messages",
+        "method": "POST",
+        "ret": "txt",
+        "url": "",
+        "timeout": "",
+        "mindspherePath": "/api/notification/v3/publisher/messages",
+        "useMindsphereAuth": true,
+        "isAdmin": false,
+        "secretHeaders": "",
+        "x": 860,
+        "y": 2060,
+        "wires": [
+            [
+                "da6883fd.18c08"
+            ]
+        ],
+        "_type": "node"
+    },
+    {
+        "id": "28c65a13.eb04f6",
+        "type": "http request",
+        "z": "216044f1.bc512c",
+        "name": "send SMS",
+        "method": "POST",
+        "ret": "txt",
+        "url": "",
+        "timeout": "",
+        "mindspherePath": "/api/notification/v4/multicastSMSNotificationJobs",
+        "useMindsphereAuth": true,
+        "isAdmin": false,
+        "secretHeaders": "",
+        "x": 620,
+        "y": 2560,
+        "wires": [
+            [
+                "51ef1a04.65c834"
+            ]
+        ]
+    },
+    {
+        "id": "5c468465.35c6bc",
+        "type": "inject",
+        "z": "216044f1.bc512c",
+        "name": "1) Create Recipient",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "repeatEnd": "0",
+        "endTime": "0",
+        "crontab": "",
+        "offset": "NaN",
+        "once": false,
+        "properties": "",
+        "timezone": "utc",
+        "betweentimesunit": "m",
+        "enableRuleEngine": false,
+        "showNextExecution": false,
+        "powerMode": false,
+        "x": 230,
+        "y": 1680,
+        "wires": [
+            [
+                "ff936de6.d8f"
+            ]
+        ],
+        "_type": "node"
+    },
+    {
+        "id": "9f81e9ee.ef64d8",
+        "type": "inject",
+        "z": "216044f1.bc512c",
+        "name": "2) Create Template Set for the SMS",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "repeatEnd": "0",
+        "endTime": "0",
+        "crontab": "",
+        "offset": "NaN",
+        "once": false,
+        "properties": "",
+        "timezone": "utc",
+        "betweentimesunit": "m",
+        "enableRuleEngine": false,
+        "showNextExecution": false,
+        "powerMode": false,
+        "x": 260,
+        "y": 1800,
+        "wires": [
+            [
+                "590f314d.7eff9"
+            ]
+        ],
+        "_type": "node"
+    },
+    {
+        "id": "45a0dbd.82fcc24",
+        "type": "inject",
+        "z": "216044f1.bc512c",
+        "name": "3) Create Category to bind above recipient and template",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "repeatEnd": "0",
+        "endTime": "0",
+        "crontab": "",
+        "offset": "NaN",
+        "once": false,
+        "properties": "",
+        "timezone": "utc",
+        "betweentimesunit": "m",
+        "enableRuleEngine": false,
+        "showNextExecution": false,
+        "powerMode": false,
+        "x": 320,
+        "y": 1900,
+        "wires": [
+            [
+                "98905067.98043",
+                "c898171a.43c878"
+            ]
+        ],
+        "_type": "node"
+    },
+    {
+        "id": "1dbc4890.9c1257",
+        "type": "inject",
+        "z": "216044f1.bc512c",
+        "name": "4) Send SMS using Category ID",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "repeatEnd": "0",
+        "endTime": "0",
+        "crontab": "",
+        "offset": "NaN",
+        "once": false,
+        "properties": "",
+        "timezone": "utc",
+        "betweentimesunit": "m",
+        "enableRuleEngine": false,
+        "showNextExecution": false,
+        "powerMode": false,
+        "x": 240,
+        "y": 2060,
+        "wires": [
+            [
+                "2dddc396.94546c"
+            ]
+        ],
+        "_type": "node"
+    },
+    {
+        "id": "a9ff21e3.89c67",
+        "type": "inject",
+        "z": "216044f1.bc512c",
+        "name": "trigger SMS sending",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "repeatEnd": "0",
+        "endTime": "0",
+        "crontab": "",
+        "offset": "NaN",
+        "once": false,
+        "properties": "",
+        "timezone": "utc",
+        "betweentimesunit": "m",
+        "enableRuleEngine": false,
+        "showNextExecution": false,
+        "powerMode": false,
+        "x": 150,
+        "y": 2560,
+        "wires": [
+            [
+                "70a0b502.96ebac"
+            ]
+        ],
+        "_type": "node"
+    },
+    {
+        "id": "3085f48e.4a8afc",
+        "type": "store-context",
+        "z": "216044f1.bc512c",
+        "name": "recipientId",
+        "key": "recipientId",
+        "context": "flow",
+        "ttl": 15811200,
+        "x": 1090,
+        "y": 1660,
+        "wires": [],
+        "_type": "node"
+    },
+    {
+        "id": "c9d1eb07.d462a8",
+        "type": "store-context",
+        "z": "216044f1.bc512c",
+        "name": "templateSetId",
+        "key": "templateSetId",
+        "context": "flow",
+        "ttl": 15811200,
+        "x": 1360,
+        "y": 1780,
+        "wires": [],
+        "_type": "node"
+    },
+    {
+        "id": "98905067.98043",
+        "type": "read-context",
+        "z": "216044f1.bc512c",
+        "name": "recipientId",
+        "key": "recipientId",
+        "context": "flow",
+        "x": 650,
+        "y": 1880,
+        "wires": [
+            [
+                "c6ffb853.57a598"
+            ]
+        ],
+        "_type": "node"
+    },
+    {
+        "id": "c898171a.43c878",
+        "type": "read-context",
+        "z": "216044f1.bc512c",
+        "name": "templateSetId",
+        "key": "templateSetId",
+        "context": "flow",
+        "x": 660,
+        "y": 1920,
+        "wires": [
+            [
+                "c6ffb853.57a598:1"
+            ]
+        ],
+        "_type": "node"
+    },
+    {
+        "id": "c6ffb853.57a598",
+        "type": "combine",
+        "z": "216044f1.bc512c",
+        "name": "",
+        "triggers": "1,0",
+        "inputs": 2,
+        "timeseries": false,
+        "waitall": false,
+        "reset": false,
+        "x": 840,
+        "y": 1900,
+        "wires": [
+            [
+                "e682af29.596a2"
+            ]
+        ]
+    },
+    {
+        "id": "71ad0040.a44a2",
+        "type": "store-context",
+        "z": "216044f1.bc512c",
+        "name": "messageCategoryId",
+        "key": "messageCategoryId",
+        "context": "flow",
+        "ttl": 15811200,
+        "x": 1710,
+        "y": 1880,
+        "wires": [],
+        "_type": "node"
+    },
+    {
+        "id": "2dddc396.94546c",
+        "type": "read-context",
+        "z": "216044f1.bc512c",
+        "name": "messageCategoryId",
+        "key": "messageCategoryId",
+        "context": "flow",
+        "x": 470,
+        "y": 2060,
+        "wires": [
+            [
+                "22f83af.a83dec6"
+            ]
+        ],
+        "_type": "node"
+    },
+    {
+        "id": "da6883fd.18c08",
+        "type": "switch",
+        "z": "216044f1.bc512c",
+        "name": "check status code",
+        "property": "statusCode",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "204",
+                "vt": "str"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "outputs": 2,
+        "x": 1090,
+        "y": 2060,
+        "wires": [
+            [
+                "d3d94151.00adb"
+            ],
+            [
+                "f17f3d21.ac935"
+            ]
+        ],
+        "_type": "node"
+    },
+    {
+        "id": "d3d94151.00adb",
+        "type": "debug",
+        "z": "216044f1.bc512c",
+        "name": "OK - successfully send SMS",
+        "active": true,
+        "console": "false",
+        "xaxis": "_time",
+        "complete": "payload",
+        "x": 1360,
+        "y": 2040,
+        "wires": [],
+        "_type": "node"
+    },
+    {
+        "id": "6442e528.f117fc",
+        "type": "comment",
+        "z": "216044f1.bc512c",
+        "name": "adjust here:",
+        "info": "- name \n- phone number ",
+        "sticky": 1,
+        "x": 440,
+        "y": 1600,
+        "wires": [],
+        "_type": "node"
+    },
+    {
+        "id": "680ef6c4.5b0e28",
+        "type": "comment",
+        "z": "216044f1.bc512c",
+        "name": "adjust here: ",
+        "info": "- message ",
+        "sticky": 1,
+        "x": 654,
+        "y": 2000,
+        "wires": [],
+        "_type": "node"
+    },
+    {
+        "id": "afb75995.9f9e98",
+        "type": "inject",
+        "z": "216044f1.bc512c",
+        "name": "set recipientId manually",
+        "topic": "",
+        "payload": "10678",
+        "payloadType": "num",
+        "repeat": "",
+        "repeatEnd": "0",
+        "endTime": "0",
+        "crontab": "",
+        "offset": "NaN",
+        "once": false,
+        "properties": "",
+        "timezone": "utc",
+        "betweentimesunit": "m",
+        "enableRuleEngine": false,
+        "showNextExecution": false,
+        "powerMode": false,
+        "x": 860,
+        "y": 1640,
+        "wires": [
+            [
+                "3085f48e.4a8afc"
+            ]
+        ],
+        "_type": "node"
+    },
+    {
+        "id": "f2aaf60a.4d3688",
+        "type": "switch",
+        "z": "216044f1.bc512c",
+        "name": "check status code (201)",
+        "property": "statusCode",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "201",
+                "vt": "str"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "outputs": 2,
+        "x": 1470,
+        "y": 1900,
+        "wires": [
+            [
+                "71ad0040.a44a2"
+            ],
+            [
+                "8da85546.60c818"
+            ]
+        ],
+        "_type": "node"
+    },
+    {
+        "id": "8da85546.60c818",
+        "type": "debug",
+        "z": "216044f1.bc512c",
+        "name": "ERROR",
+        "active": true,
+        "console": "false",
+        "xaxis": "_time",
+        "complete": "true",
+        "x": 1670,
+        "y": 1920,
+        "wires": []
+    },
+    {
+        "id": "2978c512.98c26a",
+        "type": "debug",
+        "z": "216044f1.bc512c",
+        "name": "ERROR",
+        "active": true,
+        "console": "false",
+        "xaxis": "_time",
+        "complete": "true",
+        "x": 1330,
+        "y": 1820,
+        "wires": []
+    },
+    {
+        "id": "60808ecc.32a86",
+        "type": "switch",
+        "z": "216044f1.bc512c",
+        "name": "check status code (201)",
+        "property": "statusCode",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "201",
+                "vt": "str"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "outputs": 2,
+        "x": 1130,
+        "y": 1800,
+        "wires": [
+            [
+                "c9d1eb07.d462a8"
+            ],
+            [
+                "2978c512.98c26a"
+            ]
+        ],
+        "_type": "node"
+    },
+    {
+        "id": "69e03c22.abe724",
+        "type": "debug",
+        "z": "216044f1.bc512c",
+        "name": "ERROR",
+        "active": true,
+        "console": "false",
+        "xaxis": "_time",
+        "complete": "true",
+        "x": 1070,
+        "y": 1700,
+        "wires": []
+    },
+    {
+        "id": "bd8b0ad7.0822f8",
+        "type": "switch",
+        "z": "216044f1.bc512c",
+        "name": "check status code (200)",
+        "property": "statusCode",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "200",
+                "vt": "str"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "outputs": 2,
+        "x": 850,
+        "y": 1680,
+        "wires": [
+            [
+                "3085f48e.4a8afc"
+            ],
+            [
+                "69e03c22.abe724"
+            ]
+        ],
+        "_type": "node"
+    },
+    {
+        "id": "a922b536.6fbb88",
+        "type": "inject",
+        "z": "216044f1.bc512c",
+        "name": "GET all communication categories",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "repeatEnd": "0",
+        "endTime": "0",
+        "crontab": "",
+        "offset": "NaN",
+        "once": false,
+        "properties": "",
+        "timezone": "utc",
+        "betweentimesunit": "m",
+        "enableRuleEngine": false,
+        "showNextExecution": false,
+        "powerMode": false,
+        "x": 270,
+        "y": 2240,
+        "wires": [
+            [
+                "97975229.0096"
+            ]
+        ],
+        "_type": "node"
+    },
+    {
+        "id": "97975229.0096",
+        "type": "http request",
+        "z": "216044f1.bc512c",
+        "name": "/communicationcategories",
+        "method": "GET",
+        "ret": "txt",
+        "url": "",
+        "timeout": "",
+        "mindspherePath": "/api/notification/v3/communicationcategories/",
+        "useMindsphereAuth": true,
+        "isAdmin": false,
+        "secretHeaders": "",
+        "x": 530,
+        "y": 2240,
+        "wires": [
+            [
+                "374cd45f.efd9ac"
+            ]
+        ],
+        "_type": "node"
+    },
+    {
+        "id": "374cd45f.efd9ac",
+        "type": "debug",
+        "z": "216044f1.bc512c",
+        "name": "",
+        "active": true,
+        "console": "false",
+        "xaxis": "_time",
+        "complete": "false",
+        "x": 750,
+        "y": 2240,
+        "wires": []
+    },
+    {
+        "id": "c9c07acb.bdf118",
+        "type": "inject",
+        "z": "216044f1.bc512c",
+        "name": "set templateSetId manually",
+        "topic": "",
+        "payload": "{\"templatesetId\":1813,\"templatesetName\":\"svwtemplate\",\"templateList\":[{\"templateId\":2413,\"commChannelId\":2,\"commChannelName\":\"SMS\"}]}",
+        "payloadType": "str",
+        "repeat": "",
+        "repeatEnd": "0",
+        "endTime": "0",
+        "crontab": "",
+        "offset": "NaN",
+        "once": false,
+        "properties": "",
+        "timezone": "utc",
+        "betweentimesunit": "m",
+        "enableRuleEngine": false,
+        "showNextExecution": false,
+        "powerMode": false,
+        "x": 1130,
+        "y": 1760,
+        "wires": [
+            [
+                "c9d1eb07.d462a8"
+            ]
+        ],
+        "_type": "node"
+    },
+    {
+        "id": "84829801.39ec88",
+        "type": "debug",
+        "z": "216044f1.bc512c",
+        "name": "",
+        "active": true,
+        "console": "false",
+        "xaxis": "_time",
+        "complete": "false",
+        "x": 750,
+        "y": 2280,
+        "wires": []
+    },
+    {
+        "id": "c2b7273d.c31f88",
+        "type": "http request",
+        "z": "216044f1.bc512c",
+        "name": "/template/templatelistdetails",
+        "method": "GET",
+        "ret": "txt",
+        "url": "",
+        "timeout": "",
+        "mindspherePath": "/api/notification/v3/template/templatelistdetails",
+        "useMindsphereAuth": true,
+        "isAdmin": false,
+        "x": 540,
+        "y": 2280,
+        "wires": [
+            [
+                "84829801.39ec88"
+            ]
+        ]
+    },
+    {
+        "id": "b07e61ec.e77d9",
+        "type": "inject",
+        "z": "216044f1.bc512c",
+        "name": "GET all templates",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "repeatEnd": "0",
+        "endTime": "0",
+        "crontab": "",
+        "offset": "NaN",
+        "once": false,
+        "properties": "",
+        "timezone": "utc",
+        "betweentimesunit": "m",
+        "enableRuleEngine": false,
+        "showNextExecution": false,
+        "powerMode": false,
+        "x": 216.17808532714844,
+        "y": 2285.003890991211,
+        "wires": [
+            [
+                "c2b7273d.c31f88"
+            ]
+        ],
+        "_type": "node"
+    },
+    {
+        "id": "1467f79f.0434b8",
+        "type": "comment",
+        "z": "216044f1.bc512c",
+        "name": "v3 - helper functions",
+        "info": "",
+        "sticky": 0,
+        "x": 190,
+        "y": 2200,
+        "wires": [],
+        "_type": "node"
+    }
+]

@@ -35,13 +35,17 @@ Please note, that the json-files are exported from another tenant. So their migh
 | [Create rule for asset type](./createRuleForAssetType/readme.md) | Create a rule for all assets of this type | :star: | |
 | [Generate sample data](./generateSampleData/readme.md) | Demo data for different data types in MindSphere | :star: | |
 | [Virtual machine simulator](./virtualMachineSimulator/readme.md) | | :star: | |
-
+| [send SMS notifications](./sendSmsNotifications/readme.md) | | :star: | |
 ### Examples which have to be added:
 | Name | Description | Complexity Rating | Prerequisites |
 | --- | --- | --- | --- |
+
+| [in progress: Set Flow variables via dashboard](./setFlowVariablesViaDashboard/readme.md) | | :star: | |
 | [TODO: Create dashboard for Fleet Manager](./createDashboardForFleetManager/readme.md) | | :star: | |
 | [TODO: Integrate external API](./integrateExternalApi/readme.md) | | :star: | |
 | [TODO: Dashboard with dynamic data layover](./dynamicDashboards/readme.md) | | :star: :star: | |
+
+
 
 
 You can add here your ideas for further examples.
