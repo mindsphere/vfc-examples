@@ -31,26 +31,24 @@ Please note, that the json-files are exported from another tenant. So their migh
 | Name | Description | Complexity Rating | Prerequisites |
 | --- | --- | --- | --- |
 | [Command MQTT devices connected via IoT Extension](./commandMqttDevice/readme.md) | | :star: :star: | IoT Extension|
-| [Create custom API endpoints](./createCustomEndpoint/readme.md) | | :star: | |
-| [Create rule for asset type](./createRuleForAssetType/readme.md) | Create a rule for all assets of this type | :star: | |
-| [Generate sample data](./generateSampleData/readme.md) | Demo data for different data types in MindSphere | :star: | |
-| [Virtual machine simulator](./virtualMachineSimulator/readme.md) | | :star: | |
-
+| [Create custom API endpoints](./createCustomEndpoint/readme.md) | | :star: | - |
+| [Create rule for asset type](./createRuleForAssetType/readme.md) | Create a rule for all assets of this type | :star: | - |
+| [Generate sample data](./generateSampleData/readme.md) | Demo data for different data types in MindSphere | :star: | - |
+| [Virtual machine simulator](./virtualMachineSimulator/readme.md) | | :star: | - |
+| [Send SMS notifications](./sendSmsNotifications/readme.md) | Send SMS notifications and dynamically specify recipient | :star: | - |
 ### Examples which have to be added:
 | Name | Description | Complexity Rating | Prerequisites |
 | --- | --- | --- | --- |
+| [IN PROGRESS: Set Flow variables via dashboard](./setFlowVariablesViaDashboard/readme.md) | | :star: | |
 | [TODO: Create dashboard for Fleet Manager](./createDashboardForFleetManager/readme.md) | | :star: | |
 | [TODO: Integrate external API](./integrateExternalApi/readme.md) | | :star: | |
-| [TODO: Dashboard with dynamic data layover](./dynamicDashboards/readme.md) | | :star: :star: | |
+| [TODO: Dashboard with dynamic data layer](./dynamicDashboards/readme.md) | | :star: :star: | |
 
-
-You can add here your ideas for further examples.
+You can add here your ideas or requests for further examples.
 
 ### Example template
-
 You want to create your own example? Just copy the [template flow-directory](./templateFlow/), adapt it and send us your pull request.
 ## Remarks
-
 Please note that the screenshots show just the current state, when these examples have been created. They might differ to the latest software release.
 
 Each flow has to be adapted to your tenant. Ensure, that e.g. fixed tenant names or asset ids are adapted before/after you import the flow.
