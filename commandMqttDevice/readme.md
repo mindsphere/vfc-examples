@@ -16,7 +16,7 @@ Every time the flow is triggered, the command specified in the payload is send t
 2. Connect to IoT Extension via your MQTT client of choice. The detailed process is described [here](https://developer.mindsphere.io/howto/howto-mqtt-mciot.html)
 3. Follow the process to [create your MQTT device](https://cumulocity.com/guides/device-sdk/mqtt-examples/#hello-mqtt) by sending ```100,My first MQTT device,MqttDeviceType``` to ```s/us``` topic. Once you can see the device showing up in your device list, you're ready for the next step. 
    ![image](./doc/create_MQTT_device.png)
-4. Enable [receiving operations](https://cumulocity.com/guides/10.7.0-beta/device-sdk/mqtt-examples/) for the device by sending the following payload ```114,c8y_Command,c8y_Configuration``` to ```s/us```. In your device view, you should then see the *Shell* option to show up after reloading the website. 
+4. Enable [receiving operations](https://cumulocity.com/guides/device-sdk/mqtt-examples/#receiving-operations) for the device by sending the following payload ```114,c8y_Command,c8y_Configuration``` to ```s/us```. In your device view, you should then see the *Shell* option to show up after reloading the website. 
   ![image](./doc/activate_receiving%20operations_MQTT_device.png)
 5. Subscribe to ```s/ds``` topic on the device to see the commands send
 6. Test the device setup by sending a command through the IoT Extension UI in the *Shell* window. Onc you receive the command on the device send from the browser, you're ready to automate this via VFC in the next step. 
