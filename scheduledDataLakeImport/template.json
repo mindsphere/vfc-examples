@@ -1,0 +1,93 @@
+[
+    {
+        "id": "cf1eb423.c22278",
+        "type": "comment",
+        "z": "cba45765.fb58c8",
+        "name": "Dynamic export of timeseries data to Integrated Data Lake",
+        "info": "- export timeseries data from an asset/aspect to Integrated Data Lake\n- runs every 24h\n- location in IDL where data is stored can be specified",
+        "sticky": 1,
+        "x": 360,
+        "y": 1100,
+        "wires": [],
+        "_type": "node"
+    },
+    {
+        "id": "9df841f3.541e2",
+        "type": "debug",
+        "z": "cba45765.fb58c8",
+        "name": "",
+        "active": true,
+        "console": "false",
+        "xaxis": "_time",
+        "complete": "payload",
+        "x": 870,
+        "y": 1200,
+        "wires": []
+    },
+    {
+        "id": "76f6de48.a90eb",
+        "type": "function",
+        "z": "cba45765.fb58c8",
+        "name": "buildTimeImportJobSeriesBody",
+        "func": "/**set date time and jobname**/\nvar today = new Date();\nvar day=today.getDate();\nvar month=today.getMonth()+1;\nvar year =today.getFullYear();\n\n//build From and To date = one day (24h) window \nvar startDate = new Date(today.getFullYear(), today.getMonth(), today.getDate()-1, 0, 0, 0);\nvar endDate = new Date(today.getFullYear(), today.getMonth(), today.getDate(),0, 0, 0);\n\nvar from =startDate;\nvar to = endDate;\n\nmsg.payload={\n  \"name\": \"TSIJob_test_\"+year+\"_\"+month+\"_\"+day,\n  \"destination\": \"/export/\",\n  \"aspectNames\": [\n    \"myExportData\"\n  ],\n  \"assetIds\": [\n    \"51a193966bb142aca0ab4658c1077cfd\"\n  ],\n  \"from\": from,\n  \"to\": to\n}\nreturn msg;",
+        "outputs": 1,
+        "language": "javascript",
+        "noerr": 0,
+        "x": 450,
+        "y": 1200,
+        "wires": [
+            [
+                "e2287012.6b0bf"
+            ]
+        ],
+        "_type": "node"
+    },
+    {
+        "id": "e2287012.6b0bf",
+        "type": "http request",
+        "z": "cba45765.fb58c8",
+        "name": "TSImportJob",
+        "method": "POST",
+        "ret": "txt",
+        "url": "",
+        "timeout": "",
+        "mindspherePath": "/api/datalake/v3/timeSeriesImportJobs",
+        "useMindsphereAuth": true,
+        "isAdmin": false,
+        "x": 690,
+        "y": 1200,
+        "wires": [
+            [
+                "9df841f3.541e2"
+            ]
+        ]
+    },
+    {
+        "id": "5e17b196.34938",
+        "type": "inject",
+        "z": "cba45765.fb58c8",
+        "name": "run every 24h",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "86400",
+        "repeatEnd": "0",
+        "endTime": "0",
+        "crontab": "",
+        "offset": "41785848",
+        "once": false,
+        "properties": "",
+        "timezone": "utc",
+        "betweentimesunit": "m",
+        "enableRuleEngine": false,
+        "showNextExecution": true,
+        "powerMode": false,
+        "x": 200,
+        "y": 1200,
+        "wires": [
+            [
+                "76f6de48.a90eb"
+            ]
+        ]
+    }
+]
