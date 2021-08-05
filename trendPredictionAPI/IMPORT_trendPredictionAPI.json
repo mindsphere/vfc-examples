@@ -1,0 +1,606 @@
+[
+    {
+        "id": "cea5ffeb.d1862",
+        "type": "tab",
+        "allowCycles": false,
+        "label": "Predictive Maintenance",
+        "disabled": false,
+        "info": "tim.pennington@siemens.com"
+    },
+    {
+        "id": "a9d9b8ee.5541f8",
+        "type": "change",
+        "z": "cea5ffeb.d1862",
+        "name": "polynomialDegree -> 1",
+        "rules": [
+            {
+                "t": "change",
+                "p": "payload.modelConfiguration.polynomialDegree",
+                "pt": "msg",
+                "from": "0",
+                "fromt": "num",
+                "to": "1",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 740,
+        "y": 220,
+        "wires": [
+            [
+                "d35cdda7.8bbf5",
+                "8506a16a.29b7"
+            ]
+        ]
+    },
+    {
+        "id": "68180cab.24d4d4",
+        "type": "change",
+        "z": "cea5ffeb.d1862",
+        "name": "polynomialDegree -> 2",
+        "rules": [
+            {
+                "t": "change",
+                "p": "payload.modelConfiguration.polynomialDegree",
+                "pt": "msg",
+                "from": "0",
+                "fromt": "num",
+                "to": "2",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 740,
+        "y": 260,
+        "wires": [
+            [
+                "c31350f6.885be"
+            ]
+        ]
+    },
+    {
+        "id": "4ea16595.25867c",
+        "type": "change",
+        "z": "cea5ffeb.d1862",
+        "name": "polynomialDegree -> 3",
+        "rules": [
+            {
+                "t": "change",
+                "p": "payload.modelConfiguration.polynomialDegree",
+                "pt": "msg",
+                "from": "0",
+                "fromt": "num",
+                "to": "3",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 740,
+        "y": 300,
+        "wires": [
+            [
+                "ae785994.d325f8"
+            ]
+        ]
+    },
+    {
+        "id": "ae61d2b7.31639",
+        "type": "change",
+        "z": "cea5ffeb.d1862",
+        "name": "polynomialDegree -> 4",
+        "rules": [
+            {
+                "t": "change",
+                "p": "payload.modelConfiguration.polynomialDegree",
+                "pt": "msg",
+                "from": "0",
+                "fromt": "num",
+                "to": "4",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 740,
+        "y": 340,
+        "wires": [
+            [
+                "edba801.b76ed8"
+            ]
+        ]
+    },
+    {
+        "id": "3a7a9fd6.0f93e",
+        "type": "debug",
+        "z": "cea5ffeb.d1862",
+        "name": "",
+        "active": false,
+        "console": "false",
+        "xaxis": "_time",
+        "complete": "false",
+        "x": 150,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "6f4e9962.ddab78",
+        "type": "debug",
+        "z": "cea5ffeb.d1862",
+        "name": "",
+        "active": true,
+        "console": "false",
+        "xaxis": "_time",
+        "complete": "false",
+        "x": 380,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "8506a16a.29b7",
+        "type": "debug",
+        "z": "cea5ffeb.d1862",
+        "name": "",
+        "active": true,
+        "console": "false",
+        "xaxis": "_time",
+        "complete": "false",
+        "x": 950,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "4fd5ea68.174d24",
+        "type": "delay",
+        "z": "cea5ffeb.d1862",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "powerMode": false,
+        "x": 700,
+        "y": 80,
+        "wires": [
+            [
+                "6c9d28cd.0561d8"
+            ]
+        ]
+    },
+    {
+        "id": "c336e536.712d28",
+        "type": "function",
+        "z": "cea5ffeb.d1862",
+        "name": "polynomialDegree 0",
+        "func": "// 30 minute forecast prediction...\nvar prediction_datetime = new Date(new Date().getTime() + flow.get(\"PredictionOffsetMins\") * 60000) || 1800000;\nvar timeseries = msg.payload;\nflow.set(\"PredictionDateTime\", prediction_datetime.toISOString());\n\nmsg.payload = {\n\t\"modelConfiguration\": {\n\t\t\"polynomialDegree\": 0\n\t},\n\t\"metadataConfiguration\": {\n\t\t\"outputVariable\": {\n\t\t\t\"entityId\": 66,\n\t\t\t\"propertySetName\": \"Temperature\",\n\t\t\t\"propertyName\": \"Temperature\"\n\t\t},\n\t\t\"inputVariables\": [\n\t\t\t{\n\t\t\t\t\"entityId\": 66,\n\t\t\t\t\"propertySetName\": \"Temperature\",\n\t\t\t\t\"propertyName\": \"_time\"\n\t\t\t}\n\t\t]\n\t},\n\t\"trainingData\": [\n\t\t{\n\t\t\t\"variable\": {\n\t\t\t\t\"entityId\": \"66\",\n\t\t\t\t\"propertySetName\": \"Temperature\"\n\t\t\t},\n\t\t\t\"timeSeries\": timeseries\n\t\t}\n\t],\n\t\"predictionData\": [\n\t\t{\n\t\t\t\"variable\": {\n\t\t\t\t\"entityId\": \"66\",\n\t\t\t\t\"propertySetName\": \"Temperature\"\n\t\t\t},\n\t\t\t\"timeSeries\": [\n\t\t\t\t{\n\t\t\t\t\t\"_time\": prediction_datetime\n\t\t\t\t}\n\t\t\t]\n\t\t}\n\t]\n}\n\nconsole.log(timeseries);\nreturn msg;\n",
+        "outputs": 1,
+        "language": "javascript",
+        "noerr": 0,
+        "x": 740,
+        "y": 160,
+        "wires": [
+            [
+                "a9d9b8ee.5541f8",
+                "68180cab.24d4d4",
+                "4ea16595.25867c",
+                "ae61d2b7.31639"
+            ]
+        ],
+        "_type": "node"
+    },
+    {
+        "id": "e682a016.4c575",
+        "type": "function",
+        "z": "cea5ffeb.d1862",
+        "name": "Temp_P1",
+        "func": "var timeseries = msg.payload[0].timeSeries;\n\nmsg.payload = {};\nmsg.payload = timeseries;\nmsg.payload[0].Temperature_P1 = msg.payload[0].Temperature;\nmsg.payload[0]._time = flow.get(\"PredictionDateTime\");\ndelete msg.payload[0].Temperature;\nreturn msg;\n",
+        "outputs": 1,
+        "language": "javascript",
+        "noerr": 0,
+        "x": 1120,
+        "y": 220,
+        "wires": [
+            [
+                "e7acd37e.3bb8e"
+            ]
+        ]
+    },
+    {
+        "id": "5481b4dd.26d8ec",
+        "type": "function",
+        "z": "cea5ffeb.d1862",
+        "name": "Temp_P2",
+        "func": "var timeseries = msg.payload[0].timeSeries;\n\nmsg.payload = {};\nmsg.payload = timeseries;\nmsg.payload[0].Temperature_P2 = msg.payload[0].Temperature;\nmsg.payload[0]._time = flow.get(\"PredictionDateTime\");\ndelete msg.payload[0].Temperature;\nreturn msg;\n",
+        "outputs": 1,
+        "language": "javascript",
+        "noerr": 0,
+        "x": 1120,
+        "y": 260,
+        "wires": [
+            [
+                "852fafba.dfae8"
+            ]
+        ]
+    },
+    {
+        "id": "7300f4f.501870c",
+        "type": "function",
+        "z": "cea5ffeb.d1862",
+        "name": "Temp_P3",
+        "func": "var timeseries = msg.payload[0].timeSeries;\n\nmsg.payload = {};\nmsg.payload = timeseries;\nmsg.payload[0].Temperature_P3 = msg.payload[0].Temperature;\nmsg.payload[0]._time = flow.get(\"PredictionDateTime\");\ndelete msg.payload[0].Temperature;\nreturn msg;\n",
+        "outputs": 1,
+        "language": "javascript",
+        "noerr": 0,
+        "x": 1120,
+        "y": 300,
+        "wires": [
+            [
+                "a06d434.1cda3c"
+            ]
+        ]
+    },
+    {
+        "id": "80c3d42.7903928",
+        "type": "function",
+        "z": "cea5ffeb.d1862",
+        "name": "Temp_P4",
+        "func": "var timeseries = msg.payload[0].timeSeries;\n\nmsg.payload = {};\nmsg.payload = timeseries;\nmsg.payload[0].Temperature_P4 = msg.payload[0].Temperature;\nmsg.payload[0]._time = flow.get(\"PredictionDateTime\");\ndelete msg.payload[0].Temperature;\nreturn msg;\n",
+        "outputs": 1,
+        "language": "javascript",
+        "noerr": 0,
+        "x": 1120,
+        "y": 340,
+        "wires": [
+            [
+                "56cbc97b.1960d8"
+            ]
+        ]
+    },
+    {
+        "id": "498a2ab6.a17fe4",
+        "type": "function",
+        "z": "cea5ffeb.d1862",
+        "name": "Set Payload",
+        "func": "var temp = msg.payload.main.temp;\nvar pressure = msg.payload.main.pressure;\nvar humidity = msg.payload.main.humidity;\nmsg.payload = \n{\n    \"Temperature\": temp,\n    \"Pressure\": pressure,\n    \"Humidity\": humidity,\n};\n\nreturn msg;",
+        "outputs": 1,
+        "language": "javascript",
+        "noerr": 0,
+        "x": 150,
+        "y": 160,
+        "wires": [
+            [
+                "bfb97ee2.f66b3",
+                "3a7a9fd6.0f93e",
+                "4fd5ea68.174d24"
+            ]
+        ],
+        "_type": "node"
+    },
+    {
+        "id": "3aebe78.7c3b518",
+        "type": "http request",
+        "z": "cea5ffeb.d1862",
+        "name": "Call Weather API",
+        "method": "GET",
+        "ret": "obj",
+        "url": "https://api.openweathermap.org/data/2.5/weather?q=London&appid={{APPID}}&units=metric",
+        "timeout": "",
+        "mindspherePath": "",
+        "useMindsphereAuth": false,
+        "isAdmin": false,
+        "secretHeaders": "[]",
+        "x": 160,
+        "y": 120,
+        "wires": [
+            [
+                "6f4e9962.ddab78",
+                "498a2ab6.a17fe4"
+            ]
+        ],
+        "_type": "node"
+    },
+    {
+        "id": "d35cdda7.8bbf5",
+        "type": "http request",
+        "z": "cea5ffeb.d1862",
+        "name": "",
+        "method": "POST",
+        "ret": "obj",
+        "url": "",
+        "timeout": "",
+        "mindspherePath": "/api/trendprediction/v3/trainAndPredict",
+        "useMindsphereAuth": true,
+        "isAdmin": false,
+        "secretHeaders": "",
+        "x": 950,
+        "y": 220,
+        "wires": [
+            [
+                "e682a016.4c575"
+            ]
+        ],
+        "_type": "node"
+    },
+    {
+        "id": "c31350f6.885be",
+        "type": "http request",
+        "z": "cea5ffeb.d1862",
+        "name": "",
+        "method": "POST",
+        "ret": "obj",
+        "url": "",
+        "timeout": "",
+        "mindspherePath": "/api/trendprediction/v3/trainAndPredict",
+        "useMindsphereAuth": true,
+        "isAdmin": false,
+        "secretHeaders": "",
+        "x": 950,
+        "y": 260,
+        "wires": [
+            [
+                "5481b4dd.26d8ec"
+            ]
+        ]
+    },
+    {
+        "id": "ae785994.d325f8",
+        "type": "http request",
+        "z": "cea5ffeb.d1862",
+        "name": "",
+        "method": "POST",
+        "ret": "obj",
+        "url": "",
+        "timeout": "",
+        "mindspherePath": "/api/trendprediction/v3/trainAndPredict",
+        "useMindsphereAuth": true,
+        "isAdmin": false,
+        "x": 950,
+        "y": 300,
+        "wires": [
+            [
+                "7300f4f.501870c"
+            ]
+        ]
+    },
+    {
+        "id": "edba801.b76ed8",
+        "type": "http request",
+        "z": "cea5ffeb.d1862",
+        "name": "",
+        "method": "POST",
+        "ret": "obj",
+        "url": "",
+        "timeout": "",
+        "mindspherePath": "/api/trendprediction/v3/trainAndPredict",
+        "useMindsphereAuth": true,
+        "isAdmin": false,
+        "x": 950,
+        "y": 340,
+        "wires": [
+            [
+                "80c3d42.7903928"
+            ]
+        ]
+    },
+    {
+        "id": "9683a280.4abda",
+        "type": "inject",
+        "z": "cea5ffeb.d1862",
+        "name": "",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "300",
+        "repeatEnd": "0",
+        "endTime": "0",
+        "crontab": "",
+        "offset": "",
+        "once": false,
+        "properties": "",
+        "timezone": "utc",
+        "betweentimesunit": "m",
+        "enableRuleEngine": false,
+        "showNextExecution": false,
+        "powerMode": false,
+        "x": 150,
+        "y": 80,
+        "wires": [
+            [
+                "3aebe78.7c3b518"
+            ]
+        ],
+        "_type": "node"
+    },
+    {
+        "id": "185b2047.166b8",
+        "type": "inject",
+        "z": "cea5ffeb.d1862",
+        "name": "Set Prediction Offset (Minutes)",
+        "topic": "",
+        "payload": "30",
+        "payloadType": "num",
+        "repeat": "",
+        "repeatEnd": "0",
+        "endTime": "0",
+        "crontab": "",
+        "offset": "NaN",
+        "once": false,
+        "properties": "",
+        "timezone": "utc",
+        "betweentimesunit": "m",
+        "enableRuleEngine": false,
+        "showNextExecution": false,
+        "powerMode": false,
+        "x": 200,
+        "y": 460,
+        "wires": [
+            [
+                "e6d378b9.7512a8"
+            ]
+        ],
+        "_type": "node"
+    },
+    {
+        "id": "6c9d28cd.0561d8",
+        "type": "read timeseries",
+        "z": "cea5ffeb.d1862",
+        "name": "Read Actual Temperature",
+        "topic": "15faa3704aab4069b867c948876ce38d/TJP_GenericAspect/Temperature",
+        "topicLabel": "",
+        "assetName": "PREDICTIVE_MAINT_TEST",
+        "period": "120",
+        "offset": "0",
+        "mode": "relative",
+        "from": "",
+        "datetimepickerFrom": "",
+        "to": "",
+        "datetimepickerTo": "",
+        "timezoneoffset": 0,
+        "x": 750,
+        "y": 120,
+        "wires": [
+            [
+                "c336e536.712d28"
+            ]
+        ],
+        "_type": "node"
+    },
+    {
+        "id": "e6d378b9.7512a8",
+        "type": "store-context",
+        "z": "cea5ffeb.d1862",
+        "name": "",
+        "key": "PredictionOffsetMins",
+        "context": "flow",
+        "ttl": 15811200,
+        "x": 170,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "bfb97ee2.f66b3",
+        "type": "write timeseries",
+        "z": "cea5ffeb.d1862",
+        "name": "Write Actual Temperature",
+        "topic": "15faa3704aab4069b867c948876ce38d/TJP_GenericAspect/Temperature",
+        "topicLabel": "PREDICTIVE_MAINT_TEST/TJP_GenericAspect/Temperature",
+        "assetName": "PREDICTIVE_MAINT_TEST",
+        "useMerging": false,
+        "x": 190,
+        "y": 200,
+        "wires": [],
+        "_type": "node"
+    },
+    {
+        "id": "e7acd37e.3bb8e",
+        "type": "write timeseries",
+        "z": "cea5ffeb.d1862",
+        "name": "Write Predicted Temperature_P1",
+        "topic": "15faa3704aab4069b867c948876ce38d/TJP_GenericAspect/Temperature_P1",
+        "topicLabel": "PREDICTIVE_MAINT_TEST/TJP_GenericAspect/Temperature_P1",
+        "assetName": "PREDICTIVE_MAINT_TEST",
+        "useMerging": false,
+        "x": 1350,
+        "y": 220,
+        "wires": [],
+        "_type": "node"
+    },
+    {
+        "id": "852fafba.dfae8",
+        "type": "write timeseries",
+        "z": "cea5ffeb.d1862",
+        "name": "Write Predicted Temperature_P2",
+        "topic": "15faa3704aab4069b867c948876ce38d/TJP_GenericAspect/Temperature_P2",
+        "topicLabel": "PREDICTIVE_MAINT_TEST/TJP_GenericAspect/Temperature_P2",
+        "assetName": "PREDICTIVE_MAINT_TEST",
+        "useMerging": false,
+        "x": 1350,
+        "y": 260,
+        "wires": [],
+        "_type": "node"
+    },
+    {
+        "id": "a06d434.1cda3c",
+        "type": "write timeseries",
+        "z": "cea5ffeb.d1862",
+        "name": "Write Predicted Temperature_P3",
+        "topic": "15faa3704aab4069b867c948876ce38d/TJP_GenericAspect/Temperature_P3",
+        "topicLabel": "PREDICTIVE_MAINT_TEST/TJP_GenericAspect/Temperature_P3",
+        "assetName": "PREDICTIVE_MAINT_TEST",
+        "useMerging": false,
+        "x": 1350,
+        "y": 300,
+        "wires": [],
+        "_type": "node"
+    },
+    {
+        "id": "56cbc97b.1960d8",
+        "type": "write timeseries",
+        "z": "cea5ffeb.d1862",
+        "name": "Write Predicted Temperature_P4",
+        "topic": "15faa3704aab4069b867c948876ce38d/TJP_GenericAspect/Temperature_P4",
+        "topicLabel": "PREDICTIVE_MAINT_TEST/TJP_GenericAspect/Temperature_P4",
+        "assetName": "PREDICTIVE_MAINT_TEST",
+        "useMerging": false,
+        "x": 1350,
+        "y": 340,
+        "wires": [],
+        "_type": "node"
+    },
+    {
+        "id": "639153e1.62620c",
+        "type": "comment",
+        "z": "cea5ffeb.d1862",
+        "name": "Get the data",
+        "info": "- Get weather in London via https://api.openweathermap.org\n- Extract Pressure, Temperature & Flow\n- Write the data to the asset using \"Write Timeseries\" node",
+        "sticky": 1,
+        "x": 280,
+        "y": 320,
+        "wires": [],
+        "_type": "node"
+    },
+    {
+        "id": "71d08dff.912d54",
+        "type": "comment",
+        "z": "cea5ffeb.d1862",
+        "name": "Set Prediction Offset (Minutes)",
+        "info": "- Enter a value in the inject node to define how far into the future we would like to predict (default = 30 mins)",
+        "sticky": 1,
+        "x": 480,
+        "y": 560,
+        "wires": [],
+        "_type": "node"
+    },
+    {
+        "id": "2c3351a4.ee6e1e",
+        "type": "comment",
+        "z": "cea5ffeb.d1862",
+        "name": "Run MindSphere Trend Prediction API",
+        "info": "The MindSphere Trend Prediction API (/api/trendprediction/v3/trainAndPredict) is called 4 times...\nEach time with a different polynomial degree parameter (1-4)\nThe trend prediction result is written back to the same asset using the \"Write Timeseries\" node\nIn this example the actual temperature is stored in the \"Temperature\" variable...\nThe 4 predictions are stored in \"Temperature_T1\" -> \"Temperature_T4\"\nFuture predicted values can be seen in Fleet Manager in the same chart as the actual value",
+        "sticky": 1,
+        "x": 990,
+        "y": 440,
+        "wires": [],
+        "_type": "node"
+    }
+]
