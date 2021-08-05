@@ -26,7 +26,7 @@ The weather data (actual temperature) and predictions (predicted temperature) ar
 The 4 predictions are stored in "Temperature_T1" -> "Temperature_T4"
 
 ## Result
-Future predicted and actual values can be seen in MindSphere in various apps (Fleet Manager/Operations Insights etc.). In the screenhot below you can see actual temperature (Temperature) and predicted temperature (Temperature_P1)
+Future predicted and actual values can be seen in MindSphere in various apps (Fleet Manager/Operations Insights etc.). In the screenshot below you can see actual temperature (Temperature) and predicted temperature (Temperature_P1)
 
 ![image](./doc/trendPredictionValues.png)
 
