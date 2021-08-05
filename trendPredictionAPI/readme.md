@@ -3,7 +3,7 @@
 Create a trend prediction from historic time series data. Future predictions can be used to trigger rules and create events (info/warning/error) in Fleet manager. Useful application within a Predictive Manintennace use case.
 
 ![image](./doc/trendPrediction.png)
-![image](./doc/(trendPredictionValues.png)
+![image](./doc/trendPredictionValues.png)
 
 ## Prerequisites
 - Access to Visual Flow Creator
