@@ -1,6 +1,6 @@
 # FLOW: Running MindSphere's Trend Prediction API
 
-This flow show ho to create a trend prediction from historic time series data. Future predictions can be used to trigger rules and create events (info/warning/error) in Fleet Manager/Operations Insights etc. This is  a very useful application within a Predictive Maintenance use case.
+This flow shows how to create a trend prediction from historic time series data. Future predictions can be used to trigger rules and create events (info/warning/error) in Fleet Manager/Operations Insights etc. This is  a very useful application within a Predictive Maintenance use case.
 
 ![image](./doc/trendPrediction.png)
 
