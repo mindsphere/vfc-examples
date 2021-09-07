@@ -36,6 +36,8 @@ Please note, that the json-files are exported from another tenant. So their migh
 | [Generate sample data](./generateSampleData/readme.md) | Demo data for different data types in MindSphere | :star: | - |
 | [Virtual machine simulator](./virtualMachineSimulator/readme.md) | | :star: | - |
 | [Send SMS notifications](./sendSmsNotifications/readme.md) | Send SMS notifications and dynamically specify recipient | :star: | - |
+| [Timeseries Data Import to Data Lake](./scheduledDataLakeImport/readme.md) | Setup scheduled trigger to start import of data from timeseries storage to Integrated Data Lake | :star: | Integrated Data Lake |
+
 ### Examples which have to be added:
 | Name | Description | Complexity Rating | Prerequisites |
 | --- | --- | --- | --- |
