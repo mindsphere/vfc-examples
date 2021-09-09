@@ -37,7 +37,7 @@ Please note, that the json-files are exported from another tenant. So their migh
 | [Virtual machine simulator](./virtualMachineSimulator/readme.md) | | :star: | - |
 | [Send SMS notifications](./sendSmsNotifications/readme.md) | Send SMS notifications and dynamically specify recipient | :star: | - |
 | [Data Lake - timeseries import](./DataLake_scheduledImport/readme.md) | Setup scheduled trigger to start import of data from timeseries storage to Integrated Data Lake | :star: | Integrated Data Lake |
-| [Data Lake - generate access token](./DataLake_scheduledImport/readme.md) | Provides an API endpoint which feedbacks an access token for IDL data | :star: | Integrated Data Lake |
+| [Data Lake - generate access token](./DataLake_provideAccessToken/readme.md) | Provides an API endpoint which feedbacks an access token for IDL data | :star: | Integrated Data Lake |
 | [Trend Prediction Example](./trendPredictionAPI/readme.md) | Application example which shows how to use trend prediction service to forecast timeseries data | :star: | - |
 ### Examples which have to be added:
 | Name | Description | Complexity Rating | Prerequisites |
