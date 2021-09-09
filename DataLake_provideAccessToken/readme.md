@@ -1,4 +1,4 @@
-# Scheduled Import of Timeseries Data to Integrated Data Lake
+# Provide Access Token for Integrated Data Lake via API
 <!-- (mandatory) Insert a description for the example flow. Describe the use case or its specialty. -->
 This small flow triggers sets up an API endpoint which can be called from external system to get an access token to MindSpheres' Integrated Data Lake. 
 
