@@ -1,0 +1,128 @@
+[
+    {
+        "id": "1baada46.8a7e06",
+        "type": "debug",
+        "z": "cba45765.fb58c8",
+        "name": "",
+        "active": true,
+        "console": "false",
+        "xaxis": "_time",
+        "complete": "false",
+        "x": 1140,
+        "y": 1468.6666259765625,
+        "wires": []
+    },
+    {
+        "id": "f212685b.532758",
+        "type": "function",
+        "z": "cba45765.fb58c8",
+        "name": "configure Access Token (path, duration)",
+        "func": "\nmsg.payload=\n{\n  \"path\": \"/myIdlDirectoryToAccess\", // your IDL path where you want access to\n  \"durationSeconds\": 43200,          // set how long token should be valid 43200sec = 12h\n  \"permission\": \"READ\"\n}\nreturn msg;",
+        "outputs": 1,
+        "language": "javascript",
+        "noerr": 0,
+        "x": 580,
+        "y": 1528.6666259765625,
+        "wires": [
+            [
+                "b406ddbe.6cf27"
+            ]
+        ],
+        "_type": "node"
+    },
+    {
+        "id": "9904fce1.df6f3",
+        "type": "http in",
+        "z": "cba45765.fb58c8",
+        "name": "[GET] /getAccessTokenForIDL",
+        "endpoint": "/getAccessTokenForIDL",
+        "method": "get",
+        "upload": false,
+        "access": "key",
+        "key": "",
+        "users": "",
+        "powerMode": false,
+        "x": 250,
+        "y": 1528.6666259765625,
+        "wires": [
+            [
+                "f212685b.532758"
+            ]
+        ],
+        "_type": "node"
+    },
+    {
+        "id": "b406ddbe.6cf27",
+        "type": "http request",
+        "z": "cba45765.fb58c8",
+        "name": "generate IDL Access Token",
+        "method": "POST",
+        "ret": "txt",
+        "url": "",
+        "timeout": "",
+        "mindspherePath": "/api/datalake/v3/generateAccessToken",
+        "useMindsphereAuth": true,
+        "isAdmin": false,
+        "secretHeaders": "",
+        "x": 867.0000228881836,
+        "y": 1527.6666707992554,
+        "wires": [
+            [
+                "1baada46.8a7e06",
+                "3c215623.0aa24a"
+            ]
+        ],
+        "_type": "node"
+    },
+    {
+        "id": "3c215623.0aa24a",
+        "type": "http response",
+        "z": "cba45765.fb58c8",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 1120,
+        "y": 1528.6666259765625,
+        "wires": []
+    },
+    {
+        "id": "8776981f.1b3898",
+        "type": "inject",
+        "z": "cba45765.fb58c8",
+        "name": "",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "repeatEnd": "0",
+        "endTime": "0",
+        "crontab": "",
+        "offset": "0",
+        "once": false,
+        "properties": "",
+        "timezone": "utc",
+        "betweentimesunit": "m",
+        "enableRuleEngine": false,
+        "showNextExecution": false,
+        "powerMode": false,
+        "x": 310,
+        "y": 1468.6666259765625,
+        "wires": [
+            [
+                "f212685b.532758"
+            ]
+        ]
+    },
+    {
+        "id": "413823bc.fca6bc",
+        "type": "comment",
+        "z": "cba45765.fb58c8",
+        "name": "Integrated Data Lake - generate access token via external API",
+        "info": "- provides an URL endpoint to be accessed from external\n- delivers access token to MindSphere IDL",
+        "sticky": 1,
+        "x": 311,
+        "y": 1388.6666641235352,
+        "wires": [],
+        "_type": "node"
+    }
+]
