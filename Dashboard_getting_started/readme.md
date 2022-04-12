@@ -12,4 +12,5 @@ We will simulate three different versions of an industrial machine:
 - Basic
 - Performance
 - Eco
+
 This step requires that you are familiar with Mindsphere's asset structure and can create new aspect and asset types. If this sounds like a big headache to you, please visit the [Asset Manager Tutorial](https://siemens.mindsphere.io/en/docs/tutorials/asset-manager) first.
