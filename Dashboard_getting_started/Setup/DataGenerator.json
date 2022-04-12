@@ -1,0 +1,279 @@
+[
+    {
+        "id": "42c6ce94.a9202",
+        "type": "tab",
+        "allowCycles": false,
+        "label": "Data Generator",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "92f8b622.df2838",
+        "type": "comment",
+        "z": "42c6ce94.a9202",
+        "name": "Get Random Functions",
+        "info": "function getRandomDouble(min, max) {\n    return (Math.random() * (max - min) + min).toString();\n}\nfunction getRandomInt(min, max) {\n    min = Math.ceil(min);\n    max = Math.floor(max);\n    return (Math.floor(Math.random() * (max - min + 1)) + min).toString();\n}\n",
+        "sticky": 1,
+        "x": 300,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "56f3fb32.1321b4",
+        "type": "comment",
+        "z": "42c6ce94.a9202",
+        "name": "Basic Machine",
+        "info": "",
+        "sticky": 0,
+        "x": 410,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "cd612bbe.c1cd68",
+        "type": "comment",
+        "z": "42c6ce94.a9202",
+        "name": "Performance Machine",
+        "info": "",
+        "sticky": 0,
+        "x": 440,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "5216b1db.909bc",
+        "type": "comment",
+        "z": "42c6ce94.a9202",
+        "name": "Eco Machine",
+        "info": "",
+        "sticky": 0,
+        "x": 410,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "cc846ce2.eef4a",
+        "type": "function",
+        "z": "42c6ce94.a9202",
+        "name": "Basic Machine Status",
+        "func": "function getRandomInt(min, max) {\n    min = Math.ceil(min);\n    max = Math.floor(max);\n    return (Math.floor(Math.random() * (max - min + 1)) + min).toString();\n}\n\nlet programList = [\"EDS TTU 553 V8\",\"PA12 - KKT Vorheizen\",\"TC 3D AKF PA11\",\"detax v30\",\"Tool changing position\",\"EDS PT 3404 Balanced\",\"Postprocessing\", \"PT Black TL l-R\", \"PT White FT\", \"Preprocessing\", \"Cleaning\", \"PT M FT L-R\"];\n\nlet progr = programList[Math.floor(Math.random() * programList.length)];\nvar stat = getRandomInt(1,5);\nvar id = getRandomInt(1000,9999999);\n\nvar obj = {};\nobj._time = new Date();\nobj.Machine_Status = stat;\nobj.Program_Id = id;\nobj.Program_Name = progr;\n\nmsg.payload = obj;\nreturn msg;",
+        "outputs": 1,
+        "language": "javascript",
+        "noerr": 0,
+        "x": 440,
+        "y": 120,
+        "wires": [
+            [
+                "7f529f86.7fc4e"
+            ]
+        ]
+    },
+    {
+        "id": "c5716581.b7e138",
+        "type": "function",
+        "z": "42c6ce94.a9202",
+        "name": "Basic Machine Sensors",
+        "func": "function getRandomDouble(min, max) {\n    return (Math.random() * (max - min) + min).toString();\n}\nfunction getRandomInt(min, max) {\n    min = Math.ceil(min);\n    max = Math.floor(max);\n    return (Math.floor(Math.random() * (max - min + 1)) + min).toString();\n}\nvar temp_pre = getRandomInt(80,100) + getRandomDouble(10,30);\nvar temp_work = getRandomInt(120,140) + getRandomDouble(10,60);\nvar press_pre = getRandomInt(10,20) + getRandomDouble(2,7);\nvar press_work = getRandomInt(2,5) + getRandomDouble(2,7);\n\nvar obj = {};\nobj._time = new Date();\nobj.Pressure_Preheater = press_pre;\nobj.Pressure_WorkingChamber = press_work;\nobj.Temp_Preheater = temp_pre;\nobj.Temp_WorkingChamber = temp_work;\n\nmsg.payload = obj;\nreturn msg;",
+        "outputs": 1,
+        "language": "javascript",
+        "noerr": 0,
+        "x": 440,
+        "y": 180,
+        "wires": [
+            [
+                "79dc13ad.bb2cac"
+            ]
+        ]
+    },
+    {
+        "id": "6f440ba8.2034e4",
+        "type": "function",
+        "z": "42c6ce94.a9202",
+        "name": "Basic Machine Status",
+        "func": "function getRandomInt(min, max) {\n    min = Math.ceil(min);\n    max = Math.floor(max);\n    return (Math.floor(Math.random() * (max - min + 1)) + min).toString();\n}\n\nlet programList = [\"EDS TTU 553 V8\",\"PA12 - KKT Vorheizen\",\"TC 3D AKF PA11\",\"detax v30\",\"Tool changing position\",\"EDS PT 3404 Balanced\",\"Postprocessing\", \"PT Black TL l-R\", \"PT White FT\", \"Preprocessing\", \"Cleaning\", \"PT M FT L-R\"];\n\nlet progr = programList[Math.floor(Math.random() * programList.length)];\nvar stat = getRandomInt(1,5);\nvar id = getRandomInt(1000,9999999);\n\nvar obj = {};\nobj._time = new Date();\nobj.Machine_Status = stat;\nobj.Program_Id = id;\nobj.Program_Name = progr;\n\nmsg.payload = obj;\nreturn msg;",
+        "outputs": 1,
+        "language": "javascript",
+        "noerr": 0,
+        "x": 440,
+        "y": 280,
+        "wires": [
+            [
+                "27a7aa93.b2ae06"
+            ]
+        ]
+    },
+    {
+        "id": "6eebeb9e.d6f334",
+        "type": "function",
+        "z": "42c6ce94.a9202",
+        "name": "Basic Machine Sensors",
+        "func": "function getRandomDouble(min, max) {\n    return (Math.random() * (max - min) + min).toString();\n}\nfunction getRandomInt(min, max) {\n    min = Math.ceil(min);\n    max = Math.floor(max);\n    return (Math.floor(Math.random() * (max - min + 1)) + min).toString();\n}\nvar temp_pre = getRandomInt(80,100) + getRandomDouble(10,30);\nvar temp_work = getRandomInt(120,140) + getRandomDouble(10,60);\nvar press_pre = getRandomInt(10,20) + getRandomDouble(2,7);\nvar press_work = getRandomInt(2,5) + getRandomDouble(2,7);\n\nvar obj = {};\nobj._time = new Date();\nobj.Pressure_Preheater = press_pre;\nobj.Pressure_WorkingChamber = press_work;\nobj.Temp_Preheater = temp_pre;\nobj.Temp_WorkingChamber = temp_work;\n\nmsg.payload = obj;\nreturn msg;",
+        "outputs": 1,
+        "language": "javascript",
+        "noerr": 0,
+        "x": 440,
+        "y": 340,
+        "wires": [
+            [
+                "9499b1d7.0e5eb"
+            ]
+        ]
+    },
+    {
+        "id": "846f330b.fd38c",
+        "type": "function",
+        "z": "42c6ce94.a9202",
+        "name": "Basic Machine Status",
+        "func": "function getRandomInt(min, max) {\n    min = Math.ceil(min);\n    max = Math.floor(max);\n    return (Math.floor(Math.random() * (max - min + 1)) + min).toString();\n}\n\nlet programList = [\"EDS TTU 553 V8\",\"PA12 - KKT Vorheizen\",\"TC 3D AKF PA11\",\"detax v30\",\"Tool changing position\",\"EDS PT 3404 Balanced\",\"Postprocessing\", \"PT Black TL l-R\", \"PT White FT\", \"Preprocessing\", \"Cleaning\", \"PT M FT L-R\"];\n\nlet progr = programList[Math.floor(Math.random() * programList.length)];\nvar stat = getRandomInt(1,5);\nvar id = getRandomInt(1000,9999999);\n\nvar obj = {};\nobj._time = new Date();\nobj.Machine_Status = stat;\nobj.Program_Id = id;\nobj.Program_Name = progr;\n\nmsg.payload = obj;\nreturn msg;",
+        "outputs": 1,
+        "language": "javascript",
+        "noerr": 0,
+        "x": 440,
+        "y": 440,
+        "wires": [
+            [
+                "e684622d.42458"
+            ]
+        ]
+    },
+    {
+        "id": "c6db8a58.f773c8",
+        "type": "function",
+        "z": "42c6ce94.a9202",
+        "name": "Basic Machine Sensors",
+        "func": "function getRandomDouble(min, max) {\n    return (Math.random() * (max - min) + min).toString();\n}\nfunction getRandomInt(min, max) {\n    min = Math.ceil(min);\n    max = Math.floor(max);\n    return (Math.floor(Math.random() * (max - min + 1)) + min).toString();\n}\nvar temp_pre = getRandomInt(80,100) + getRandomDouble(10,30);\nvar temp_work = getRandomInt(120,140) + getRandomDouble(10,60);\nvar press_pre = getRandomInt(10,20) + getRandomDouble(2,7);\nvar press_work = getRandomInt(2,5) + getRandomDouble(2,7);\n\nvar obj = {};\nobj._time = new Date();\nobj.Pressure_Preheater = press_pre;\nobj.Pressure_WorkingChamber = press_work;\nobj.Temp_Preheater = temp_pre;\nobj.Temp_WorkingChamber = temp_work;\n\nmsg.payload = obj;\nreturn msg;",
+        "outputs": 1,
+        "language": "javascript",
+        "noerr": 0,
+        "x": 440,
+        "y": 500,
+        "wires": [
+            [
+                "25e44221.d6425e"
+            ]
+        ]
+    },
+    {
+        "id": "31e8510f.54df0e",
+        "type": "inject",
+        "z": "42c6ce94.a9202",
+        "name": "",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "300",
+        "repeatEnd": "0",
+        "endTime": "0",
+        "crontab": "",
+        "offset": "",
+        "once": false,
+        "properties": "",
+        "timezone": "utc",
+        "betweentimesunit": "m",
+        "enableRuleEngine": false,
+        "showNextExecution": true,
+        "powerMode": false,
+        "x": 130,
+        "y": 260,
+        "wires": [
+            [
+                "cc846ce2.eef4a",
+                "c5716581.b7e138",
+                "6f440ba8.2034e4",
+                "6eebeb9e.d6f334",
+                "846f330b.fd38c",
+                "c6db8a58.f773c8"
+            ]
+        ]
+    },
+    {
+        "id": "7f529f86.7fc4e",
+        "type": "write timeseries",
+        "z": "42c6ce94.a9202",
+        "name": "",
+        "topic": "4c011fd02a2b4990a80d2c4c6d25ef23/Dashboard_Machine_Status",
+        "topicData": "{\"asset\":\"4c011fd02a2b4990a80d2c4c6d25ef23\",\"assetName\":\"Basic Machine\",\"aspect\":\"7600f42a1d324f73b10d00ec963febfd\",\"aspectName\":\"Dashboard_Machine_Status\",\"variable\":null,\"variableName\":null}",
+        "topicLabel": "Basic Machine/Dashboard_Machine_Status",
+        "assetName": "",
+        "aspectName": "",
+        "useMerging": false,
+        "x": 950,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "79dc13ad.bb2cac",
+        "type": "write timeseries",
+        "z": "42c6ce94.a9202",
+        "name": "",
+        "topic": "4c011fd02a2b4990a80d2c4c6d25ef23/Dashboard_Machine_Sensor",
+        "topicData": "{\"asset\":\"4c011fd02a2b4990a80d2c4c6d25ef23\",\"assetName\":\"Basic Machine\",\"aspect\":\"59e5446feebb454eaf3ef7ce24565dfb\",\"aspectName\":\"Dashboard_Machine_Sensor\",\"variable\":null,\"variableName\":null}",
+        "topicLabel": "Basic Machine/Dashboard_Machine_Sensor",
+        "assetName": "",
+        "aspectName": "",
+        "useMerging": false,
+        "x": 950,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "27a7aa93.b2ae06",
+        "type": "write timeseries",
+        "z": "42c6ce94.a9202",
+        "name": "",
+        "topic": "a12faec62d33439ea297adcde30ef5d2/Dashboard_Machine_Status",
+        "topicData": "{\"asset\":\"a12faec62d33439ea297adcde30ef5d2\",\"assetName\":\"Performance Machine\",\"aspect\":\"7600f42a1d324f73b10d00ec963febfd\",\"aspectName\":\"Dashboard_Machine_Status\",\"variable\":null,\"variableName\":null}",
+        "topicLabel": "Performance Machine/Dashboard_Machine_Status",
+        "assetName": "",
+        "aspectName": "",
+        "useMerging": false,
+        "x": 970,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "9499b1d7.0e5eb",
+        "type": "write timeseries",
+        "z": "42c6ce94.a9202",
+        "name": "",
+        "topic": "a12faec62d33439ea297adcde30ef5d2/Dashboard_Machine_Sensor",
+        "topicData": "{\"asset\":\"a12faec62d33439ea297adcde30ef5d2\",\"assetName\":\"Performance Machine\",\"aspect\":\"59e5446feebb454eaf3ef7ce24565dfb\",\"aspectName\":\"Dashboard_Machine_Sensor\",\"variable\":null,\"variableName\":null}",
+        "topicLabel": "Performance Machine/Dashboard_Machine_Sensor",
+        "assetName": "",
+        "aspectName": "",
+        "useMerging": false,
+        "x": 980,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "e684622d.42458",
+        "type": "write timeseries",
+        "z": "42c6ce94.a9202",
+        "name": "",
+        "topic": "1ccfd846e53447de88fdaaeeeddd6d78/Dashboard_Machine_Status",
+        "topicData": "{\"asset\":\"1ccfd846e53447de88fdaaeeeddd6d78\",\"assetName\":\"Eco Machine\",\"aspect\":\"7600f42a1d324f73b10d00ec963febfd\",\"aspectName\":\"Dashboard_Machine_Status\",\"variable\":null,\"variableName\":null}",
+        "topicLabel": "Eco Machine/Dashboard_Machine_Status",
+        "assetName": "",
+        "aspectName": "",
+        "useMerging": false,
+        "x": 950,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "25e44221.d6425e",
+        "type": "write timeseries",
+        "z": "42c6ce94.a9202",
+        "name": "",
+        "topic": "1ccfd846e53447de88fdaaeeeddd6d78/Dashboard_Machine_Sensor",
+        "topicData": "{\"asset\":\"1ccfd846e53447de88fdaaeeeddd6d78\",\"assetName\":\"Eco Machine\",\"aspect\":\"59e5446feebb454eaf3ef7ce24565dfb\",\"aspectName\":\"Dashboard_Machine_Sensor\",\"variable\":null,\"variableName\":null}",
+        "topicLabel": "Eco Machine/Dashboard_Machine_Sensor",
+        "assetName": "",
+        "aspectName": "",
+        "useMerging": false,
+        "x": 950,
+        "y": 500,
+        "wires": []
+    }
+]
