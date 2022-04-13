@@ -52,17 +52,20 @@ Under the options tab, click on import:
 and paste the json data in the blank field. Click on import and you should have couple of nodes that you can now place in the flow. Then Click Save
 
 Your DataGenerator Flow should now look like this:
+
 ![Data_Generator_Flow](../doc/Data_Generator_Flow.png)
 
 > This flow will be triggered by the inject node every 5 minutes. If you want to alter the interval data is written to your machines, feel free to do so.
 
 To finish this flow, you have to map the 6 write timeseries node to your own corresponding machines. Double click on a node and choose your asset & aspect by clicking on the three dots:
+
 ![write_timeseries](../doc/write_timeseries.png)
 
 > Make sure you are writing to the correct machine and the correct aspect. **Do not write directly to a variable** as we are writing several variables of an Aspect at the same time. You will get an error message if you do so. 
 
-:white_check_mark::white_check_mark::white_check_mark::white_check_mark::white_check_mark::white_check_mark:
-Your Data Generator is ready to go and will run in the background. Now [CONTINUE HERE](../readme.md#overview-dashboard) and get started building your VFC Dashboard!
+:white_check_mark:  :white_check_mark:  :white_check_mark:  :white_check_mark:  :white_check_mark:  :white_check_mark:
+
+Your Data Generator is ready to go and will run in the background. Now **[Continue Here](../readme.md#overview-dashboard)** and get started building your VFC Dashboard!
 
 # Data Generator best practices:
 
