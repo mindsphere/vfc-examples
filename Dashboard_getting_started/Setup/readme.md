@@ -87,7 +87,7 @@ function getRandomDouble (min, max) {
     return (Math.random() * (max - min) + min).toString();
 }
 ```
-Now we can use these functions in a *function node*:
+You can use these javascript code snippets in a *function node*:
 
 ![function_node](../doc/function_node.png)
 
