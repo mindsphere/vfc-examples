@@ -67,5 +67,20 @@ To finish this flow, you have to map the 6 write timeseries node to your own cor
 
 Your Data Generator is ready to go and will run in the background. Now **[Continue Here](../readme.md#overview-dashboard)** and get started building your VFC Dashboard!
 
-# Data Generator best practices:
+:white_check_mark:  :white_check_mark:  :white_check_mark:  :white_check_mark:  :white_check_mark:  :white_check_mark:
 
+# Data Generator best practices:
+VFC offers a build in method to simulate/generate data with the generate node. You can use it to create powerful data patterns.
+However, sometimes the easy way does also the job. Why not simply take a random INT or DOUBLE from a defined interval?
+´´´javascript
+function getRandomInt(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return (Math.floor(Math.random() * (max - min + 1)) + min).toString();
+}
+´´´
+´´´javascript
+function getRandomDouble(min, max) {
+    return (Math.random() * (max - min) + min).toString();
+}
+´´´
