@@ -88,6 +88,7 @@ function getRandomDouble (min, max) {
 }
 ```
 Now we can use these functions in a *function node*:
+
 ![function_node](../doc/function_node.png)
 
 generate the necessary data und pass them as *msg.payload* to our *write-timeseries node*.
@@ -100,9 +101,9 @@ function getRandomInt(min, max) {
     return (Math.floor(Math.random() * (max - min + 1)) + min).toString();
 }
 
-let programList = ["String A", "String B", "String C", "String D", "String ...", "String X"];
+let StringList = ["String A", "String B", "String C", "String D", "String ...", "String X"];
 
-let progr = programList[Math.floor(Math.random() * programList.length)];
+let progr = StringList[Math.floor(Math.random() * programList.length)];
 var stat = getRandomInt(1,5);
 var id = getRandomInt(1000,9999999);
 
