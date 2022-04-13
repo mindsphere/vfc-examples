@@ -69,8 +69,9 @@ Your Data Generator is ready to go and will run in the background. Now **[Contin
 
 :white_check_mark:  :white_check_mark:  :white_check_mark:  :white_check_mark:  :white_check_mark:  :white_check_mark:
 
-# Data Generator best practices:
-VFC offers a build in method to simulate/generate data with the generate node. You can use it to create powerful data patterns.
+## Data Generator best practices:
+VFC offers a build in method to simulate/generate data with the *generate node*. You can use it to create powerful data patterns.
+
 However, sometimes the easy way does also the job. Why not simply take a random INT or DOUBLE from a defined interval?
 ```javascript
 function getRandomInt (min, max) {
