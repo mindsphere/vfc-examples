@@ -46,6 +46,7 @@ The Visual Flow Creator (VFC) is a [Node-RED](https://nodered.org) based applica
 Start by creating a new flow and name it something like *DataGenerator*. Then copy the json data from the [DataGenerator.json](../Resources/DataGenerator.json) file to your clipboard and go back to the VFC.
 
 Under the options tab, click on import:
+
 ![Import](../doc/import.png)
 
 and paste the json data in the blank field. Click on import and you should have couple of nodes that you can now place in the flow.
