@@ -16,11 +16,13 @@ To do this, please follow the following steps and note the notation for the vari
   - latitude [-, DOUBLE, -]
   - longitude [-,DOUBLE, -]
   - Software_Version [-, STRING, 32]
+ 
 - [x] Setup dynamic Aspect type Dashboard_Machine_Location with four variables:
   - Pressure_Preheater [Bar, DOUBLE, -]
   - Pressure_WorkingChamber [Bar, DOUBLE, -]
   - Temp_Preheater [°C, DOUBLE, -]
   - Temp_WorkingChamber [°C, DOUBLE, -]
+
 - [x] Setup dynamic Aspect type Dashboard_Machine_Status with three variables:
   - Machine_Status [-, INT, -]
   - Program_Id [-, INT, -]
