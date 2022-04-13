@@ -1,5 +1,5 @@
 # Setup steps for the getting started VFC Dashboard:
-This short tutorial will show you how to set up the assets and the data generator for the VFC dashboard example.
+This short tutorial will show you how to set up the simulated assets and the data generator for the VFC dashboard example.
 
 # Asset Setup
 We want to create an Asset Type **VFC_Dashboard_Machine** as a **core.basicasset**:
