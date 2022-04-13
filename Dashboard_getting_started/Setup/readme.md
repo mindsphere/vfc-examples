@@ -6,7 +6,7 @@ We want to create an Asset Type **VFC_Dashboard_Machine**:
 
 ![Asset_type](../doc/asset_type.png)
 
-with three Aspects assigned to the Aseet type:
+with three Aspects assigned to the Asset type:
 - Dashboard_Machine_Location [Static]
 - Dashboard_Machine_Sensor [Dynamic]
 - Dashboard_Machine_Status [Dynamic]
