@@ -29,4 +29,4 @@ To do this, please follow the following steps:
 
 Your Asset type should look like this:
 
-![Aspect_types](../doc/aspect_types.png)
+![Aspect_types](../doc/asset_complete.png)
