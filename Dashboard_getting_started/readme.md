@@ -4,8 +4,11 @@ This example will guide you step by step through the VFC Dahsboard functionaliti
 ![dashboard_image](./doc/overview.png)
 
 # Prerequisites:
+- around 120 minutes of time
 - Visual Flow Creator
 - Asset Manager
+- basic javascript knowledge is helpful, but not required
+> This tutorial can be done on a [Start for free tenant](https://siemens.mindsphere.io/en/start) 
 
 # Setup:
 We will simulate three different versions of an industrial machine:
