@@ -49,7 +49,10 @@ Under the options tab, click on import:
 
 ![Import](../doc/import.png)
 
-and paste the json data in the blank field. Click on import and you should have couple of nodes that you can now place in the flow.
+and paste the json data in the blank field. Click on import and you should have couple of nodes that you can now place in the flow. Then Click Save
 
 Your DataGenerator Flow should now look like this:
 ![Data_Generator_Flow](../doc/Data_Generator_Flow.png)
+
+> This flow will be triggered by the inject node every 5 minutes. If you want to alter the interval data is written to your machines, feel free to do so.
+
