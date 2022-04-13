@@ -21,4 +21,18 @@ This step requires you to be familiar with Mindsphere's asset structure and can 
 If not, please follow the [Setup Instructions](./Setup/readme.md) and come back once you completed the process.
 
 # Overview Dashboard:
-Start by creating a new flow and name it something like *Dashboard* or *MyFirstDashboard*. 
+Start by creating a new flow and name it something like *Dashboard* or *MyFirstDashboard*. Then switch to the dashboard tab under Layout, which will be blank for now.
+
+![dashboard_menu](./doc/dashboard_menu)
+
+Here you can structure the basic layout of your dashboard using tabs and groups. A tab is the equivalent of a dashboard page. You can assign different content to each tab and it will then only be displayed on that that. Each tab will display your content in groups, which act like columns. For example, the structure that you created under *Tabs & Links* looks like this:
+- Tab 1
+  - Group 1
+  - Group 2
+  - Group 3
+  - Group 4
+then the corresponding dashboard page would be organized as shown below:
+
+![tabs_groups](./doc/tabs_groups.png)
+
+
