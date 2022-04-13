@@ -24,5 +24,9 @@ To do this, please follow the following steps:
 - [x] Setup dynamic Aspect type Dashboard_Machine_Status with three variables:
   - Machine_Status [INT]
   - Program_Id [INT]
-  - Program_Name[STRING, 255]
+  - Program_Name [STRING, 255]
 - [x] Create an Asset Type of parent type core.basicasset, name it **VFC_Dashboard_Machine** and add the three created Aspect types under the Aspects dropdown window
+
+Your Asset type should look like this:
+
+![Aspect_types](../doc/aspect_type.png)
