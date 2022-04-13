@@ -30,3 +30,12 @@ To do this, please follow the following steps:
 Your Asset type should look like this:
 
 ![Aspect_types](../doc/asset_complete.png)
+
+- [x] Now Create 3 Assets of type **VFC_Dashboard_Machine** and name them:
+  - Basic
+  - Performance
+  - Eco
+
+For the purpose of this example let us assume you are a factory manager that has three different machines (Basic, Performance and Eco), but they all share the same data model. Now you want to monitor them, but to do so, your machines need to send data. Let's generate some data using Mindspheres Visual Flow Creator application.
+
+# VFC Data Generator
