@@ -103,7 +103,7 @@ function getRandomInt(min, max) {
 
 let StringList = ["String A", "String B", "String C", "String D", "String ...", "String X"];
 
-let progr = StringList[Math.floor(Math.random() * programList.length)];
+let progr = StringList[Math.floor(Math.random() * StringList.length)];
 var stat = getRandomInt(1,5);
 var id = getRandomInt(1000,9999999);
 
