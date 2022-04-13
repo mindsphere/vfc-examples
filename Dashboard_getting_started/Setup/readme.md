@@ -73,14 +73,14 @@ Your Data Generator is ready to go and will run in the background. Now **[Contin
 VFC offers a build in method to simulate/generate data with the generate node. You can use it to create powerful data patterns.
 However, sometimes the easy way does also the job. Why not simply take a random INT or DOUBLE from a defined interval?
 ```javascript
-function getRandomInt(min, max) {
+function getRandomInt (min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);
     return (Math.floor(Math.random() * (max - min + 1)) + min).toString();
 }
 ```
 ```javascript
-function getRandomDouble(min, max) {
+function getRandomDouble (min, max) {
     return (Math.random() * (max - min) + min).toString();
 }
 ```
