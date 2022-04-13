@@ -74,7 +74,7 @@ VFC offers a build in method to simulate/generate data with the *generate node*.
 
 ![gerate_node](../doc/generate_node.png)
 
-However, sometimes the easy way does also the job. Why not simply take a random INT or DOUBLE from a defined interval?
+However, sometimes the easy way also does the job. Why not simply take a random INT or DOUBLE from a defined interval?
 ```javascript
 function getRandomInt (min, max) {
     min = Math.ceil(min);
