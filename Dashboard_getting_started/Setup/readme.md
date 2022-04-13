@@ -61,8 +61,8 @@ To finish this flow, you have to map the 6 write timeseries node to your own cor
 
 > Make sure you are writing to the correct machine and the correct aspect. **Do not write directly to a variable** as we are writing several variables of an Aspect at the same time. You will get an error message if you do so. 
 
-
-Your Data Generator is ready to go and will run in the background. You can [continue here](../readme.md#overview-dashboard) and get started building your VFC Dashboard!
+:white_check_mark::white_check_mark::white_check_mark::white_check_mark::white_check_mark::white_check_mark:
+Your Data Generator is ready to go and will run in the background. Now [CONTINUE HERE](../readme.md#overview-dashboard) and get started building your VFC Dashboard!
 
 # Data Generator best practices:
 
