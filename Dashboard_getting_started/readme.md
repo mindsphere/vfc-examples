@@ -31,6 +31,7 @@ Here you can structure the basic layout of your dashboard using tabs and groups.
   - Group 2
   - Group 3
   - Group 4
+
 then the corresponding dashboard page would be organized as shown below:
 
 ![tabs_groups](./doc/tabs_groups.png)
