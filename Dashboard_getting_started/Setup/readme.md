@@ -43,4 +43,11 @@ For the purpose of this example, let's assume you are a factory manager that has
 # VFC Data Generator
 The Visual Flow Creator (VFC) is a [Node-RED](https://nodered.org) based application that can simplify and automate a lot of tasks inside Mindsphere. If you are new to the VFC, please take a few minutes and go through the basics in our [Documentation](https://documentation.mindsphere.io/resources/html/visualflow-creator/en-US/index.html). It will help you understanding the concept of VFC tremendously.
 
-Start by creating a new flow and name it something like "DataGenerator". 
+Start by creating a new flow and name it something like *DataGenerator*. Then copy the json data from the [DataGenerator.json](../Resources/DataGenerator.json) file to your clipboard and go back to the VFC.
+
+Under the options tab, click on import:
+![Import](../doc/import.png)
+and paste the json data in the blank field. Click on import and you should have couple of nodes that you can now place in the flow.
+
+Your DataGenerator Flow should now look like this:
+![Data_Generator_Flow](../doc/Data_Generator_Flow.png)
