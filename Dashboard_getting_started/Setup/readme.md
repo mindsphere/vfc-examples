@@ -95,18 +95,21 @@ generate the necessary data und pass them as *msg.payload* to our *write-timeser
 You can use the same (simple) logic to generate a string by picking a random index of a string array.
 
 ```javascript
+//declare your functions
 function getRandomInt(min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);
     return (Math.floor(Math.random() * (max - min + 1)) + min).toString();
 }
-
+//set up your string array and pick a random string out of it
 let StringList = ["String A", "String B", "String C", "String D", "String ...", "String X"];
-
 let progr = StringList[Math.floor(Math.random() * StringList.length)];
+
+//generate some random integers using your getRandomInt function
 var stat = getRandomInt(1,5);
 var id = getRandomInt(1000,9999999);
 
+//initialize your payload object and send it as msg.payload
 var obj = {};
 obj._time = new Date();
 obj.Machine_Status = stat;
