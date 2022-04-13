@@ -70,7 +70,7 @@ Your Data Generator is ready to go and will run in the background. Now **[Contin
 :white_check_mark:  :white_check_mark:  :white_check_mark:  :white_check_mark:  :white_check_mark:  :white_check_mark:
 
 ### Data Generator best practices:
-VFC offers a build in method to simulate/generate data with the *generate node*. You can use it to create powerful data patterns.
+VFC offers a build in method to simulate/generate data with the *generate node*. You can use it to create powerful data patterns and stack signals like: saw, sine, gauss, linear and noise.
 
 ![gerate_node](../doc/generate_node.png)
 
