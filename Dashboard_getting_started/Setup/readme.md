@@ -51,7 +51,7 @@ Under the options tab, click on import:
 
 and paste the json data in the blank field. Click on import and you should have couple of nodes that you can now place in the flow. Then Click Save
 
-Your DataGenerator Flow should now look like this:
+Your *DataGenerator* Flow should now look like this:
 
 ![Data_Generator_Flow](../doc/Data_Generator_Flow.png)
 
