@@ -43,4 +43,4 @@ For the purpose of this example, let's assume you are a factory manager that has
 # VFC Data Generator
 The Visual Flow Creator (VFC) is a [Node-RED](https://nodered.org) based application that can simplify and automate a lot of tasks inside Mindsphere. If you are new to the VFC, please take a few minutes and go through the basics in our [Documentation](https://documentation.mindsphere.io/resources/html/visualflow-creator/en-US/index.html). It will help you understanding the concept of VFC tremendously.
 
-Start by creating a new flow 
+Start by creating a new flow and name it something like "DataGenerator". 
