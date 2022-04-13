@@ -8,7 +8,7 @@ This example will guide you step by step through the VFC Dahsboard functionaliti
 - Visual Flow Creator
 - Asset Manager
 - basic javascript knowledge is helpful, but not required
-> This tutorial can be done on a [Start for free tenant](https://siemens.mindsphere.io/en/start) 
+> All required applications and resources are part of the [Start for free](https://siemens.mindsphere.io/en/start) tenant. You can follow along this tutorial regardless of your mindsphere package.
 
 # Setup:
 We will simulate three different versions of an industrial machine:
