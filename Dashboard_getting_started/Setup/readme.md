@@ -47,6 +47,7 @@ Start by creating a new flow and name it something like *DataGenerator*. Then co
 
 Under the options tab, click on import:
 ![Import](../doc/import.png)
+
 and paste the json data in the blank field. Click on import and you should have couple of nodes that you can now place in the flow.
 
 Your DataGenerator Flow should now look like this:
