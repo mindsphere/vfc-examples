@@ -1,7 +1,7 @@
 # Setup steps for the getting started VFC Dashboard:
 This short tutorial will show you how to set up the simulated assets and the data generator for the VFC dashboard example.
 
-# Asset Setup
+# Asset Setup:
 We want to create an Asset Type **VFC_Dashboard_Machine**:
 
 ![Asset_type](../doc/asset_type.png)
@@ -40,7 +40,7 @@ Your Asset type should look like this:
 
 For the purpose of this example, let's assume you are a factory manager that has three different machines (Basic, Performance and Eco), but they all share the same data model. Now you want to monitor them, but to do so, your machines need to send data. Let's generate some data using Mindspheres Visual Flow Creator application.
 
-# VFC Data Generator
+# VFC Data Generator:
 The Visual Flow Creator (VFC) is a [Node-RED](https://nodered.org) based application that can simplify and automate a lot of tasks inside Mindsphere. If you are new to the VFC, please take a few minutes and go through the basics in our [Documentation](https://documentation.mindsphere.io/resources/html/visualflow-creator/en-US/index.html). It will help you understanding the concept of VFC tremendously.
 
 Start by creating a new flow and name it something like *DataGenerator*. Then copy the json data from the [DataGenerator.json](../Resources/DataGenerator.json) file to your clipboard and go back to the VFC.
@@ -61,4 +61,8 @@ To finish this flow, you have to map the 6 write timeseries node to your own cor
 
 > Make sure you are writing to the correct machine and the correct aspect. **Do not write directly to a variable** as we are writing several variables of an Aspect at the same time. You will get an error message if you do so. 
 
-Your Data Generator is ready to go and will run in the background. 
+
+Your Data Generator is ready to go and will run in the background. You can [continue here](../readme.md#overview-dashboard) and get started building your VFC Dashboard!
+
+# Data Generator best practices:
+
