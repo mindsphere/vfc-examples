@@ -16,7 +16,8 @@ We will simulate three different versions of an industrial machine:
 - Performance
 - Eco
 
-This step requires you to be familiar with Mindsphere's asset structure and can create new aspect and asset types. If this sounds like a big headache to you, please visit the [Asset Manager Tutorial](https://siemens.mindsphere.io/en/docs/tutorials/asset-manager) first. If not, please follow the [Setup Instructions](./Setup/readme.md) and come back once you completed the process.
+This step requires you to be familiar with Mindsphere's asset structure and can create new aspect and asset types. If this sounds like a big headache to you, please visit the [Asset Manager Tutorial](https://siemens.mindsphere.io/en/docs/tutorials/asset-manager) first.
+If not, please follow the [Setup Instructions](./Setup/readme.md) and come back once you completed the process.
 
 # Overview Dashboard:
 Start by creating a new flow and name it something like *Dashboard* or *MyFirstDashboard*. 
