@@ -87,7 +87,10 @@ function getRandomDouble (min, max) {
     return (Math.random() * (max - min) + min).toString();
 }
 ```
-Now we can use these functions in a *function node*, generate the necessary data und pass them as *msg.payload* to our *write-timeseries node*.
+Now we can use these functions in a *function node*:
+![function_node](../doc/function_node.png)
+
+generate the necessary data und pass them as *msg.payload* to our *write-timeseries node*.
 You can use the same (simple) logic to generate a string by picking a random index of a string array.
 
 ```javascript
