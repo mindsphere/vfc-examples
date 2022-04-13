@@ -95,6 +95,12 @@ generate the necessary data und pass them as *msg.payload* to our *write-timeser
 You can use the same (simple) logic to generate a string by picking a random index of a string array.
 
 ```javascript
+let StringList = ["String A", "String B", "String C", "String D", "String ...", "String X"];
+let RandomString = StringList[Math.floor(Math.random() * StringList.length)];
+```
+A *function node* that gerates random integers and random strings and passes them to the *write-timeseries node* can look like this:
+
+```javascript
 //declare your functions
 function getRandomInt(min, max) {
     min = Math.ceil(min);
