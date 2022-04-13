@@ -56,3 +56,7 @@ Your DataGenerator Flow should now look like this:
 
 > This flow will be triggered by the inject node every 5 minutes. If you want to alter the interval data is written to your machines, feel free to do so.
 
+To finish this flow, you have to map the 6 write timeseries node to your own corresponding machines. Double click on a node and choose your asset & aspect by clicking on the three dots:
+![write_timeseries](../doc/write_timeseries.png)
+
+> Make sure you are writing to the correct machine and the correct aspect. **Do not write directly to a variable** as we are writing several variables of an Aspect at the same time. You will get an error message if you do so. 
