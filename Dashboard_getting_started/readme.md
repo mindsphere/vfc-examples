@@ -29,7 +29,7 @@ Here you can structure the basic layout of your dashboard using tabs and groups.
 
 ![tab_structure](./doc/tab_structure.png)
 
-then the corresponding dashboard page would be organized as shown below:
+the corresponding dashboard page would be organized as shown below:
 
 ![tabs_groups](./doc/tabs_groups.png)
 
