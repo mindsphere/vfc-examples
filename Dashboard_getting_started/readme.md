@@ -1,5 +1,5 @@
 # VFC Dashboard - A Getting Started Example:
-This example will guide you step by step through the VFC Dahsboard functionalities. You will create a simple but dynamic dashboard that shows the status of your three (simulated) machines that you already connected to Mindsphere. You will learn the essential nodes for dashboarding with the VFC and will be able to extend your dashboard according to your own needs. The Dashboard you create will look like this:
+This example will guide you step by step through the VFC Dahsboard functionalities. You will create a simple but interactive dashboard that shows the status of your three (simulated) machines that you already connected to Mindsphere. You will learn the essential nodes for dashboarding with the VFC and will be able to extend your dashboard according to your own needs. The Dashboard you create will look like this:
 
 ![dashboard_image](./doc/overview.png)
 
@@ -106,3 +106,4 @@ Maybe you have noticed that we already set initial position and zoom level for t
 
 > You can change the initial position of the *MDSP Map* by sending a payload with {{latitude, longitude, zoomLevel}
 
+Let's assume, our three machines Basic, Performance and Eco are located on three different fairs in Germany as exhibition machines. Basic is located at fair Frankfurt, Performance at fair Munich and Eco at fair Berlin. 
