@@ -59,6 +59,9 @@ You can rename tabs and groups by hovering over them and clicking the *edit* but
 
 ![group_edit](./doc/group_edit.png)
 
+Now create a second tab called *Detail* with only one group named *Events*. We will use the *Detail* tab at the very end of this tutorial, so consider this a little teaser.
+
+#Overview Dashboard:
 
 
 
