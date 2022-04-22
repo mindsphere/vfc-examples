@@ -74,7 +74,7 @@ But before styling our nodes, we have to adjust the width of the group. Click *e
 
 ![text_node_settings](./doc/text_node.png)
 
-So we assigned the *text* node to our *Selector* group, gave it a form of 6x2 (width x height) and chose the: <br> *label* **value** (left aligned)<br> format, where *label* = Asset: and **value** = Basic. This text is static. We will implement a dynamic *text* node later.<br> Now rinse and repeat for the other two *text* nodes, but remember to change the **value** to Performance and Eco.
+So we assigned the *text* node to our *Selector* group, gave it a form of 6x2 (width x height) and chose the: <br> *label* **value** (left aligned)<br> format, where *label* = Asset: and **value** = Basic. This text is static and will not change depending on the input. We will implement a dynamic *text* node later.<br> Now rinse and repeat for the other two *text* nodes, but remember to change the **value** to Performance and Eco.
 
 
 
