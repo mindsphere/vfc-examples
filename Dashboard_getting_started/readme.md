@@ -104,10 +104,10 @@ The next step is to implement a map, where you can see the location of the asset
 
 Maybe you have noticed that we already set initial position and zoom level for the *MDSP Map* node. Feel free to alter the position to your company's headquarters and experiment with the zoom level. Furthermore, the **value** of the *text* node is {{msg.name}}. We want to display a dynamic text which changes depending on your selection in the *Selector* group. The text node will check the incoming message to have a msg.name property and will display it`s value. Changing the text according to the selected Asset is great, but we want to display the stored location of this asset in the map too.
 
-> You can change the initial position of the *MDSP Map* by sending a payload with {{latitude, longitude, zoomLevel}
+> You can change the initial position of the *MDSP Map* by sending a payload with {latitude, longitude, zoomLevel}
 
 Let's assume, our three machines Basic, Performance and Eco are located on three different fairs in Germany as exhibition machines. Basic is located at fair Frankfurt, Performance at fair Munich and Eco at fair Berlin. We have already set the location of the machines in the [Setup](./Setup/readme.md#asset-setup) and want to get these locational informations into our flow. This can be achievend using the *read-aspect-static* node, as we want to read data from the static aspect *Dashboard_Machine_Location*. Configure one *read-aspect-static* node for each machine with the given example:
 
 ![read_location](./doc/read_location.png)
 
-
+In the next step, we hava to transform the data to the form {latitude, longitude, zoomLevel}, so the *MDSP Map* 
