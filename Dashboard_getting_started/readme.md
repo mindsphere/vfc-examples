@@ -25,12 +25,22 @@ Start by creating a new flow and name it something like *Dashboard* or *MyFirstD
 
 ![dashboard_menu](./doc/dashboard_menu.png)
 
-Here you can structure the basic layout of your dashboard using tabs and groups. A tab is the equivalent of a dashboard page. You can assign different content to each tab and it will then only be displayed on that that. Each tab will display your content in groups, which act like columns. For example, a structure that you created under *Tabs & Links* looks like this:
+Here you can structure the basic layout of your dashboard using tabs and groups. A tab is the equivalent of a dashboard page. You can assign different content to each tab and it will then only be displayed on that that. Each tab will display your content in groups, which act like columns. For example, a structure that you created under *Tabs & Links* like this:
 
 ![tab_structure](./doc/tab_structure.png)
 
 the corresponding dashboard page would be organized as shown below:
 
 ![tabs_groups](./doc/tabs_groups.png)
+
+Inside a group (column), the dashboard content is structured vertically, from top to bottom. If you assigned three items to a group like this:
+
+![group_structure](./doc/group_structure.png)
+
+the corresponding dashboard page would be organized as shown below:
+
+![groups_content](./doc/groups_content.png)
+
+
 
 
