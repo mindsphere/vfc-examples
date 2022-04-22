@@ -76,5 +76,9 @@ But before styling our nodes, we have to adjust the width of the group. Click *e
 
 So we assigned the *text* node to our *Selector* group, gave it a form of 6x2 (width x height) and chose the: <br> *label* **value** (left aligned)<br> format, where *label* = Asset: and **value** = Basic. This text is static and will not change depending on the input.<br> Now rinse and repeat for the other two *text* nodes, but remember to change the **value** to Performance and Eco.
 
+Now apply the following settings to the three *button* nodes:
+
+![button_nodes_settings](./doc/button_node.png)
+
 
 
