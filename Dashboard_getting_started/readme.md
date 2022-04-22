@@ -49,5 +49,12 @@ As you can see, *Group 1* is centered automatically on the tab. You don't have t
 
 > **Content**, that is structured from **top to bottom**, will be displayed from **top to bottom** inside a group.
 
+Now let's start building the overview dashboard:
+- Create a tab and name it *Overview*
+- Under *Overview*, create three new groups
+- Rename these groups to *Selector*, *Asset Map* and *Info*
+- Remember the way the VFC is displaying groups. You want to place the *Selector* group on the left and the *Info* group on the right
+
+You can rename tabs and groups by hovering over them and clicking the *edit* button:
 
 
