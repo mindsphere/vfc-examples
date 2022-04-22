@@ -98,3 +98,10 @@ Now you want to switch to your dashboard and view your progress. The *Selection*
 
 The next step is to implement a map, where you can see the location of the asset you chose in the *Selector* group. Mindsphere offers some pre-build nodes, that reflect the Mindsphere look and feel and can be implemented into your VFC dashboards. You find them in the *MDSP Dashboard* node section. There is a date picker, timeseries chart, asset list, aspect variable selector, event table and the Mindsphere Map. But first, change the *Asset Map* group width to 122. Now drop the *MDSP Map* and another *text* node into your flow, assign them to the *Asset Map* group (the *MDSP Map* node is positioned below the *text* node)  and configure them as follows:
 
+![map_text](./doc/map_text.png)
+
+![MDSP_Map](./doc/map.png)
+
+Maybe you have noticed that we already set initial position and zoom level for the *MDSP Map* node. Feel free to alter the position to your company's headquarters and experiment with the zoom level. Furthermore, the **value** of the *text* node is {{msg.name}}. We want to display a dynamic text which changes depending on your selection in the *Selector* group. The text node will check the incoming message to have a msg.name property and will display it`s value. Changing the text according to the selected Asset is great, but we want to display the stored location of this asset in the map too.
+
+> You can change the initial position of the *MDSP Map* by sending a payload with {{latitude, longitude, zoomLevel}
