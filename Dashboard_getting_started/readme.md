@@ -64,7 +64,7 @@ Now create a second tab called *Detail* with only one group named *Events*. We w
 # Overview Dashboard:
 In this chapter, we will bring some life and functionality to our Overview dashboard. This tutorial is designed to build all elements from scratch and simultaneously show the logic behind a VFC dashboard. Some steps might be overcomplicated with the purpose of demonstrating several VFC nodes.
 
-> If you just want to check out the final result, you can copy paste the json flow data [From Here](./Resources/Dashboard.json). It will import all elements, including nodes, tabs and groups. 
+> If you just want to check out the final result, you can copy paste the [Json Flow Data From Here](./Resources/Dashboard.json). It will import all elements, including nodes, tabs and groups. 
 
 For the beginning, we will place three *text* nodes and three *button* nodes in the flow. This will be our Asset selector, where each machine has it's own button like below:
 
