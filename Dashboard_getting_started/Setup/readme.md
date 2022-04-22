@@ -65,7 +65,7 @@ To finish this flow, you have to map the 6 write timeseries node to your own cor
 
 :white_check_mark:  :white_check_mark:  :white_check_mark:  :white_check_mark:  :white_check_mark:  :white_check_mark:
 
-Your Data Generator is ready to go and will run in the background. Now **[Continue Here](../readme.md#dashboard-structure)** and get started building your VFC Dashboard!
+Click Save. Your Data Generator is ready to go and will run in the background. Now **[Continue Here](../readme.md#dashboard-structure)** and get started building your VFC Dashboard!
 
 :white_check_mark:  :white_check_mark:  :white_check_mark:  :white_check_mark:  :white_check_mark:  :white_check_mark:
 
