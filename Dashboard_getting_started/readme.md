@@ -131,4 +131,7 @@ Now try out your dashboard. The *Location of* and Map view should change every t
 
 https://user-images.githubusercontent.com/90254123/164717991-9ee5fa5a-f5b6-4deb-a426-beec63d6571a.mp4
 
-
+Our next topic will be the third group, the *Info* group. Here we want to display some quick info about the selected machine:
+- A status indicator
+- and the software version, the machine is running on
+First things first, adjust the width of the *Info* group to 12. Now we are facing a design problem: If we load or reload the dashboard (so no machine is selected), the whole skeleton of the *Info* group would be visible, but empty. 
