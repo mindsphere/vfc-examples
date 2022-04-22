@@ -66,6 +66,10 @@ In this chapter, we will bring some life and functionality to our Overview dashb
 
 > If you just want to check out the final result, you can copy paste the json flow data [From Here](./Resources/Dashboard.json). It will import all elements, including nodes, tabs and groups. 
 
+For the beginning, we will place three *text* nodes and three *button* nodes in the flow. This will be our Asset selector, where each machine has it's own button like below:
+
+![asset_selector](./doc/selector.png)
+
 
 
 
