@@ -121,7 +121,11 @@ msg.payload = maploc;
 msg.name = 'INSERT MACHINE TYPE HERE';
 return msg;
 ```
-Obviously, change ***INSERT MACHINE TYPE HERE*** to the corresponding machine type in your code.
+Obviously, change ***INSERT MACHINE TYPE HERE*** to the corresponding machine type in your function code.
+
+Now it is time to connect the nodes and complete our first dashboard functionality:
+
+![connected_nodes](./doc/flowpic_2.png)
 
 
 
