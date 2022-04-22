@@ -33,7 +33,7 @@ the corresponding dashboard page would be organized as shown below:
 
 ![tabs_groups](./doc/tabs_groups.png)
 
-Inside a group (column), the dashboard content is structured vertically, from top to bottom. If you assigned three items to a group like this:
+Inside a group (column), the dashboard content is structured vertically, from top to bottom. If you assigned three items to a single group on a single tab like this:
 
 ![group_structure](./doc/group_structure.png)
 
