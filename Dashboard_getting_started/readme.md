@@ -70,7 +70,11 @@ For the beginning, we will place three *text* nodes and three *button* nodes in 
 
 ![asset_selector](./doc/selector.png)
 
+But before styling our nodes, we have to adjust the width of the group. Click *edit* on the *Selector* group and give it a width of 9. Rearrange your nodes in the flow, so that the *text* nodes are alternating with the *button* nodes, starting with the text node. Double click the first *text node* to open it's properties. Here you can assign the node to a group and change it's apperence. We will start with our Basic machine. Copy the following setting:
 
+![text_node_settings](./doc/text_node.png)
+
+So we assigned the *text* node to our *Selector* group, gave it a form of 6x2 (width x height) and chose the *label* **value** format, where *label* = Asset and **value** = Basic. Now rinse and repeat for the other two *text* nodes, but remember to change the **value** to Performance and Eco.
 
 
 
