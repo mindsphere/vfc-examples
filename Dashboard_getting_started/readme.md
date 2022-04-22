@@ -43,8 +43,10 @@ the corresponding dashboard page would be organized as shown below:
 
 As you can see, *Group 1* is centered automatically on the tab. You don't have to worry about the position of your groups, Mindsphere does that automatically for you. Just remember the following rule of thumb:
 
-> **Tabs** are **individual dashboard pages**. You can only view one tab at once.<br>
-> **Groups**, that are structured from **top to bottom**, will be displayed from **left to right** on your dashboard page.<br>
+> **Tabs** are **individual dashboard pages**. You can only view one tab at once.
+
+> **Groups**, that are structured from **top to bottom**, will be displayed from **left to right** on your dashboard page.
+
 > **Content**, that is structured from **top to bottom**, will be displayed from **top to bottom** inside a group.
 
 
