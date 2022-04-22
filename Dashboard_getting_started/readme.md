@@ -80,5 +80,5 @@ Now apply the following settings to the three *button* nodes:
 
 ![button_nodes_settings](./doc/button_node.png)
 
-
+The positioning of nodes in the flow is not relevant for the structure of the dashboard. By organizing your flow, you will have a huge benefit once it get's complicated, but the order of the nodes under the *Selection* group is decisive. 
 
