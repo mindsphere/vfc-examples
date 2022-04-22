@@ -38,7 +38,7 @@ Your Asset type should look like this:
   - Performance
   - Eco
 
-For the purpose of this example, let's assume you are a factory manager that has three different machines (Basic, Performance and Eco), but they all share the same data model. Each machine is exhibited at a fair to showcase the power and potential of the IIoT with Mindsphere. Basic is located at Frankfurt, Performance at Munich and Eco at Berlin. We already created a static aspect *Dashboard_Machine_Location* to store the latitude, longitude and software version of each machine. Now, we have to initialize these Values. To do so, click on the edit symbol of the Asset, open the dropdown of *static aspects* and fill in the following under *Dashboard_Machine_Location*:
+For the purpose of this example, let's assume you are a factory manager that has three different machines (Basic, Performance and Eco), but they all share the same data model. Let's assume each machine is exhibited at a fair to showcase the power and potential of the IIoT with Mindsphere. Basic is located at Frankfurt, Performance at Munich and Eco at Berlin. We already created a static aspect *Dashboard_Machine_Location* to store the latitude, longitude and software version of each machine. Now, we have to initialize these Values. To do so, click on the edit symbol of the Asset, open the dropdown of *static aspects* and fill in the following under *Dashboard_Machine_Location*:
 
 - [x] For machine **Basic**:
   - latitude: 50.1109
