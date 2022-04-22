@@ -112,35 +112,16 @@ Let's assume, our three machines Basic, Performance and Eco are located on three
 
 In the next step, we hava to transform the data to the form {latitude, longitude, zoomLevel}, so that the *MDSP Map* can interpret the input. We achieve this using *function* nodes. Create three *function* nodes (again, one for each machine) and use the following code:
 
-| Basic | Performance | Eco |
-| ----- | ----------- | --- |
-|```javascript
+```javascript
 var long = msg.payload.longitude;
 var lat = msg.payload.latitude;
 
 var maploc = {'longitude':long,'latitude': lat,'zoomLevel': 12};
 msg.payload = maploc;
-msg.name = 'Basic';
+msg.name = 'INSERT MACHINE TYPE HERE';
 return msg;
 ```
-| ```javascript
-var long = msg.payload.longitude;
-var lat = msg.payload.latitude;
+Obviously, change *INSERT MACHINE TYPE HERE* to the corresponding machine type in your code.
 
-var maploc = {'longitude':long,'latitude': lat,'zoomLevel': 12};
-msg.payload = maploc;
-msg.name = 'Performance';
-return msg;
-```
-| ```javascript
-var long = msg.payload.longitude;
-var lat = msg.payload.latitude;
-
-var maploc = {'longitude':long,'latitude': lat,'zoomLevel': 12};
-msg.payload = maploc;
-msg.name = 'Eco';
-return msg;
-```
-|
 
 
