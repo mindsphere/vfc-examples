@@ -38,7 +38,22 @@ Your Asset type should look like this:
   - Performance
   - Eco
 
-For the purpose of this example, let's assume you are a factory manager that has three different machines (Basic, Performance and Eco), but they all share the same data model. Now you want to monitor them, but to do so, your machines need to send data. Let's generate some data using Mindspheres Visual Flow Creator application.
+For the purpose of this example, let's assume you are a factory manager that has three different machines (Basic, Performance and Eco), but they all share the same data model. Each machine is exhibited at a fair to showcase the power and potential of the IIoT with Mindsphere. Basic is located at Frankfurt, Performance at Munich and Eco at Berlin. We already created a static aspect *Dashboard_Machine_Location* to store the latitude, longitude and software version of each machine. Now, we have to initialize these Values. To do so, click on the edit symbol of the Asset, open the dropdown of *static aspects* and fill in the following under *Dashboard_Machine_Location*:
+
+- [x] For machine **Basic**:
+  - latitude: 50.1109
+  - longitude: 8.6508
+  - Software_Version: 1.0.0.2
+- [x] For machine **Performance**:
+  - latitude: 48.1353
+  - longitude: 11.6962
+  - Software_Version: 1.3.3.0
+- [x] For machine **Eco**:
+  - latitude: 52.5040
+  - longitude: 13.2733
+  - Software_Version: 1.5.0.0
+
+Now you want to monitor them, but to do so, your machines need to send data. Let's generate some data using Mindspheres Visual Flow Creator application.
 
 # VFC Data Generator:
 The Visual Flow Creator (VFC) is a [Node-RED](https://nodered.org) based application that can simplify and automate a lot of tasks inside Mindsphere. If you are new to the VFC, please take a few minutes and go through the basics in our [Documentation](https://documentation.mindsphere.io/resources/html/visualflow-creator/en-US/index.html). It will help you understanding the concept of VFC tremendously.
