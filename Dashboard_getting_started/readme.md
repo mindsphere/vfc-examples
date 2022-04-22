@@ -20,7 +20,7 @@ This step requires you to be familiar with Mindsphere's asset structure and that
 
 If not, please follow the [Setup Instructions](./Setup/readme.md) and come back once you completed the process.
 
-# Overview Dashboard:
+# Dashboard Structure:
 Start by creating a new flow and name it something like *Dashboard* or *MyFirstDashboard*. Then switch to the dashboard tab under Layout, which will be blank for now.
 
 ![dashboard_menu](./doc/dashboard_menu.png)
@@ -56,5 +56,9 @@ Now let's start building the overview dashboard:
 - Remember the way the VFC is displaying groups. You want to place the *Selector* group on the left and the *Info* group on the right
 
 You can rename tabs and groups by hovering over them and clicking the *edit* button:
+
+![group_edit](./doc/group_edit.png)
+
+
 
 
