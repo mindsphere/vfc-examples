@@ -121,7 +121,7 @@ msg.payload = maploc;
 msg.name = 'INSERT MACHINE TYPE HERE';
 return msg;
 ```
-Obviously, change *INSERT MACHINE TYPE HERE* to the corresponding machine type in your code.
+Obviously, change ***INSERT MACHINE TYPE HERE*** to the corresponding machine type in your code.
 
 
 
