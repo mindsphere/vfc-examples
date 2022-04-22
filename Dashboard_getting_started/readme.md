@@ -88,13 +88,11 @@ Your flow should look like this:
 
 ![flow_actual](./doc/flowpic_1.png)
 
-Now you want to switch to your dashboard and view your progress. You can open the dashboard by clicking *Open dashboard in new tab*:
-
-![how_to_open_dashboard](./doc/open_dashboard.png)
-
-The *Selection* group of the dashboard should look like this:
+Now you want to switch to your dashboard and view your progress. The *Selection* group of the dashboard should look like this:
 
 ![Selection_actual](./doc/dashpic_1.png)
 
-
+>Hint. You can open the dashboard by clicking *Open dashboard in new tab*:
+>
+>![how_to_open_dashboard](./doc/open_dashboard.png)
 
