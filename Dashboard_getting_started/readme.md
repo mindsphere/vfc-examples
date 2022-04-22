@@ -129,6 +129,6 @@ Now it is time to connect the nodes and complete our first dashboard functionali
 
 Now try out your dashboard. The *Location of* and Map view should change every time you click an Asset in the *Selector* group:
 
-[video](./doc/asset_switch.mp4)
+https://user-images.githubusercontent.com/90254123/164717991-9ee5fa5a-f5b6-4deb-a426-beec63d6571a.mp4
 
 
