@@ -92,7 +92,7 @@ Now you want to switch to your dashboard and view your progress. The *Selection*
 
 ![Selection_actual](./doc/dashpic_1.png)
 
->Hint. You can open the dashboard by clicking *Open dashboard in new tab*:
+>Hint: You can open your dashboard by clicking *Open dashboard in new tab*. Here, you can also reload all dashboards to apply changes made to the flow model.
 >
 >![how_to_open_dashboard](./doc/open_dashboard.png)
 
