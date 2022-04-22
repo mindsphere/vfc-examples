@@ -61,7 +61,12 @@ You can rename tabs and groups by hovering over them and clicking the *edit* but
 
 Now create a second tab called *Detail* with only one group named *Events*. We will use the *Detail* tab at the very end of this tutorial, so consider this a little teaser.
 
-#Overview Dashboard:
+# Overview Dashboard:
+In this chapter, we will bring some life and functionality to our Overview dashboard. This tutorial is designed to build all elements from scratch and simultaneously show the logic behind a VFC dashboard. Some steps might be overcomplicated with the purpose of demonstrating several VFC nodes.
+
+> If you only want to check out the finished dashboard, you can copy paste the json data [From Here](./Resources/Dashboard.json).
+
+
 
 
 
