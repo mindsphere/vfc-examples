@@ -84,5 +84,17 @@ The positioning of nodes in the flow is not relevant for the structure of the da
 
 ![check_nodes](./doc/check_nodes.png)
 
+Your flow should look like this:
+
+![flow_actual](./doc/flowpic_1.png)
+
+Now you want to switch to your dashboard and view your progress. You can open the dashboard by clicking *Open dashboard in new tab*:
+
+![how_to_open_dashboard](./doc/open_dashboard.png)
+
+The *Selection* group of the dashboard should look like this:
+
+![Selection_actual](./doc/dashpic_1.png)
+
 
 
