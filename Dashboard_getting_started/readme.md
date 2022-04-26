@@ -10,6 +10,8 @@ This example will guide you step by step through the VFC Dahsboard functionaliti
 - basic Javascript knowledge is helpful, but not required
 > All required applications and resources are part of a [Start for free](https://siemens.mindsphere.io/en/start) tenant. You can follow this tutorial along regardless of your Mindsphere package.
 
+> This tutorial is designed for beginners. However, some basic knowledge about the VFC will make your learning journey more enjoyable. Learn the basics [Here](https://documentation.mindsphere.io/resources/html/visualflow-creator/en-US/index.html).
+
 # Setup:
 We will simulate three different versions of an industrial machine:
 - Basic
