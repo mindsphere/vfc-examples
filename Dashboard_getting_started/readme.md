@@ -177,3 +177,10 @@ And this code to show the *Info* group:
     }
 }
 ```
+Now that we implemented that functionality, let´s give the *Info* group some content! We want to display the Software Version of the machine and a status indicator, showing the actual status of our machine. The data generator is generating a status code between 1 and five, so lets' assume:
+- 1 = Status OK
+- 2 = Status Information
+- 3 = Status WARNING
+- 4 = Status FAULT
+- 5 = Status MAINTENANCE
+Remember, that the *Machine_Status* is a dynamic variable and the *Software_Version* is a static attribute. So we need three *read-timeseries* nodes and three *read-aspect-static* nodes from the *mindsphere* section. Drop them in your flow and arrange them as you like. Now adjust all six *read* nodes, so they read the right data from your assets. For the three *read-timeseries* nodes choose Mode *Period* and set the Period to *2 hours* with no offset.
