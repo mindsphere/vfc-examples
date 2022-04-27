@@ -138,12 +138,11 @@ Our next topic will be the third group, the *Info* group. Here we want to displa
 - and the software version, the machine is running on
 
 First things first, adjust the width of the *Info* group to 12. Now we are facing a design problem: If we load or reload the dashboard (so no machine is selected), the whole skeleton of the *Info* group would be visible, but empty. So we want to hide the *Info* group by default and only display it if any of the machines is selected. We can use the *ui control* node from the *dashboard* section. The default function iss to change the currently displayed tab by sending the tab name as msg.payload, but you can also control the visibility of groups of widgets by sending a payload in the form:
-```JSON
+```javascript
 {group:
-  {hide:
-    ["tab_name_group_name_with_underscores"], 
-    show:["reveal_another_group"], 
-    focus:true
+  {hide: ["tab_name_group_name_with_underscores"], 
+   show: ["reveal_another_group"], 
+   focus:true
   }
 }
 ```
