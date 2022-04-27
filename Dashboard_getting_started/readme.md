@@ -183,4 +183,5 @@ Now that we implemented that functionality, let´s give the *Info* group some co
 - 3 = Status WARNING
 - 4 = Status FAULT
 - 5 = Status MAINTENANCE
+
 Remember, that the *Machine_Status* is a dynamic variable and the *Software_Version* is a static attribute. So we need three *read-timeseries* nodes and three *read-aspect-static* nodes from the *mindsphere* section. Drop them in your flow and arrange them as you like. Now adjust all six *read* nodes, so they read the right data from your assets. For the three *read-timeseries* nodes choose Mode *Period* and set the Period to *2 hours* with no offset.
