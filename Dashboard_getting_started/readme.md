@@ -147,6 +147,6 @@ First things first, adjust the width of the *Info* group to 12. Now we are facin
   }
 }
 ```
-The focus:true is optional.
+>The focus:true is optional.
 Another feature of the ui node is that it emit's a msg when a browser client connects or looses connection. Let´s combine these funtionalities to create the following. When the dashboard is loaded, the ui node emit's a message and the *info* group is hidden. On the other hand, when you select one of the machines, the *info* group is displayed again:
 ![hide_show](./doc/hide_show.png)
