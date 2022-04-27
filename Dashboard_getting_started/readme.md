@@ -10,7 +10,7 @@ This example will guide you step by step through the VFC Dahsboard functionaliti
 - basic Javascript knowledge is helpful, but not required
 > All required applications and resources are part of a [Start for free](https://siemens.mindsphere.io/en/start) tenant. You can follow this tutorial along regardless of your Mindsphere package.
 
-> This tutorial is designed for beginners. However, some basic knowledge about the VFC will make your learning journey more enjoyable. Learn the basics [Here](https://documentation.mindsphere.io/resources/html/visualflow-creator/en-US/index.html).
+> This tutorial is designed for beginners. However, some fundamental knowledge about the VFC will make your learning journey more enjoyable. Learn the basics [Here](https://documentation.mindsphere.io/resources/html/visualflow-creator/en-US/index.html).
 
 # Setup:
 We will simulate three different versions of an industrial machine:
@@ -137,4 +137,8 @@ Our next topic will be the third group, the *Info* group. Here we want to displa
 - A status indicator
 - and the software version, the machine is running on
 
-First things first, adjust the width of the *Info* group to 12. Now we are facing a design problem: If we load or reload the dashboard (so no machine is selected), the whole skeleton of the *Info* group would be visible, but empty. 
+First things first, adjust the width of the *Info* group to 12. Now we are facing a design problem: If we load or reload the dashboard (so no machine is selected), the whole skeleton of the *Info* group would be visible, but empty. So we want to hide the *Info* group by default and only display it if any of the machines is selected. We can use the *ui control* node from the *dashboard* section. The default function iss to change the currently displayed tab by sending the tab name as msg.payload, but you can also control the visibility of groups of widgets by sending a payload in the form:
+```json
+{group:{hide:["tab_name_group_name_with_underscores"], show:["reveal_another_group"], focus:true}}
+```
+
