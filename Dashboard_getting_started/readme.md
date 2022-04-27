@@ -137,7 +137,7 @@ Our next topic will be the third group, the *Info* group. Here we want to displa
 - A status indicator
 - and the software version, the machine is running on
 
-First things first, adjust the width of the *Info* group to 12. Now we are facing a design problem: If we load or reload the dashboard (so no machine is selected), the whole skeleton of the *Info* group would be visible, but empty. So we want to hide the *Info* group by default and only display it if any of the machines is selected. We can use the *ui control* node from the *dashboard* section. The default function iss to change the currently displayed tab by sending the tab name as msg.payload, but you can also control the visibility of groups of widgets by sending a payload in the form:
+First things first, adjust the width of the *Info* group to 12. Now we are facing a design problem: If we load or reload the dashboard (so no machine is selected), the whole skeleton of the *Info* group would be visible, but empty. So we want to hide the *Info* group by default and only display it if any of the machines is selected. We can use the *ui control* node from the *dashboard* section. The default function iss to change the currently displayed tab by sending the tab name as *msg.payload*, but you can also control the visibility of groups of widgets by sending a payload in the form:
 ```
 {group:
   {
@@ -148,5 +148,32 @@ First things first, adjust the width of the *Info* group to 12. Now we are facin
 }
 ```
 >The focus:true is optional.
+
 Another feature of the ui node is that it emit's a msg when a browser client connects or looses connection. Let´s combine these funtionalities to create the following. When the dashboard is loaded, the ui node emit's a message and the *info* group is hidden. On the other hand, when you select one of the machines, the *info* group is displayed again:
+
 ![hide_show](./doc/hide_show.png)
+
+To set the *msg.payload*, you could use a *function* node or just take advantage of the *change* node. Choose the *Set* property from the dropdown and set to msg. payload to a JSON object, like this:
+
+![change_node](./doc/change_node.png)
+
+By clicking the three dots in the change, node, you can insert JSON code. Use this code to hide the *Info* group:
+```JSON
+{
+    "group": {
+        "hide": [
+            "Overview_Info"
+        ]
+    }
+}
+```
+And this code to show the *Info* group:
+```JSON
+{
+    "group": {
+        "show": [
+            "Overview_Info"
+        ]
+    }
+}
+```
