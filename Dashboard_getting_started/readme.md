@@ -217,3 +217,7 @@ and insert this code in the *Extract Software Version* node:
 msg.payload = msg.payload['Software_Version'];
 return msg;
 ```
+Next we simply have to combine the nodes:
+
+![flowpic_3](./doc/flowpic_3.png)
+
