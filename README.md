@@ -39,7 +39,7 @@ Please note, that the json-files are exported from another tenant. So their migh
 | [Send SMS notifications](./sendSmsNotifications/readme.md) | Send SMS notifications and dynamically specify recipient | :star: | - |
 | [Trend Prediction Example](./trendPredictionAPI/readme.md) | Application example which shows how to use trend prediction service to forecast timeseries data | :star: | - |
 | [Virtual machine simulator](./virtualMachineSimulator/readme.md) | | :star: | - |
-| [Write location data to your Asset](./WriteLocationDataToAsset) | Write locational information directly to your Asset using the Asset Management API | :star: | - | 
+| [Write location data to your Asset](./WriteLocationToAsset) | Write locational information directly to your Asset using the Asset Management API | :star: | - | 
 
 ### Examples which have to be added:
 | Name | Description | Complexity Rating | Prerequisites |
