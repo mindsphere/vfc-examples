@@ -188,4 +188,9 @@ Remember, that the *Machine_Status* is a dynamic variable and the *Software_Vers
 
 ![Logical_grouping](./doc/logical_grouping.png)
 
+Now drop five more nodes into your flow:
+- 2 *function* nodes from the *function* node section
+- 2 *text* nodes from the *dashboard* node section
+- 1 *led* node from the *dashboard* node section
 
+fff
