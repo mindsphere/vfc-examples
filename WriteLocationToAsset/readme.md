@@ -1,4 +1,4 @@
-# How to write location data to your Asset using the Asset Management API
+# How to write location data directly to your Asset using the Asset Management API
 
 How to use this flow:
 - Copy the json flow structure from [Here](./IMPORT_WriteLocationToAsset.json)
