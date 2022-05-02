@@ -1,10 +1,11 @@
 # How to write location data to your Asset using the Asset Management API
 
 How to use this flow:
-- Copy the json structure from [Here](./IMPORT_WriteLocationToAsset.json).
+- Copy the json flow structure from [Here](./IMPORT_WriteLocationToAsset.json)
 - Click Import in the VFC and paste the json data in the blank field
 - Click Import
 - Change the asset id's in the GET and PUT call to the id of your own asset
+- Change the locational information by altering the body in the function node
 - Save the flow
 
 You are done! Your flow should now look like this:
