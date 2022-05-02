@@ -206,7 +206,7 @@ and for the second *text* node:
 
 ![text_node_3](./doc/text_node_3.png)
 
-Now that these elements are set up, let's take care of the function nodes. The *read-timeseries* nodes return an array with multiple data points, but we only want to extract the latest value in this array and sent it as *msg.payload*. Name the first *function* node *Extract Machine Status* and the second *function* node *Extract Software Version*. Use the following javascript code for the *Extract Machine Status* node:
+Now that these elements are set up, let's take care of the function nodes. The *read-timeseries* nodes return an array with multiple data points, but we only want to extract the latest value in this array and sent it as *msg.payload*. Name the first *function* node ***Extract Machine Status*** and the second *function* node ***Extract Software Version***. Use the following javascript code for the *Extract Machine Status* node:
 ```javascript
 var lastDataPoint = msg.payload.slice(-1)[0];
 msg.payload =lastDataPoint['Machine_Status'];
