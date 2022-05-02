@@ -193,4 +193,16 @@ Now drop five more nodes into your flow:
 - 2 *text* nodes from the *dashboard* node section
 - 1 *led* node from the *dashboard* node section
 
-fff
+and change the settings to the following for the first *text* node:
+
+![text_node_2](./doc/text_node_2.png)
+
+for the *led* node:
+
+![led_node](./doc/led_node.png)
+
+and for the second *text* node:
+
+![text_node_3](./doc/text_node_3.png)
+
+
