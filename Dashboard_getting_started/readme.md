@@ -221,7 +221,7 @@ Next we simply have to combine the nodes:
 
 ![flowpic_3](./doc/flowpic_3.png)
 
-Try these new functionalities in your own dashboard. If you click on a machine, the led and software Version should change dynamically:
+Try these new functionalities in your own dashboard. If you click on a machine, the led and Software Version should change dynamically:
 
 https://user-images.githubusercontent.com/90254123/166253526-9b203cf0-5e0d-42ab-9dd6-360943efe8bd.mp4
 
