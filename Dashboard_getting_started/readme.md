@@ -225,5 +225,12 @@ Try these new functionalities in your own dashboard. If you click on a machine, 
 https://user-images.githubusercontent.com/90254123/166253526-9b203cf0-5e0d-42ab-9dd6-360943efe8bd.mp4
 
 Let's take a short summary. As a VFC user you have already visualized your three assets, their location and status. Now you want to take things to the next level. Imagine beeing a machine Operator, who wants to report a critical machine failure as quickly as possible directly from the dashboard. Furthermore, you want to be able to navigate to your machine and see what happened. MindSphere offers a functionality that supports our idea, it' called **events**. So let's implement events in our dashboard. But we have to do something else first. The logic of our flow needs to know which machine is actually selected. We need to store some kind of indicator which machine is selected and we can do it in two different ways:
-1. By sending the machine directly as *mag.payload* or as a *msg.xxxxx* property.
+1. By sending the machine directly as *msg.payload* or as a *msg.xxxxx* property
 2. By setting up a flow variable
+When you are declaring variables in a *function* node, they are of course only valid and accessible in the respective function. Flow variables however are stored on flow level and can be used to store some data and read it again later in the flow without the need to send it in the *msg*. We now want to store our selected machine in a flow variable called *ActiveAsset*. Drop three *change* nodes and one *store ctx* node into your flow.
+
+Configure each *change* node to only have one rule that sets the *msg.payload*. The first node set's *msg.payload* to *Basic*, the second to *Performance* and the third to *Eco*. Use this settings for the *store ctx* node:
+
+![store_ctx_node](./doc/store_ctx_node.png)
+
+
