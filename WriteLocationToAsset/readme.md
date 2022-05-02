@@ -5,7 +5,7 @@ How to use this flow:
 - Click Import in the VFC and paste the json data in the blank field
 - Click Import
 - Change the asset id's in the GET and PUT call to the id of your own asset
-- Change the locational information by altering the body in the function node
+- Change the locational information by altering the body in the function node (optional)
 - Save the flow
 
 You are done! Your flow should now look like this:
