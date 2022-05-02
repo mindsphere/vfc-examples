@@ -230,8 +230,19 @@ Let's take a short summary. As a VFC user you have already visualized your three
 2. By setting up a flow variable
 When you are declaring variables in a *function* node, they are of course only valid and accessible in the respective function. Flow variables however are stored on flow level and can be used to store some data and read it again later in the flow without the need to send it in the *msg*. We now want to store our selected machine in a flow variable called *ActiveAsset*. Drop three *change* nodes and one *store ctx* node into your flow.
 
-Configure each *change* node to only have one rule that sets the *msg.payload*. The first node set's *msg.payload* to *Basic*, the second to *Performance* and the third to *Eco*. Use this settings for the *store ctx* node:
+Configure each *change* node to only have one rule that sets the *msg.payload*. The first node set's *msg.payload* to *Basic*, the second to *Performance* and the third to *Eco*. Use these settings for the *store ctx* node:
 
 ![store_ctx_node](./doc/store_ctx_node.png)
+
+Now we will add a couple of nodes on top:
+- one *button* node
+- one *read ctx* node
+- one *switch* node
+- one *change* node
+- one *ui control* node
+
+First: the *button* node. Assign it to the *Info* Group and type *Go To Asset* in the *Label* field. Configure the *read ctx* node to *Context* = *Flow* and *Key* = *ActiveAsset*. By doing so, we will read the selected machine that was previosly stored in the *ActiveAsset* flow variable. Configure the switch node as follows:
+
+![switch_node](./doc/switch_node.png)
 
 
