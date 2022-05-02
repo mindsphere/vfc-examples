@@ -90,13 +90,14 @@ Your flow should look like this:
 
 ![flow_actual](./doc/flowpic_1.png)
 
-Now you want to switch to your dashboard and view your progress. The *Selection* group of the dashboard should look like this:
-
-![Selection_actual](./doc/dashpic_1.png)
-
+Now you want to switch to your dashboard and view your progress.
 >Hint: You can open your dashboard by clicking *Open dashboard in new tab*. Here, you can also reload all dashboards to apply changes made to the flow model.
 >
 >![how_to_open_dashboard](./doc/open_dashboard.png)
+
+The *Selection* group of the dashboard should look like this:
+
+![Selection_actual](./doc/dashpic_1.png)
 
 The next step is to implement a map, where you can see the location of the asset you chose in the *Selector* group. Mindsphere offers some pre-build nodes, that reflect the Mindsphere look and feel and can be implemented into your VFC dashboards. You find them in the *MDSP Dashboard* node section. There is a date picker, timeseries chart, asset list, aspect variable selector, event table and the Mindsphere Map. But first, change the *Asset Map* group width to 122. Now drop the *MDSP Map* and another *text* node into your flow, assign them to the *Asset Map* group (the *MDSP Map* node is positioned below the *text* node)  and configure them as follows:
 
@@ -205,4 +206,14 @@ and for the second *text* node:
 
 ![text_node_3](./doc/text_node_3.png)
 
-
+Now that these elements are set up, let's take care of the function nodes. The *read-timeseries* nodes return an array with multiple data points, but we only want to extract the latest value in this array and sent it as *msg.payload*. Name the first *function* node *Extract Machine Status* and the second *function* node *Extract Software Version*. Use the following javascript code for the *Extract Machine Status* node:
+```javascript
+var lastDataPoint = msg.payload.slice(-1)[0];
+msg.payload =lastDataPoint['Machine_Status'];
+return msg;
+```
+and insert this code in the *Extract Software Version* node:
+```javascript
+msg.payload = msg.payload['Software_Version'];
+return msg;
+```
