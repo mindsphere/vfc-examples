@@ -81,7 +81,7 @@
         "to": "",
         "reg": false,
         "x": 700,
-        "y": 740,
+        "y": 680,
         "wires": [
             [
                 "66d14505.6118ec",
@@ -109,11 +109,11 @@
         "to": "",
         "reg": false,
         "x": 700,
-        "y": 860,
+        "y": 720,
         "wires": [
             [
                 "66d14505.6118ec",
-                "f6c5ca8a.d06498"
+                "b69374d2.cbdec8"
             ]
         ]
     },
@@ -137,11 +137,11 @@
         "to": "",
         "reg": false,
         "x": 700,
-        "y": 980,
+        "y": 760,
         "wires": [
             [
                 "66d14505.6118ec",
-                "75ddfb88.dca834"
+                "b69374d2.cbdec8"
             ]
         ]
     },
@@ -165,7 +165,7 @@
         "to": "",
         "reg": false,
         "x": 1560,
-        "y": 780,
+        "y": 720,
         "wires": [
             [
                 "c40b6ea.69b8d9"
@@ -192,7 +192,7 @@
         "to": "",
         "reg": false,
         "x": 700,
-        "y": 1060,
+        "y": 920,
         "wires": [
             [
                 "38117cec.e3a854"
@@ -243,8 +243,8 @@
         "acknowledged": "false",
         "source": "VFC",
         "description": "Basic machine has experienced a critical failure",
-        "x": 1630,
-        "y": 900,
+        "x": 1750,
+        "y": 780,
         "wires": []
     },
     {
@@ -258,8 +258,8 @@
         "acknowledged": "false",
         "source": "VFC",
         "description": "Performance machine has experienced a critical failure",
-        "x": 1630,
-        "y": 960,
+        "x": 1750,
+        "y": 820,
         "wires": []
     },
     {
@@ -273,8 +273,8 @@
         "acknowledged": "false",
         "source": "VFC",
         "description": "Eco machine has experienced a critical failure",
-        "x": 1630,
-        "y": 1020,
+        "x": 1750,
+        "y": 860,
         "wires": []
     },
     {
@@ -335,12 +335,12 @@
         "id": "20020e56.62dd32",
         "type": "function",
         "z": "c8542287.a2c4a",
-        "name": "Extract Last Value",
+        "name": "Extract Machine Status",
         "func": "var lastDataPoint = msg.payload.slice(-1)[0];\nmsg.payload =lastDataPoint['Machine_Status'];\nreturn msg;\n",
         "outputs": 1,
         "language": "javascript",
         "noerr": 0,
-        "x": 970,
+        "x": 980,
         "y": 420,
         "wires": [
             [
@@ -352,7 +352,7 @@
         "id": "24046c2.d71fb94",
         "type": "function",
         "z": "c8542287.a2c4a",
-        "name": "Extract Last Value",
+        "name": "Extract Software Version",
         "func": "msg.payload = msg.payload['Software_Version'];\nreturn msg;\n",
         "outputs": 1,
         "language": "javascript",
@@ -451,7 +451,7 @@
         "key": "ActiveAsset",
         "context": "flow",
         "x": 1170,
-        "y": 860,
+        "y": 800,
         "wires": [
             [
                 "4698eac.6ed4f14"
@@ -466,7 +466,7 @@
         "key": "ActiveAsset",
         "context": "flow",
         "x": 1150,
-        "y": 1060,
+        "y": 920,
         "wires": [
             [
                 "5ad7c3dc.3d5a4c"
@@ -589,29 +589,7 @@
         "key": "ActiveAsset",
         "context": "flow",
         "x": 970,
-        "y": 700,
-        "wires": []
-    },
-    {
-        "id": "f6c5ca8a.d06498",
-        "type": "store-context",
-        "z": "c8542287.a2c4a",
-        "name": "",
-        "key": "ActiveAsset",
-        "context": "flow",
-        "x": 970,
-        "y": 740,
-        "wires": []
-    },
-    {
-        "id": "75ddfb88.dca834",
-        "type": "store-context",
-        "z": "c8542287.a2c4a",
-        "name": "",
-        "key": "ActiveAsset",
-        "context": "flow",
-        "x": 970,
-        "y": 780,
+        "y": 680,
         "wires": []
     },
     {
@@ -641,7 +619,7 @@
         "checkall": "true",
         "outputs": 3,
         "x": 1380,
-        "y": 860,
+        "y": 800,
         "wires": [
             [
                 "268051eb.8e036e"
@@ -677,7 +655,7 @@
         "checkall": "true",
         "outputs": 3,
         "x": 1380,
-        "y": 1060,
+        "y": 920,
         "wires": [
             [
                 "7e64a72b.5ce7d8",
@@ -809,7 +787,7 @@
         "topic": "",
         "powerMode": false,
         "x": 950,
-        "y": 860,
+        "y": 800,
         "wires": [
             [
                 "897f3a03.1133f8"
@@ -836,7 +814,7 @@
         "topic": "",
         "powerMode": false,
         "x": 910,
-        "y": 1060,
+        "y": 920,
         "wires": [
             [
                 "5287cb5.d919534"
@@ -849,7 +827,7 @@
         "z": "c8542287.a2c4a",
         "name": "",
         "group": "a92fa412.22fae8",
-        "order": 0,
+        "order": 2,
         "width": "26",
         "singleBrowser": false,
         "height": "1",
@@ -862,8 +840,8 @@
         "payloadType": "json",
         "topic": "",
         "powerMode": false,
-        "x": 1720,
-        "y": 1240,
+        "x": 140,
+        "y": 580,
         "wires": [
             [
                 "dd71cdce.1b1ec"
@@ -920,7 +898,7 @@
         "z": "c8542287.a2c4a",
         "name": "",
         "group": "a92fa412.22fae8",
-        "order": 0,
+        "order": 1,
         "width": "26",
         "height": "12",
         "label": "event table",
@@ -940,8 +918,8 @@
         "showCorrelationId": true,
         "showTypeId": false,
         "showCode": false,
-        "x": 1690,
-        "y": 1200,
+        "x": 110,
+        "y": 540,
         "wires": []
     },
     {
@@ -1080,8 +1058,8 @@
         "topic": "Event reported successfull for machine:",
         "name": "",
         "singleBrowser": false,
-        "x": 1650,
-        "y": 1120,
+        "x": 1750,
+        "y": 920,
         "wires": []
     },
     {
@@ -1129,7 +1107,7 @@
         "name": "Change to Detail page",
         "powerMode": false,
         "x": 1780,
-        "y": 780,
+        "y": 720,
         "wires": [
             []
         ]
@@ -1140,8 +1118,8 @@
         "z": "c8542287.a2c4a",
         "name": "Back",
         "powerMode": false,
-        "x": 1910,
-        "y": 1240,
+        "x": 330,
+        "y": 620,
         "wires": [
             []
         ]
