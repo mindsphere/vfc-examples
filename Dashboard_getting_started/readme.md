@@ -328,7 +328,10 @@ You can extend this dashboard in many ways. See it as a starting point and add t
 - Alarm people automatically when an event is triggered
 - . . .
 
-# Get Help
+# Questions and Answers
+Feel free to ask your questions in the [MindSphere Developer Forum](https://community.sw.siemens.com/s/topic/0TO4O000000MihsWAC).
 
+Or open an [issue](https://github.com/mindsphere/vfc-examples/issues) if you find a bug in our examples.
 
+You want to contribute? Your pull request is always welcome!!!
 
