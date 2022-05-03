@@ -232,7 +232,7 @@ Let's take a short summary. As a VFC user you have already visualized your three
 2. By setting up a flow variable
 When you are declaring variables in a *function* node, they are of course only valid and accessible in the respective function. Flow variables however are stored on flow level and can be used to store some data and read it again later in the flow without the need to send it in the *msg*. We now want to store our selected machine in a flow variable called *ActiveAsset*. Drop three *change* nodes and one *store ctx* node into your flow.
 
-Configure each *change* node to only have one rule that sets the *msg.payload*. The first node set's *msg.payload* to *Basic*, the second to *Performance* and the third to *Eco*. Use these settings for the *store ctx* node:
+Configure each *change* node to only have one rule that sets the *msg.payload* to a string. The first node set's *msg.payload* to *Basic*, the second to *Performance* and the third to *Eco*. Use these settings for the *store ctx* node:
 
 ![store_ctx_node](./doc/store_ctx_node.png)
 
@@ -255,5 +255,18 @@ Connect the nodes to the rest of your flow and your flow should now have the fol
 
 ![flowpic_4](./doc/flowpic_4.png)
 
-So, if you have the *Basic* machine selected and click on *Go To Asset*, you should be redirected to a new blank tab. As a control mechanism, try to click on *Go To Asset* if *Performance* or *Eco* machine is selected. Nothing should happen there, as we have not connected any nodes to these routings of the *switch* node yet.
+So, if you have the *Basic* machine selected and click on *Go To Asset*, you should be redirected to a new blank tab. As a control mechanism, try to click on *Go To Asset* if *Performance* or *Eco* machine is selected. Nothing should happen there, as we have not connected any nodes to these routings of the *switch* node yet. 
+
+Now let's do the same for our emergency button. Drop these buttons in the flow and place them in the right order (from left to right):
+- one *change* node
+- one *button* node
+- one *read ctx* node
+- one *switch* node
+
+On top of that, add three *create event* nodes and one *notification* node and place them on the right side of the flow. Let us configure the nodes together, but the logic is the same as for the tab switch. Configure the *change* node to set the *msg.payload* to a string *Critical Failure*. Assign the *button* node to the *Info* group and *Label* ist *Report emergency*. The *read ctx* node has a *Context* of *Flow* (so it can only read variables in the flow scope) and a *Key* of *ActiveAsset*. Configure the switch node in the same way as you did a few steps before:
+
+![switch_node](./doc/switch_node.png)
+
+
+
 
