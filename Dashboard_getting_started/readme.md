@@ -3,7 +3,7 @@ This example will guide you step by step through the VFC Dahsboard functionaliti
 
 ![dashboard_image](./doc/overview.png)
 
-This tutorial is meant to start from scratch. You will set up your Assets, generate data for them and build your dashboard on the basis of this data. If you just want to check out the dashboard, import it [From Here](./Resource/IMPORT_Dashboard.json). Please note, that you have to change major components to fit the dashboard to your own tenant's asset model. 
+This tutorial is meant to start from scratch. You will set up your Assets, generate data for them and build your dashboard on the basis of this data. If you just want to check out the dashboard, import it [From Here](./Resources/IMPORT_Dashboard.json). Please note, that you have to change major components to fit the dashboard to your own tenant's asset model. 
 
 # Prerequisites:
 - around 120 minutes of time
@@ -250,5 +250,9 @@ First: the *button* node. Assign it to the *Info* Group and type *Go To Asset* i
 With the help of the *change* node, set the *msg.payload* to detail. Let's understand the purpose of these nodes. When you click on the button *Go To Asset*, the flow reads the *ActiveAsset* flow variable and will direct the flow in a way, that the dashboard changes to a new tab; the detail page for a machine. We will create one of these detail tabs, for our *Basic* machine. Add a new tab in the *Tabs&Links* menu and name it **Detail**. Then connect the nodes like this:
 
 ![change_tab](./doc/change_tab.png)
+
+Connect the nodes to the rest of your flow and your flow should now have the following form:
+
+![flowpic_4](./doc/flowpic_4.png)
 
 
