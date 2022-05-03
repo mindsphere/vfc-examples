@@ -267,6 +267,22 @@ On top of that, add three *create event* nodes and one *notification* node and p
 
 ![switch_node](./doc/switch_node.png)
 
+You also have to change the settings of the *create event* nodes because you have to specify the type of event that VFC generates for you. These are the settings for the *Basic* machine:
+
+![event_node](./doc/event_node.png)
+
+Adjust the *create event* node settings for the other two machines as well, but change the target asset and the *Description* text. Finally, take these settings for the *notification* node:
+
+![notification_node](./doc/notification_node.png)
+
+Connect the nodes to make the flow logic functional:
+
+![flowpic_5](./doc/flowpic_5.png)
+
+And the whole bottom part of your flow should look like this:
+
+![flowpic_6](./doc/flowpic_6.png)
+
 
 
 
