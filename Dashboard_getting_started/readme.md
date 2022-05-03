@@ -296,9 +296,9 @@ Now let's get this getting-started dashboard finished and implement one last fea
 Then drop another *Button* node and *ui control* node in your flow. This button will take you back to the *Overview* tab. Try to configure these two nodes by yourself, so it appears on the Detail page and takes you back to the overview page when clicked.
 > Hint 1: Give the *Button* node a Size of 26 x 1
 
-> Hint 2: Sent a JSON object as msg.payload
+> Hint 2: Send a JSON object as *msg.payload*
 
-> Hint 3: Sent
+> Hint 3: Send
 > ```
 > {
 >    "tab": "Overview"
