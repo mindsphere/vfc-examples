@@ -290,8 +290,11 @@ Now let's get this getting-started dashboard finished and implement one last fea
 - [x] EntityId
 - [x] Timestamp
 - [x] Despriction
+- [ ] Source
 - [x] Acknowledged
 - [x] CorrlationId
+- [ ] TypeId
+- [ ] Code
 
 Then drop another *Button* node and *ui control* node in your flow. This button will take you back to the *Overview* tab. Try to configure these two nodes by yourself, so it appears on the Detail page and takes you back to the overview page when clicked.
 > Hint 1: Give the *Button* node a Size of 26 x 1
@@ -306,6 +309,13 @@ Then drop another *Button* node and *ui control* node in your flow. This button 
 > ```
 > to change back to the Overview tab when clicked
 
+As you can see, displaying an event table and implementing a button that chages tabs can be achieved in only three nodes:
 
+![event_table](./doc/event_table.png)
 
+This will complete the content of this tutorial and your final flow should look something like this:
+
+![flowpic_7](./doc/flowpic_7.png)
+
+# Next Steps
 
