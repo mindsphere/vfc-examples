@@ -283,6 +283,8 @@ And the whole bottom part of your flow should look like this:
 
 ![flowpic_6](./doc/flowpic_6.png)
 
+But what exactly are these nodes doing? If a machine is selected and you click on the button *Report emergency* you create an event for this machine, which is saved and bound to your asset, so you can see and use this event in the future or execute other commands dependent of the event severity. At the same time, a notification pops out in the right corner of your browser to inform you that the event was successfully created.
 
+Now let's get this getting-started dashboard finished and implement one last feature: we want to see our events for a machine on our detail dashboard. MindSphere offers the pre build *event table* node exactly for this purpose. Go to your *Detail* tab and create a new group called *Events* with a width of 26. Then drop the *event table* node from the *MDSP Dashboard* section in your flow and assign it to the *Events* group. Give the node a *Size* of 26 x 12. We want it to be big, to see al the details of the events.
 
 
