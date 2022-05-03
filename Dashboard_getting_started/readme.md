@@ -317,15 +317,18 @@ This will complete the content of this tutorial and your final flow should look 
 
 ![flowpic_7](./doc/flowpic_7.png)
 
+You finished your first dashboard! Check it out, try some things and experiment with creating events. As we all know, this dashboard is not perfect at all and has mainly the purpose to present different elements of VFC dashboarding. What would you do different? Now it's time to bring in your own ideas!
+
 # Next Steps
 
-You can extend this dashboard in many ways. See it as a starting point and add the content that you think would fit your own use case. Here are some ideas what you could do:
+You can extend this dashboard in many ways. See it as a starting point and add the content that you think would fit your own use case. If you are completely lost, here are some ideas what you could do:
 - Add more Data to the *Info* group
 - Create a detail dashboard for *Performance* and *Eco*
   1. You can create a single tab for each machine
   2. Or you can combine the three machines in one tab by creating a dynamic data layer
-- Implement a security check when creating an event (e.g. a: do you really want to create this event? Yes, No)
+- Implement a security check when creating an event (e.g.: Do you really want to create this event? Yes, No)
 - Alarm people automatically when an event is triggered
+- Design a dynamic text input for the triggered event
 - . . .
 
 # Questions and Answers
