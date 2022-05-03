@@ -299,7 +299,7 @@ Then drop another *Button* node and *ui control* node in your flow. This button 
 > Hint 2: Send a JSON object as *msg.payload*
 
 > Hint 3: Send
-> ```
+> ```JSON
 > {
 >    "tab": "Overview"
 > }
