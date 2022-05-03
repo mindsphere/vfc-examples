@@ -65,7 +65,7 @@ You can rename tabs and groups by hovering over them and clicking the *edit* but
 
 Now create a second tab called *Detail* with only one group named *Events*. We will use the *Detail* tab at the very end of this tutorial, so consider this a little teaser.
 
-# Overview Dashboard:
+# Designing the Dashboard:
 In this chapter, we will bring some life and functionality to our Overview dashboard. This tutorial is designed to build all elements from scratch and simultaneously show the logic behind a VFC dashboard. Some steps might be overcomplicated with the purpose of demonstrating several VFC nodes.
 
 > If you just want to check out the final result, you can copy paste the [Json Flow Data From Here](./Resources/Dashboard.json). It will import all elements, including nodes, tabs and groups. Remember to adjust all *read-timeseries* and *write-timeseries* nodes to your own assets.
@@ -318,4 +318,17 @@ This will complete the content of this tutorial and your final flow should look 
 ![flowpic_7](./doc/flowpic_7.png)
 
 # Next Steps
+
+You can extend this dashboard in many ways. See it as a starting point and add the content that you think would fit your own use case. Here are some ideas what you could do:
+- Add more Data to the *Info* group
+- Create a detail dashboard for *Performance* and *Eco*
+  1. You can create a single tab for each machine
+  2. Or you can combine the three machines in one tab by creating a dynamic data layer
+- Implement a security check when creating an event (e.g. a: do you really want to create this event? Yes, No)
+- Alarm people automatically when an event is triggered
+- . . .
+
+# Get Help
+
+
 
