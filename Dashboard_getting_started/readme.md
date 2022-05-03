@@ -247,7 +247,7 @@ First: the *button* node. Assign it to the *Info* Group and type *Go To Asset* i
 
 ![switch_node](./doc/switch_node.png)
 
-With the help of the *change* node, set the *msg.payload* to detail. Let's understand the purpose of these nodes. When you click on the button *Go To Asset*, the flow reads the *ActiveAsset* flow variable and will direct the flow in a way, that the dashboard changes to a new tab; the detail page for a machine. We will create one of these detail tabs, for our *Basic* machine. Add a new tab in the *Tabs&Links* menu and name it **Detail**. Then connect the nodes like this:
+The *switch* node now has three outputs and will route the *msg* signal with the given rules. So if *msg.payload* = *Basic*, the node will send a message to the first output. With the help of the *change* node, set the *msg.payload* to detail. Let's understand the purpose of these nodes. When you click on the button *Go To Asset*, the flow reads the *ActiveAsset* flow variable and will direct the flow in a way, that the dashboard changes to a new tab; the detail page for a machine. We will create one of these detail tabs, for our *Basic* machine. Add a new tab in the *Tabs&Links* menu and name it **Detail**. Then connect the nodes like this:
 
 ![change_tab](./doc/change_tab.png)
 
