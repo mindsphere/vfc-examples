@@ -255,4 +255,5 @@ Connect the nodes to the rest of your flow and your flow should now have the fol
 
 ![flowpic_4](./doc/flowpic_4.png)
 
+So, if you have the *Basic* machine selected and click on *Go To Asset*, you should be redirected to a new blank tab. As a control mechanism, try to click on *Go To Asset* if *Performance* or *Eco* machine is selected. Nothing should happen there, as we have not connected any nodes to these routings of the *switch* node yet.
 
