@@ -1,14 +1,16 @@
 # VFC Dashboard - A Getting Started Example:
-This example will guide you step by step through the VFC Dahsboard functionalities. You will create a simple but interactive dashboard that shows the status of your three (simulated) machines that you already connected to Mindsphere. You will learn the essential nodes for dashboarding with the VFC and will be able to extend your dashboard according to your own needs. The Dashboard you create will look like this:
+This example will guide you step by step through the VFC Dahsboard functionalities. You will create a simple but interactive dashboard that shows the status of your three (simulated) machines that you already connected to MindSphere. You will learn the essential nodes for dashboarding with the VFC and will be able to extend your dashboard according to your own needs. The Dashboard you create will look like this:
 
 ![dashboard_image](./doc/overview.png)
+
+This tutorial is meant to start from scratch. You will set up your Assets, generate data for them and build your dashboard on the basis of this data. If you just want to check out the dashboard, import it [From Here](./Resource/IMPORT_Dashboard.json). Please note, that you have to change major components to fit the dashboard to your own tenant's asset model. 
 
 # Prerequisites:
 - around 120 minutes of time
 - Visual Flow Creator
 - Asset Manager
 - basic Javascript knowledge is helpful, but not required
-> All required applications and resources are part of a [Start for free](https://siemens.mindsphere.io/en/start) tenant. You can follow this tutorial along regardless of your Mindsphere package.
+> All required applications and resources are part of a [Start for free](https://siemens.mindsphere.io/en/start) tenant. You can follow this tutorial along regardless of your MindSphere package.
 
 > This tutorial is designed for beginners. However, some fundamental knowledge about the VFC will make your learning journey more enjoyable. Learn the basics [Here](https://documentation.mindsphere.io/resources/html/visualflow-creator/en-US/index.html).
 
@@ -18,7 +20,7 @@ We will simulate three different versions of an industrial machine:
 - Performance
 - Eco
 
-This step requires you to be familiar with Mindsphere's asset structure and that you can create new aspects, assets and asset types. If this sounds like a big headache to you, please visit the [Asset Manager Tutorial](https://siemens.mindsphere.io/en/docs/tutorials/asset-manager) first.
+This step requires you to be familiar with MindSphere's asset structure and that you can create new aspects, assets and asset types. If this sounds like a big headache to you, please visit the [Asset Manager Tutorial](https://siemens.mindsphere.io/en/docs/tutorials/asset-manager) first.
 
 If not, please follow the [Setup Instructions](./Setup/readme.md) and come back once you completed the process.
 
