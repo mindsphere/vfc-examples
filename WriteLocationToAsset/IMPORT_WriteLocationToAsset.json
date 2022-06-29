@@ -1,0 +1,152 @@
+[
+    {
+        "id": "f36b6875.db8608",
+        "type": "delay",
+        "z": "eeddfd21.19809",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "powerMode": false,
+        "x": 2140,
+        "y": 3640,
+        "wires": [
+            [
+                "50f968ae.c48ab8"
+            ]
+        ]
+    },
+    {
+        "id": "7d37f5d9.f7ee2c",
+        "type": "function",
+        "z": "eeddfd21.19809",
+        "name": "Store e-tag",
+        "func": "var data = msg.payload;\nvar tag = data[\"etag\"];\nmsg.payload = tag;\nreturn msg;",
+        "outputs": 1,
+        "language": "javascript",
+        "noerr": 0,
+        "x": 2310,
+        "y": 3760,
+        "wires": [
+            [
+                "cd796701.b45798"
+            ]
+        ]
+    },
+    {
+        "id": "50f968ae.c48ab8",
+        "type": "function",
+        "z": "eeddfd21.19809",
+        "name": "Headers & Body",
+        "func": "var etag = flow.get('etag');\nmsg.headers = {};\nmsg.headers['If-Match'] = etag;\nvar body = {\n    \n  \"longitude\": 53.5125546,\n  \"latitude\": 9.9763411\n}\n;\n\nmsg.payload = body;\nreturn msg;",
+        "outputs": 1,
+        "language": "javascript",
+        "noerr": 0,
+        "x": 2340,
+        "y": 3640,
+        "wires": [
+            [
+                "4777a2ca.61eeac"
+            ]
+        ]
+    },
+    {
+        "id": "4dadbb3b.047224",
+        "type": "http request",
+        "z": "eeddfd21.19809",
+        "name": "GET e-tag",
+        "method": "GET",
+        "ret": "txt",
+        "url": "",
+        "timeout": "",
+        "mindspherePath": "/api/assetmanagement/v3/assets/7cb6736dd0d74c7792727242c9e5b9d5",
+        "useMindsphereAuth": true,
+        "isAdmin": false,
+        "x": 2040,
+        "y": 3760,
+        "wires": [
+            [
+                "141262.1c759d9f"
+            ]
+        ]
+    },
+    {
+        "id": "4777a2ca.61eeac",
+        "type": "http request",
+        "z": "eeddfd21.19809",
+        "name": "PUT Location",
+        "method": "PUT",
+        "ret": "txt",
+        "url": "",
+        "timeout": "",
+        "mindspherePath": "/api/assetmanagement/v3/assets/7cb6736dd0d74c7792727242c9e5b9d5/location",
+        "useMindsphereAuth": true,
+        "isAdmin": true,
+        "x": 2550,
+        "y": 3640,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "62a355ae.1ce6ec",
+        "type": "inject",
+        "z": "eeddfd21.19809",
+        "name": "",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "repeatEnd": "0",
+        "endTime": "0",
+        "crontab": "",
+        "offset": "0",
+        "once": false,
+        "properties": "",
+        "timezone": "utc",
+        "betweentimesunit": "m",
+        "enableRuleEngine": false,
+        "showNextExecution": false,
+        "powerMode": false,
+        "x": 1824.5,
+        "y": 3679,
+        "wires": [
+            [
+                "4dadbb3b.047224",
+                "f36b6875.db8608"
+            ]
+        ]
+    },
+    {
+        "id": "141262.1c759d9f",
+        "type": "json",
+        "z": "eeddfd21.19809",
+        "name": "",
+        "pretty": false,
+        "x": 2170,
+        "y": 3760,
+        "wires": [
+            [
+                "7d37f5d9.f7ee2c"
+            ]
+        ]
+    },
+    {
+        "id": "cd796701.b45798",
+        "type": "store-context",
+        "z": "eeddfd21.19809",
+        "name": "store etag",
+        "key": "etag",
+        "context": "flow",
+        "x": 2460,
+        "y": 3760,
+        "wires": []
+    }
+]

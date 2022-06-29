@@ -1,0 +1,1213 @@
+[
+    {
+        "id": "c8542287.a2c4a",
+        "type": "tab",
+        "allowCycles": false,
+        "label": "Dashboard",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "6665a508.80824c",
+        "type": "change",
+        "z": "c8542287.a2c4a",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\"group\":{\"hide\":[\"Overview_Info\"]}}",
+                "tot": "json"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 720,
+        "y": 60,
+        "wires": [
+            [
+                "95c11b4a.0a4898"
+            ]
+        ]
+    },
+    {
+        "id": "5388bd1d.0a1dc4",
+        "type": "change",
+        "z": "c8542287.a2c4a",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\"group\":{\"show\":[\"Overview_Info\"]}}",
+                "tot": "json"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 720,
+        "y": 120,
+        "wires": [
+            [
+                "b4d46175.f8203"
+            ]
+        ]
+    },
+    {
+        "id": "c476965c.34c478",
+        "type": "change",
+        "z": "c8542287.a2c4a",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "Basic",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 700,
+        "y": 680,
+        "wires": [
+            [
+                "66d14505.6118ec",
+                "b69374d2.cbdec8"
+            ]
+        ]
+    },
+    {
+        "id": "4ba58c0b.4cdef4",
+        "type": "change",
+        "z": "c8542287.a2c4a",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "Performance",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 700,
+        "y": 720,
+        "wires": [
+            [
+                "66d14505.6118ec",
+                "b69374d2.cbdec8"
+            ]
+        ]
+    },
+    {
+        "id": "8f9aab20.3aad28",
+        "type": "change",
+        "z": "c8542287.a2c4a",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "Eco",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 700,
+        "y": 760,
+        "wires": [
+            [
+                "66d14505.6118ec",
+                "b69374d2.cbdec8"
+            ]
+        ]
+    },
+    {
+        "id": "268051eb.8e036e",
+        "type": "change",
+        "z": "c8542287.a2c4a",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "Detail",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1560,
+        "y": 720,
+        "wires": [
+            [
+                "c40b6ea.69b8d9"
+            ]
+        ]
+    },
+    {
+        "id": "178d9332.67362d",
+        "type": "change",
+        "z": "c8542287.a2c4a",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "Critical failure",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 700,
+        "y": 920,
+        "wires": [
+            [
+                "38117cec.e3a854"
+            ]
+        ]
+    },
+    {
+        "id": "e8cc1ed5.f3f4c",
+        "type": "comment",
+        "z": "c8542287.a2c4a",
+        "name": "Basic Machine",
+        "info": "",
+        "sticky": 0,
+        "x": 110,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "eaf62352.0dfa1",
+        "type": "comment",
+        "z": "c8542287.a2c4a",
+        "name": "Performance",
+        "info": "",
+        "sticky": 0,
+        "x": 110,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "8d691e1a.dbfc8",
+        "type": "comment",
+        "z": "c8542287.a2c4a",
+        "name": "Eco Machine",
+        "info": "",
+        "sticky": 0,
+        "x": 110,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "7e64a72b.5ce7d8",
+        "type": "create event",
+        "z": "c8542287.a2c4a",
+        "name": "",
+        "asset": "4c011fd02a2b4990a80d2c4c6d25ef23",
+        "assetName": "Basic Machine",
+        "severity": "10",
+        "acknowledged": "false",
+        "source": "VFC",
+        "description": "Basic machine has experienced a critical failure",
+        "x": 1750,
+        "y": 780,
+        "wires": []
+    },
+    {
+        "id": "a4949bd1.4f2158",
+        "type": "create event",
+        "z": "c8542287.a2c4a",
+        "name": "",
+        "asset": "a12faec62d33439ea297adcde30ef5d2",
+        "assetName": "Performance Machine",
+        "severity": "10",
+        "acknowledged": "false",
+        "source": "VFC",
+        "description": "Performance machine has experienced a critical failure",
+        "x": 1750,
+        "y": 820,
+        "wires": []
+    },
+    {
+        "id": "7630dfe1.ba26f",
+        "type": "create event",
+        "z": "c8542287.a2c4a",
+        "name": "",
+        "asset": "1ccfd846e53447de88fdaaeeeddd6d78",
+        "assetName": "Eco Machine",
+        "severity": "10",
+        "acknowledged": "false",
+        "source": "VFC",
+        "description": "Eco machine has experienced a critical failure",
+        "x": 1750,
+        "y": 860,
+        "wires": []
+    },
+    {
+        "id": "f0f898db.86d8c8",
+        "type": "function",
+        "z": "c8542287.a2c4a",
+        "name": "Fair Frankfurt",
+        "func": "var long = msg.payload.longitude;\nvar lat = msg.payload.latitude;\n\nvar maploc = {'longitude':long,'latitude': lat,'zoomLevel': 12};\nmsg.payload = maploc;\nmsg.name = 'Basic';\nreturn msg;\n",
+        "outputs": 1,
+        "language": "javascript",
+        "noerr": 0,
+        "x": 930,
+        "y": 200,
+        "wires": [
+            [
+                "45f89bb.e819864",
+                "5477362c.2e3358"
+            ]
+        ]
+    },
+    {
+        "id": "df535891.ce74c8",
+        "type": "function",
+        "z": "c8542287.a2c4a",
+        "name": "Fair München",
+        "func": "var long = msg.payload.longitude;\nvar lat = msg.payload.latitude;\n\nvar maploc = {'longitude':long,'latitude': lat,'zoomLevel': 12};\nmsg.payload = maploc;\nmsg.name = 'Performance';\nreturn msg;\n",
+        "outputs": 1,
+        "language": "javascript",
+        "noerr": 0,
+        "x": 940,
+        "y": 240,
+        "wires": [
+            [
+                "45f89bb.e819864",
+                "5477362c.2e3358"
+            ]
+        ]
+    },
+    {
+        "id": "c6ff14bd.b82788",
+        "type": "function",
+        "z": "c8542287.a2c4a",
+        "name": "Fair Berlin",
+        "func": "var long = msg.payload.longitude;\nvar lat = msg.payload.latitude;\n\nvar maploc = {'longitude':long,'latitude': lat,'zoomLevel': 12};\nmsg.payload = maploc;\nmsg.name = 'Eco';\nreturn msg;\n",
+        "outputs": 1,
+        "language": "javascript",
+        "noerr": 0,
+        "x": 920,
+        "y": 280,
+        "wires": [
+            [
+                "5477362c.2e3358",
+                "45f89bb.e819864"
+            ]
+        ]
+    },
+    {
+        "id": "20020e56.62dd32",
+        "type": "function",
+        "z": "c8542287.a2c4a",
+        "name": "Extract Machine Status",
+        "func": "var lastDataPoint = msg.payload.slice(-1)[0];\nmsg.payload =lastDataPoint['Machine_Status'];\nreturn msg;\n",
+        "outputs": 1,
+        "language": "javascript",
+        "noerr": 0,
+        "x": 980,
+        "y": 420,
+        "wires": [
+            [
+                "d5d39b05.d2f5d8"
+            ]
+        ]
+    },
+    {
+        "id": "24046c2.d71fb94",
+        "type": "function",
+        "z": "c8542287.a2c4a",
+        "name": "Extract Software Version",
+        "func": "msg.payload = msg.payload['Software_Version'];\nreturn msg;\n",
+        "outputs": 1,
+        "language": "javascript",
+        "noerr": 0,
+        "x": 990,
+        "y": 580,
+        "wires": [
+            [
+                "762cf053.e6a2e"
+            ]
+        ]
+    },
+    {
+        "id": "3720fa58.9da1e6",
+        "type": "read timeseries",
+        "z": "c8542287.a2c4a",
+        "name": "Basic Status",
+        "topic": "4c011fd02a2b4990a80d2c4c6d25ef23/Dashboard_Machine_Status/Machine_Status",
+        "topicLabel": "Basic Machine/Dashboard_Machine_Status/Machine_Status",
+        "topicData": "{\"asset\":\"4c011fd02a2b4990a80d2c4c6d25ef23\",\"assetName\":\"Basic Machine\",\"aspects\":[{\"aspectId\":\"7600f42a1d324f73b10d00ec963febfd\",\"aspectName\":\"Dashboard_Machine_Status\",\"variables\":[{\"variableId\":\"qr95e3090d95d9\",\"name\":\"Machine_Status\"}]}]}",
+        "assetName": "",
+        "selectedTopics": "",
+        "period": "120",
+        "offset": "0",
+        "mode": "relative",
+        "from": "",
+        "datetimepickerFrom": "",
+        "to": "",
+        "datetimepickerTo": "",
+        "timezoneoffset": 0,
+        "x": 690,
+        "y": 380,
+        "wires": [
+            [
+                "20020e56.62dd32"
+            ]
+        ]
+    },
+    {
+        "id": "e9b4728a.6787e",
+        "type": "read timeseries",
+        "z": "c8542287.a2c4a",
+        "name": "Performance Status",
+        "topic": "a12faec62d33439ea297adcde30ef5d2/Dashboard_Machine_Status/Machine_Status",
+        "topicLabel": "Performance Machine/Dashboard_Machine_Status/Machine_Status",
+        "topicData": "{\"asset\":\"a12faec62d33439ea297adcde30ef5d2\",\"assetName\":\"Performance Machine\",\"aspects\":[{\"aspectId\":\"7600f42a1d324f73b10d00ec963febfd\",\"aspectName\":\"Dashboard_Machine_Status\",\"variables\":[{\"variableId\":\"qr95e3090d95d9\",\"name\":\"Machine_Status\"}]}]}",
+        "assetName": "",
+        "selectedTopics": "",
+        "period": "120",
+        "offset": "0",
+        "mode": "relative",
+        "from": "",
+        "datetimepickerFrom": "",
+        "to": "",
+        "datetimepickerTo": "",
+        "timezoneoffset": 0,
+        "x": 710,
+        "y": 420,
+        "wires": [
+            [
+                "20020e56.62dd32"
+            ]
+        ]
+    },
+    {
+        "id": "57aa3c84.e7a964",
+        "type": "read timeseries",
+        "z": "c8542287.a2c4a",
+        "name": "Eco Status",
+        "topic": "1ccfd846e53447de88fdaaeeeddd6d78/Dashboard_Machine_Status/Machine_Status",
+        "topicLabel": "Eco Machine/Dashboard_Machine_Status/Machine_Status",
+        "topicData": "{\"asset\":\"1ccfd846e53447de88fdaaeeeddd6d78\",\"assetName\":\"Eco Machine\",\"aspects\":[{\"aspectId\":\"7600f42a1d324f73b10d00ec963febfd\",\"aspectName\":\"Dashboard_Machine_Status\",\"variables\":[{\"variableId\":\"qr95e3090d95d9\",\"name\":\"Machine_Status\"}]}]}",
+        "assetName": "",
+        "selectedTopics": "",
+        "period": "120",
+        "offset": "0",
+        "mode": "relative",
+        "from": "",
+        "datetimepickerFrom": "",
+        "to": "",
+        "datetimepickerTo": "",
+        "timezoneoffset": 0,
+        "x": 680,
+        "y": 460,
+        "wires": [
+            [
+                "20020e56.62dd32"
+            ]
+        ]
+    },
+    {
+        "id": "897f3a03.1133f8",
+        "type": "read-context",
+        "z": "c8542287.a2c4a",
+        "name": "",
+        "key": "ActiveAsset",
+        "context": "flow",
+        "x": 1170,
+        "y": 800,
+        "wires": [
+            [
+                "4698eac.6ed4f14"
+            ]
+        ]
+    },
+    {
+        "id": "5287cb5.d919534",
+        "type": "read-context",
+        "z": "c8542287.a2c4a",
+        "name": "",
+        "key": "ActiveAsset",
+        "context": "flow",
+        "x": 1150,
+        "y": 920,
+        "wires": [
+            [
+                "5ad7c3dc.3d5a4c"
+            ]
+        ]
+    },
+    {
+        "id": "cff02fba.7c813",
+        "type": "read-static",
+        "z": "c8542287.a2c4a",
+        "name": "read location",
+        "topic": "4c011fd02a2b4990a80d2c4c6d25ef23/Dashboard_Machine_Location/latitude,longitude",
+        "topicLabel": "Basic Machine/Dashboard_Machine_Location/latitude,longitude",
+        "topicData": "{\"asset\":\"4c011fd02a2b4990a80d2c4c6d25ef23\",\"assetName\":\"Basic Machine\",\"aspect\":\"0180f24b9a6843459c1763b47dffa1b2\",\"aspectName\":\"Dashboard_Machine_Location\",\"variables\":[{\"name\":\"latitude\",\"variableId\":\"sk95e30b3a87e2\"},{\"name\":\"longitude\",\"variableId\":\"sj95e30b3a87e1\"}]}",
+        "assetName": "",
+        "aspectName": "",
+        "x": 690,
+        "y": 200,
+        "wires": [
+            [
+                "f0f898db.86d8c8"
+            ]
+        ]
+    },
+    {
+        "id": "488fd0cd.34dd6",
+        "type": "read-static",
+        "z": "c8542287.a2c4a",
+        "name": "read location",
+        "topic": "a12faec62d33439ea297adcde30ef5d2/Dashboard_Machine_Location/latitude,longitude",
+        "topicLabel": "Performance Machine/Dashboard_Machine_Location/latitude,longitude",
+        "topicData": "{\"asset\":\"a12faec62d33439ea297adcde30ef5d2\",\"assetName\":\"Performance Machine\",\"aspect\":\"0180f24b9a6843459c1763b47dffa1b2\",\"aspectName\":\"Dashboard_Machine_Location\",\"variables\":[{\"name\":\"latitude\",\"variableId\":\"sk95e30b3a87e2\"},{\"name\":\"longitude\",\"variableId\":\"sj95e30b3a87e1\"}]}",
+        "assetName": "",
+        "aspectName": "",
+        "x": 690,
+        "y": 240,
+        "wires": [
+            [
+                "df535891.ce74c8"
+            ]
+        ]
+    },
+    {
+        "id": "f0c6c4fe.56be98",
+        "type": "read-static",
+        "z": "c8542287.a2c4a",
+        "name": "read location",
+        "topic": "1ccfd846e53447de88fdaaeeeddd6d78/Dashboard_Machine_Location/latitude,longitude",
+        "topicLabel": "Eco Machine/Dashboard_Machine_Location/latitude,longitude",
+        "topicData": "{\"asset\":\"1ccfd846e53447de88fdaaeeeddd6d78\",\"assetName\":\"Eco Machine\",\"aspect\":\"0180f24b9a6843459c1763b47dffa1b2\",\"aspectName\":\"Dashboard_Machine_Location\",\"variables\":[{\"name\":\"latitude\",\"variableId\":\"sk95e30b3a87e2\"},{\"name\":\"longitude\",\"variableId\":\"sj95e30b3a87e1\"}]}",
+        "assetName": "",
+        "aspectName": "",
+        "x": 690,
+        "y": 280,
+        "wires": [
+            [
+                "c6ff14bd.b82788"
+            ]
+        ]
+    },
+    {
+        "id": "21f2fea4.2d8f42",
+        "type": "read-static",
+        "z": "c8542287.a2c4a",
+        "name": "Basic SWV",
+        "topic": "4c011fd02a2b4990a80d2c4c6d25ef23/Dashboard_Machine_Location/Software_Version",
+        "topicLabel": "Basic Machine/Dashboard_Machine_Location/Software_Version",
+        "topicData": "{\"asset\":\"4c011fd02a2b4990a80d2c4c6d25ef23\",\"assetName\":\"Basic Machine\",\"aspect\":\"0180f24b9a6843459c1763b47dffa1b2\",\"aspectName\":\"Dashboard_Machine_Location\",\"variables\":[{\"name\":\"Software_Version\",\"variableId\":\"qx95e333ad266b\"}]}",
+        "assetName": "",
+        "aspectName": "",
+        "x": 680,
+        "y": 540,
+        "wires": [
+            [
+                "24046c2.d71fb94"
+            ]
+        ]
+    },
+    {
+        "id": "4a9a7834.be3668",
+        "type": "read-static",
+        "z": "c8542287.a2c4a",
+        "name": "Performance SWV",
+        "topic": "a12faec62d33439ea297adcde30ef5d2/Dashboard_Machine_Location/Software_Version",
+        "topicLabel": "Performance Machine/Dashboard_Machine_Location/Software_Version",
+        "topicData": "{\"asset\":\"a12faec62d33439ea297adcde30ef5d2\",\"assetName\":\"Performance Machine\",\"aspect\":\"0180f24b9a6843459c1763b47dffa1b2\",\"aspectName\":\"Dashboard_Machine_Location\",\"variables\":[{\"name\":\"Software_Version\",\"variableId\":\"qx95e333ad266b\"}]}",
+        "assetName": "",
+        "aspectName": "",
+        "x": 710,
+        "y": 580,
+        "wires": [
+            [
+                "24046c2.d71fb94"
+            ]
+        ]
+    },
+    {
+        "id": "921bbed6.38682",
+        "type": "read-static",
+        "z": "c8542287.a2c4a",
+        "name": "Eco SWV",
+        "topic": "1ccfd846e53447de88fdaaeeeddd6d78/Dashboard_Machine_Location/Software_Version",
+        "topicLabel": "Eco Machine/Dashboard_Machine_Location/Software_Version",
+        "topicData": "{\"asset\":\"1ccfd846e53447de88fdaaeeeddd6d78\",\"assetName\":\"Eco Machine\",\"aspect\":\"0180f24b9a6843459c1763b47dffa1b2\",\"aspectName\":\"Dashboard_Machine_Location\",\"variables\":[{\"name\":\"Software_Version\",\"variableId\":\"qx95e333ad266b\"}]}",
+        "assetName": "",
+        "aspectName": "",
+        "x": 680,
+        "y": 620,
+        "wires": [
+            [
+                "24046c2.d71fb94"
+            ]
+        ]
+    },
+    {
+        "id": "b69374d2.cbdec8",
+        "type": "store-context",
+        "z": "c8542287.a2c4a",
+        "name": "",
+        "key": "ActiveAsset",
+        "context": "flow",
+        "x": 970,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "4698eac.6ed4f14",
+        "type": "switch",
+        "z": "c8542287.a2c4a",
+        "name": "Routing",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "Basic",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "Performance",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "Eco",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "outputs": 3,
+        "x": 1380,
+        "y": 800,
+        "wires": [
+            [
+                "268051eb.8e036e"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "5ad7c3dc.3d5a4c",
+        "type": "switch",
+        "z": "c8542287.a2c4a",
+        "name": "Routing",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "Basic",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "Performance",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "Eco",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "outputs": 3,
+        "x": 1380,
+        "y": 920,
+        "wires": [
+            [
+                "7e64a72b.5ce7d8",
+                "e2295bf6.cc6778"
+            ],
+            [
+                "a4949bd1.4f2158",
+                "e2295bf6.cc6778"
+            ],
+            [
+                "7630dfe1.ba26f",
+                "e2295bf6.cc6778"
+            ]
+        ]
+    },
+    {
+        "id": "1a45d534.181a0b",
+        "type": "ui_button",
+        "z": "c8542287.a2c4a",
+        "name": "",
+        "group": "dfe2e288.44727",
+        "order": 2,
+        "width": "2",
+        "singleBrowser": false,
+        "height": "2",
+        "passthru": false,
+        "label": "Select",
+        "color": "white",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "",
+        "powerMode": false,
+        "x": 250,
+        "y": 200,
+        "wires": [
+            [
+                "cff02fba.7c813",
+                "3720fa58.9da1e6",
+                "21f2fea4.2d8f42",
+                "5388bd1d.0a1dc4",
+                "c476965c.34c478",
+                "178d9332.67362d"
+            ]
+        ]
+    },
+    {
+        "id": "fb4cff24.5f2d9",
+        "type": "ui_button",
+        "z": "c8542287.a2c4a",
+        "name": "",
+        "group": "dfe2e288.44727",
+        "order": 4,
+        "width": "2",
+        "singleBrowser": false,
+        "height": "2",
+        "passthru": false,
+        "label": "Select",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "date",
+        "topic": "",
+        "powerMode": false,
+        "x": 250,
+        "y": 280,
+        "wires": [
+            [
+                "488fd0cd.34dd6",
+                "e9b4728a.6787e",
+                "4a9a7834.be3668",
+                "5388bd1d.0a1dc4",
+                "4ba58c0b.4cdef4",
+                "178d9332.67362d"
+            ]
+        ]
+    },
+    {
+        "id": "bafabcb8.2cd17",
+        "type": "ui_button",
+        "z": "c8542287.a2c4a",
+        "name": "",
+        "group": "dfe2e288.44727",
+        "order": 6,
+        "width": "2",
+        "singleBrowser": false,
+        "height": "2",
+        "passthru": false,
+        "label": "Select",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "",
+        "powerMode": false,
+        "x": 250,
+        "y": 360,
+        "wires": [
+            [
+                "f0c6c4fe.56be98",
+                "57aa3c84.e7a964",
+                "921bbed6.38682",
+                "5388bd1d.0a1dc4",
+                "8f9aab20.3aad28",
+                "178d9332.67362d"
+            ]
+        ]
+    },
+    {
+        "id": "66d14505.6118ec",
+        "type": "ui_button",
+        "z": "c8542287.a2c4a",
+        "name": "",
+        "group": "c8a6da12.7dbfd8",
+        "order": 5,
+        "width": 0,
+        "singleBrowser": false,
+        "height": 0,
+        "passthru": false,
+        "label": "Go to Asset",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "",
+        "powerMode": false,
+        "x": 950,
+        "y": 800,
+        "wires": [
+            [
+                "897f3a03.1133f8"
+            ]
+        ]
+    },
+    {
+        "id": "38117cec.e3a854",
+        "type": "ui_button",
+        "z": "c8542287.a2c4a",
+        "name": "",
+        "group": "c8a6da12.7dbfd8",
+        "order": 4,
+        "width": 0,
+        "singleBrowser": false,
+        "height": 0,
+        "passthru": false,
+        "label": "Report emergency",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "",
+        "powerMode": false,
+        "x": 910,
+        "y": 920,
+        "wires": [
+            [
+                "5287cb5.d919534"
+            ]
+        ]
+    },
+    {
+        "id": "7bb121f9.837d6",
+        "type": "ui_button",
+        "z": "c8542287.a2c4a",
+        "name": "",
+        "group": "a92fa412.22fae8",
+        "order": 2,
+        "width": "26",
+        "singleBrowser": false,
+        "height": "1",
+        "passthru": false,
+        "label": "Back to the Overview",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "{\"tab\":\"Overview\"}",
+        "payloadType": "json",
+        "topic": "",
+        "powerMode": false,
+        "x": 140,
+        "y": 580,
+        "wires": [
+            [
+                "dd71cdce.1b1ec"
+            ]
+        ]
+    },
+    {
+        "id": "d5d39b05.d2f5d8",
+        "type": "ui_led",
+        "z": "c8542287.a2c4a",
+        "group": "c8a6da12.7dbfd8",
+        "order": 2,
+        "width": "4",
+        "height": "3",
+        "label": "",
+        "labelPlacement": "left",
+        "labelAlignment": "left",
+        "colorForValue": [
+            {
+                "color": "green",
+                "value": "1",
+                "valueType": "num"
+            },
+            {
+                "color": "yellow",
+                "value": "2",
+                "valueType": "num"
+            },
+            {
+                "color": "orange",
+                "value": "3",
+                "valueType": "num"
+            },
+            {
+                "color": "red",
+                "value": "4",
+                "valueType": "num"
+            },
+            {
+                "color": "blue",
+                "value": "5",
+                "valueType": "num"
+            }
+        ],
+        "allowColorForValueInMessage": false,
+        "name": "",
+        "x": 1310,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "d51f25cc.4a4468",
+        "type": "ui_mdsp_event_table",
+        "z": "c8542287.a2c4a",
+        "name": "",
+        "group": "a92fa412.22fae8",
+        "order": 1,
+        "width": "26",
+        "height": "12",
+        "label": "event table",
+        "asset": "4c011fd02a2b4990a80d2c4c6d25ef23",
+        "assetName": "Basic Machine",
+        "from": "",
+        "datetimepickerFrom": "",
+        "to": "",
+        "datetimepickerTo": "",
+        "singleBrowser": false,
+        "showSeverity": true,
+        "showEntityId": true,
+        "showTimestamp": true,
+        "showDescription": true,
+        "showSource": false,
+        "showAcknowledged": true,
+        "showCorrelationId": true,
+        "showTypeId": false,
+        "showCode": false,
+        "x": 110,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "5477362c.2e3358",
+        "type": "ui_mdsp_map",
+        "z": "c8542287.a2c4a",
+        "name": "",
+        "group": "87438727.5c4ec8",
+        "order": 2,
+        "width": "12",
+        "height": "6",
+        "longitude": "11.002",
+        "latitude": "49.594",
+        "zoomLevel": "5",
+        "draggable": false,
+        "label": "Asset Location",
+        "singleBrowser": false,
+        "x": 1260,
+        "y": 280,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "309f9bbc.f42d44",
+        "type": "ui_text",
+        "z": "c8542287.a2c4a",
+        "group": "dfe2e288.44727",
+        "order": 1,
+        "width": "6",
+        "singleBrowser": false,
+        "height": "2",
+        "name": "",
+        "label": "Asset:     ",
+        "format": "Basic",
+        "layout": "row-left",
+        "x": 250,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "4e0a6456.77ed0c",
+        "type": "ui_text",
+        "z": "c8542287.a2c4a",
+        "group": "dfe2e288.44727",
+        "order": 3,
+        "width": "6",
+        "singleBrowser": false,
+        "height": "2",
+        "name": "",
+        "label": "Asset:     ",
+        "format": "Performance",
+        "layout": "row-left",
+        "x": 250,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "9723bdd3.d5d7",
+        "type": "ui_text",
+        "z": "c8542287.a2c4a",
+        "group": "dfe2e288.44727",
+        "order": 5,
+        "width": "6",
+        "singleBrowser": false,
+        "height": "2",
+        "name": "",
+        "label": "Asset:     ",
+        "format": "Eco",
+        "layout": "row-left",
+        "x": 250,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "45f89bb.e819864",
+        "type": "ui_text",
+        "z": "c8542287.a2c4a",
+        "group": "87438727.5c4ec8",
+        "order": 1,
+        "width": "12",
+        "singleBrowser": false,
+        "height": "1",
+        "name": "",
+        "label": "Location of: ",
+        "format": "{{msg.name}}",
+        "layout": "row-left",
+        "x": 1250,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "e6503cf6.9664b",
+        "type": "ui_text",
+        "z": "c8542287.a2c4a",
+        "group": "c8a6da12.7dbfd8",
+        "order": 1,
+        "width": "8",
+        "singleBrowser": false,
+        "height": "3",
+        "name": "",
+        "label": "Machine Status",
+        "format": "",
+        "layout": "row-spread",
+        "x": 1260,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "762cf053.e6a2e",
+        "type": "ui_text",
+        "z": "c8542287.a2c4a",
+        "group": "c8a6da12.7dbfd8",
+        "order": 3,
+        "width": "12",
+        "singleBrowser": false,
+        "height": "2",
+        "name": "",
+        "label": "Software Version: ",
+        "format": "{{msg.payload}}     ",
+        "layout": "row-spread",
+        "x": 1270,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "e2295bf6.cc6778",
+        "type": "ui_toast",
+        "z": "c8542287.a2c4a",
+        "position": "top right",
+        "displayTime": "3",
+        "highlight": "green",
+        "outputs": 0,
+        "ok": "OK",
+        "cancel": "",
+        "topic": "Event reported successfull for machine:",
+        "name": "",
+        "singleBrowser": false,
+        "x": 1750,
+        "y": 920,
+        "wires": []
+    },
+    {
+        "id": "95c11b4a.0a4898",
+        "type": "ui_ui_control",
+        "z": "c8542287.a2c4a",
+        "name": "Hide Machine Info",
+        "powerMode": false,
+        "x": 930,
+        "y": 60,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "3e877818.cec8a8",
+        "type": "ui_ui_control",
+        "z": "c8542287.a2c4a",
+        "name": "Triggers on load",
+        "powerMode": false,
+        "x": 500,
+        "y": 60,
+        "wires": [
+            [
+                "6665a508.80824c"
+            ]
+        ]
+    },
+    {
+        "id": "b4d46175.f8203",
+        "type": "ui_ui_control",
+        "z": "c8542287.a2c4a",
+        "name": "Show Machine Info",
+        "powerMode": false,
+        "x": 930,
+        "y": 120,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c40b6ea.69b8d9",
+        "type": "ui_ui_control",
+        "z": "c8542287.a2c4a",
+        "name": "Change to Detail page",
+        "powerMode": false,
+        "x": 1780,
+        "y": 720,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "dd71cdce.1b1ec",
+        "type": "ui_ui_control",
+        "z": "c8542287.a2c4a",
+        "name": "Back",
+        "powerMode": false,
+        "x": 330,
+        "y": 620,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "dfe2e288.44727",
+        "type": "ui_group",
+        "z": "",
+        "name": "Selector",
+        "tab": "4cc1ad0e.1a1bc4",
+        "order": 1,
+        "disp": true,
+        "width": "9",
+        "collapse": false,
+        "_type": "config"
+    },
+    {
+        "id": "c8a6da12.7dbfd8",
+        "type": "ui_group",
+        "z": "",
+        "name": "Info",
+        "tab": "4cc1ad0e.1a1bc4",
+        "order": 4,
+        "disp": true,
+        "width": "12",
+        "collapse": false,
+        "_type": "config"
+    },
+    {
+        "id": "a92fa412.22fae8",
+        "type": "ui_group",
+        "z": "",
+        "name": "Events",
+        "tab": "c659eb4e.e80c18",
+        "order": 1,
+        "disp": true,
+        "width": "26",
+        "collapse": false,
+        "_type": "config"
+    },
+    {
+        "id": "87438727.5c4ec8",
+        "type": "ui_group",
+        "z": "",
+        "name": "Asset Map",
+        "tab": "4cc1ad0e.1a1bc4",
+        "order": 2,
+        "disp": true,
+        "width": "12",
+        "collapse": false,
+        "_type": "config"
+    },
+    {
+        "id": "4cc1ad0e.1a1bc4",
+        "type": "ui_tab",
+        "z": "",
+        "name": "Overview",
+        "icon": "'Subject'",
+        "order": 1,
+        "publicAccess": "false",
+        "fmAccess": "none",
+        "fmAccessType": "private",
+        "assetType": "",
+        "asset": "",
+        "assetName": "",
+        "assetText": "",
+        "image": "",
+        "description": "",
+        "hideTitleBar": false,
+        "_type": "config"
+    },
+    {
+        "id": "c659eb4e.e80c18",
+        "type": "ui_tab",
+        "z": "",
+        "name": "Detail",
+        "icon": "dashboard",
+        "order": 2,
+        "publicAccess": "false",
+        "fmAccess": "none",
+        "fmAccessType": "private",
+        "assetType": "",
+        "asset": "",
+        "assetName": "",
+        "assetText": "",
+        "image": "",
+        "description": "",
+        "hideTitleBar": false,
+        "_type": "config"
+    }
+]
