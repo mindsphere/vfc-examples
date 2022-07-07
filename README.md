@@ -30,7 +30,8 @@ Please note, that the json-files are exported from another tenant. So their migh
 
 | Name | Description | Complexity Rating | Prerequisites |
 | --- | --- | --- | --- |
-| [Command MQTT devices connected via IoT Extension](./commandMqttDevice/readme.md) | | :star: :star: | IoT Extension|
+| [Command MQTT devices connected via IoT Extension](./commandMqttDevice_IoT-Extension/readme.md) | | :star: :star: | IoT Extension|
+| [Command MQTT devices connected via MindConnect](./commandMqttDevice_MindConnect/readme.md) | | :star: :star: | IoT Extension|
 | [Create custom API endpoints](./createCustomEndpoint/readme.md) | | :star: | - |
 | [Create rule for asset type](./createRuleForAssetType/readme.md) | Create a rule for all assets of this type | :star: | - |
 | [Data Lake - timeseries import](./DataLake_scheduledImport/readme.md) | Setup scheduled trigger to start import of data from timeseries storage to Integrated Data Lake | :star: | Integrated Data Lake |

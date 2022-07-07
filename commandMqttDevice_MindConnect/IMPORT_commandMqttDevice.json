@@ -1,0 +1,87 @@
+[
+    {
+        "id": "3ddaa4f0.f2cefc",
+        "type": "comment",
+        "z": "216044f1.bc512c",
+        "name": "Bi-Directional Communication to MQTT devices",
+        "info": "- send commands to devices connected via IoT Extension MQTT Broker\n- adjust payload with device-ID and message body dynamically in VFC \n- all parameters (deviceID, message, ...) currently hardcoded \n- authentication for IoT Extension Broker is set in http request node",
+        "sticky": 1,
+        "x": 520,
+        "y": 760,
+        "wires": []
+    },
+    {
+        "id": "b8016fbd.6144d",
+        "type": "debug",
+        "z": "216044f1.bc512c",
+        "name": "debug",
+        "active": true,
+        "console": "false",
+        "xaxis": "_time",
+        "complete": "payload",
+        "x": 1150,
+        "y": 860,
+        "wires": []
+    },
+    {
+        "id": "9c8b7033.0568",
+        "type": "function",
+        "z": "216044f1.bc512c",
+        "name": "DeviceID and Command",
+        "func": "var deviceID = \"67342472\";\nvar command = \"my command from Visual Flow Creator\"\nvar description = \"Shell command received from MindSphere VFC\"\n\n\nmsg.payload = {\n  \"deviceId\" : deviceID,\n  \"c8y_Command\": {\n      \"text\": command\n  },\n  \"description\": description\n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 590,
+        "y": 860,
+        "wires": [
+            [
+                "2c6ac212.95352e"
+            ]
+        ]
+    },
+    {
+        "id": "2c6ac212.95352e",
+        "type": "http request",
+        "z": "216044f1.bc512c",
+        "name": "send command to IoT Extension",
+        "method": "POST",
+        "ret": "txt",
+        "url": "http://myTenantName.mciotextension.eu-central.mindsphere.io/devicecontrol/operations/",
+        "timeout": "",
+        "mindspherePath": "",
+        "useMindsphereAuth": false,
+        "isAdmin": false,
+        "secretHeaders": "",
+        "x": 890,
+        "y": 860,
+        "wires": [
+            [
+                "b8016fbd.6144d"
+            ]
+        ],
+        "_type": "node"
+    },
+    {
+        "id": "8c4cd279.ce237",
+        "type": "inject",
+        "z": "216044f1.bc512c",
+        "name": "",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "properties": "",
+        "timezone": "utc",
+        "betweentimesunit": "m",
+        "enableRuleEngine": false,
+        "x": 340,
+        "y": 860,
+        "wires": [
+            [
+                "9c8b7033.0568"
+            ]
+        ]
+    }
+]
