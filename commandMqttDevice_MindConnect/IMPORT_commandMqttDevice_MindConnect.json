@@ -1,0 +1,122 @@
+[
+    {
+        "id": "e415ac9c.2a734",
+        "type": "comment",
+        "z": "cba45765.fb58c8",
+        "name": "MindConnect MQTT - commading of a device",
+        "info": "- sends a command to a device which is connected via MindConnect MQTT",
+        "sticky": 1,
+        "x": 360,
+        "y": 1720,
+        "wires": [],
+        "readOnly": false,
+        "userName": "CloudFoxUser",
+        "tenant": "presiot"
+    },
+    {
+        "id": "5d4d2d1e.1be5f4",
+        "type": "comment",
+        "z": "cba45765.fb58c8",
+        "name": "adjust here:",
+        "info": "- MQTT clientID(s)\n- commanding payload (data) for device",
+        "sticky": 1,
+        "x": 460,
+        "y": 1820,
+        "wires": [],
+        "readOnly": false,
+        "userName": "CloudFoxUser",
+        "tenant": "presiot"
+    },
+    {
+        "id": "6dadce05.535e5",
+        "type": "debug",
+        "z": "cba45765.fb58c8",
+        "name": "",
+        "active": true,
+        "console": "false",
+        "xaxis": "_time",
+        "complete": "payload",
+        "x": 970,
+        "y": 1880,
+        "wires": [],
+        "readOnly": false,
+        "userName": "CloudFoxUser",
+        "tenant": "presiot"
+    },
+    {
+        "id": "100131f0.458a6e",
+        "type": "function",
+        "z": "cba45765.fb58c8",
+        "name": "edit clientID and data",
+        "func": "/**in the body of the request, specify \n    - clientID(s) which should received the command. Can be one or multiple clients\n    - in the 'data' section, specify the command-payload to be send to the device. \n      This will be received on the device at the command-subscription topic. \n      \nExample: \n- tenant:           presiot\n- device name:      CloudFox-Laptop\n- clientID:         presiot_CloudFox-Laptop\n- commanding topic: tc/presiot/presiot_CloudFox-Laptop/i/cmd_v3/c\n\n**/\nvar name = \"a commanding information for my device\";\nvar clientIDs = [\"presiot_CloudFox-Laptop\"]; \nvar commandingData = {\n    \"configuration\": \"sample config v1.4.3\",\n    \"data\": \"hello world\",\n    \"INTvalue\": 5,\n    \"light-status\": true,\n    \"motor_rpm_setpoint\": 1200.5\n  }\n\n//setup body for commanding request\nmsg.payload = {\n  \"name\": name,\n  \"clientIds\": clientIDs,\n  \"data\": commandingData\n}\nreturn msg;",
+        "outputs": 1,
+        "language": "javascript",
+        "noerr": 0,
+        "x": 400,
+        "y": 1880,
+        "wires": [
+            [
+                "21c0aab9.b71656"
+            ]
+        ],
+        "readOnly": false,
+        "userName": "CloudFoxUser",
+        "tenant": "presiot"
+    },
+    {
+        "id": "21c0aab9.b71656",
+        "type": "http request",
+        "z": "cba45765.fb58c8",
+        "name": "command to device",
+        "method": "POST",
+        "ret": "txt",
+        "url": "",
+        "timeout": "",
+        "mindspherePath": "/api/commanding/v3/deliveryJobs",
+        "useMindsphereAuth": true,
+        "isAdmin": false,
+        "userSecrets": "",
+        "secretHeaders": "",
+        "x": 770,
+        "y": 1880,
+        "wires": [
+            [
+                "6dadce05.535e5"
+            ]
+        ],
+        "readOnly": false,
+        "userName": "CloudFoxUser",
+        "tenant": "presiot"
+    },
+    {
+        "id": "8bd21774.9b5778",
+        "type": "inject",
+        "z": "cba45765.fb58c8",
+        "name": "",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "repeatEnd": "0",
+        "endTime": "0",
+        "crontab": "",
+        "offset": "NaN",
+        "once": false,
+        "properties": "",
+        "timezone": "utc",
+        "betweentimesunit": "m",
+        "enableRuleEngine": false,
+        "showNextExecution": false,
+        "powerMode": false,
+        "x": 180,
+        "y": 1880,
+        "wires": [
+            [
+                "100131f0.458a6e"
+            ]
+        ],
+        "readOnly": false,
+        "userName": "CloudFoxUser",
+        "tenant": "presiot"
+    }
+]

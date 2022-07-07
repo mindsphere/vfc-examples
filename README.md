@@ -30,7 +30,7 @@ Please note, that the json-files are exported from another tenant. So their migh
 
 | Name | Description | Complexity Rating | Prerequisites |
 | --- | --- | --- | --- |
-| [Command MQTT devices connected via MindConnect](./commandMqttDevice_MindConnect/readme.md) | Send commands back to a device via MindConnect MQTT | :star: :star: | IoT Extension|
+| [Command MQTT devices connected via MindConnect](./commandMqttDevice_MindConnect/readme.md) | Send commands back to a device via MindConnect MQTT | :star: | MindConnect MQTT connected device |
 | [Command MQTT devices connected via IoT Extension](./commandMqttDevice_IoT-Extension/readme.md) | Send a command to a device via IoT Extension | :star: :star: | IoT Extension|
 | [Create custom API endpoints](./createCustomEndpoint/readme.md) | | :star: | - |
 | [Create rule for asset type](./createRuleForAssetType/readme.md) | Create a rule for all assets of this type | :star: | - |
