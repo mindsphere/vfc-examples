@@ -43,12 +43,7 @@ Commanding can be initiated via a dedicated API. Here we will use VFC to initiat
       ```
 
       ![image](./doc/VFC_setup_MindConnect.png)
-3. In the *http request* node 
-   - change the URL to your tenant name
-   - enable basic authentication 
-   - use the device credentials you used earlier to also connect the device to MindSphere
-   ![image](./doc/VFC_setup_http_request.png)
-4.  Save the flow 
+3.  Save the flow 
 
 :cloud: :heavy_check_mark: You're ready to command a device once the flow is triggered - enjoy!
 
@@ -56,6 +51,7 @@ Commanding can be initiated via a dedicated API. Here we will use VFC to initiat
 ## Result
 Once the flow is executed, the device will receive on ```tc/<tenantName>/<ClientID>/i/cmd_v3/c``` (general schema) topic the command as specified in the VFC flow. Make sure that you have subscribed to this topic before the flow is being triggered. 
 Follow the device logic to now acknowledge this command and use it for your application needs further on the device.  
+ 
 **Device-View**
 The following is received at the device on the subscribed topic, given the following setup  
 | parameter | value | 
