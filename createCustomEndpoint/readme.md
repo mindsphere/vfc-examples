@@ -1,8 +1,8 @@
 # Create a custom API endpoint
 
-If you want to provide some external partners/users with your MindSphere data though a customizable API endpoint, this is how you get started on this. 
+If you want to provide some external partners/users with your data though a customizable API endpoint, this is how you get started on this. 
 The example shows how you can 
-- specify a dedicated MindSphere RestAPI endpoint
+- specify a dedicated RestAPI endpoint
 - select the method the endpoint should support (GET, PUT, POST, DELETE)
 - choose who has access to this endpoint (only users of the flow, all users on the tenant, public access)
 - develop the API functionality using VFC nodes

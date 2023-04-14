@@ -28,6 +28,6 @@
 ## See also
 <!-- (optional) Description on what the results are from this flow -->
 
-<!-- - [:shopping_cart: MindSphere Store: IoT Extension](https://mindsphere.io/store) -->
+<!-- - [:shopping_cart: Store: IoT Extension](https://mindsphere.io/store) -->
 
 

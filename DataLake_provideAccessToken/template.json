@@ -118,7 +118,7 @@
         "type": "comment",
         "z": "cba45765.fb58c8",
         "name": "Integrated Data Lake - generate access token via external API",
-        "info": "- provides an URL endpoint to be accessed from external\n- delivers access token to MindSphere IDL",
+        "info": "- provides an URL endpoint to be accessed from external\n- delivers access token to Integrated Data Lake",
         "sticky": 1,
         "x": 311,
         "y": 1388.6666641235352,

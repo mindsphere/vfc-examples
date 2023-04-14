@@ -3,7 +3,7 @@ Using this flow, you can generate virtual machine data consisting of both a simu
 - machine states
 - product counter
 
-It can be used if no physical assets are available or to learn about the features on MindSphere to explore VFC and other apps using the data stored in the Asset Management. The data generated can also be used further to calculate the machine OEE, Availability or Quality of the virtual products produced. 
+It can be used if no physical assets are available or to learn about the features on Insights Hub to explore VFC and other apps using the data stored in the Asset Management. The data generated can also be used further to calculate the machine OEE, Availability or Quality of the virtual products produced. 
 
 ![image](./doc/virtualMachineSimulator.png)
 
@@ -34,16 +34,8 @@ e.g. `my virtual machine`
 
 
 ## Result
-After saving the flow, the output of the simulation is written to the asset and you can monitor the results e.g. in Fleet Manager. Based on this you can also now start calculating the machine KPIs (OEE, Availability, Quality, ...) using the VFC or other apps. 
+After saving the flow, the output of the simulation is written to the asset and you can monitor the results e.g. in Insights Hub Monitor. Based on this you can also now start calculating the machine KPIs (OEE, Availability, Quality, ...) using the VFC or other apps. 
 ![image](./doc/FleetManager_Results.png)
 
 ## See also
 - [Asset Manager Documentation](https://documentation.mindsphere.io/resources/html/asset-manager/en-US/index.html)
-
-
-
-
-
-
-
-

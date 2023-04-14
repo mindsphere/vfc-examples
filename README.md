@@ -1,19 +1,19 @@
-# MindSphere Visual Flow Creator Examples
+# Insights Hub - Visual Flow Creator Examples
 
-[![The MDL License](https://img.shields.io/badge/license-MDL-009999.svg?style=flat)](./LICENSE.md)
+[![The DL License](https://img.shields.io/badge/license-MDL-009999.svg?style=flat)](./LICENSE.md)
 [![Documentation](https://img.shields.io/badge/mindsphere-documentation-%23009999.svg)](https://opensource.mindsphere.io/docs/mindconnect-nodejs/index.html)
-[![Forum](https://img.shields.io/badge/mindsphere-community-%23009999.svg)](https://community.plm.automation.siemens.com/t5/Developer-Space/bd-p/MindSphere-platform-forum)
+[![Forum](https://img.shields.io/badge/mindsphere-community-%23009999.svg)](https://community.sw.siemens.com/s/topic/0TO4O000000MihsWAC)
 
 # Welcome
-* You are interested in MindSphere?
+* You are interested in Insights Hub?
 * You want to know, what you can do with it?
 * You've heard about Visual Flow Creator and want to try it out?
 * You know already Visual Flow Creator but search for examples?
 * You want to get inspired by other flows from the community?
 
-This repository provides example flows to be used in MindSphere Visual Flow Creator (VFC). You can use them and try it out to get an impression what is possible. Additionally you can customize them to your use cases. And of course you can contribute to this repository and share your knowledge to others.
+This repository provides example flows to be used in Visual Flow Creator (VFC). You can use them and try it out to get an impression what is possible. Additionally you can customize them to your use cases. And of course you can contribute to this repository and share your knowledge to others.
 
-If you do not have already purchased the app, you can get it in the [MindSphere Store](https://www.dex.siemens.com/mindsphere/applications/Visual-Flow-Creator). Or if you do not already have a MindSphere account, get one at [MindSphere Start](https://www.mindsphere.io/start).
+If you do not have already purchased the app, you can get it in the [Store](https://www.dex.siemens.com/mindsphere/applications/Visual-Flow-Creator). Or if you do not already have an account to Insights Hub, get one at [Start](https://www.mindsphere.io/start).
 
 ## How does this work
 
@@ -34,11 +34,11 @@ Please note, that the json-files are exported from another tenant. So their migh
 | [Command MQTT devices connected via IoT Extension](./commandMqttDevice_IoT-Extension/readme.md) | Send a command to a device via IoT Extension | :star: :star: | IoT Extension|
 | [Create custom API endpoints](./createCustomEndpoint/readme.md) | | :star: | - |
 | [Create rule for asset type](./createRuleForAssetType/readme.md) | Create a rule for all assets of this type | :star: | - |
-| [Data Lake - timeseries import](./DataLake_scheduledImport/readme.md) | Setup scheduled trigger to start import of data from timeseries storage to Integrated Data Lake | :star: | Integrated Data Lake |
+| [Data Lake - time series import](./DataLake_scheduledImport/readme.md) | Setup scheduled trigger to start import of data from time series storage to Integrated Data Lake | :star: | Integrated Data Lake |
 | [Data Lake - generate access token](./DataLake_provideAccessToken/readme.md) | Provides an API endpoint which feedbacks an access token for IDL data | :star: | Integrated Data Lake |
-| [Generate sample data](./generateSampleData/readme.md) | Demo data for different data types in MindSphere | :star: | - |
+| [Generate sample data](./generateSampleData/readme.md) | Demo data for different data type | :star: | - |
 | [Send SMS notifications](./sendSmsNotifications/readme.md) | Send SMS notifications and dynamically specify recipient | :star: | - |
-| [Trend Prediction Example](./trendPredictionAPI/readme.md) | Application example which shows how to use trend prediction service to forecast timeseries data | :star: | - |
+| [Trend Prediction Example](./trendPredictionAPI/readme.md) | Application example which shows how to use trend prediction service to forecast time series data | :star: | - |
 | [Virtual machine simulator](./virtualMachineSimulator/readme.md) | | :star: | - |
 | [Write location data to your Asset](./WriteLocationToAsset/readme.md) | Write locational information directly to your Asset using the Asset Management API | :star: | - |
 | [VFC Dashboard - Getting Started Guide](./Dashboard_getting_started/readme.md) | Create a dynamic Dashboard completely from scratch and learn the basics of VFC Dashboarding | :star: | - |
@@ -47,26 +47,25 @@ Please note, that the json-files are exported from another tenant. So their migh
 | Name | Description | Complexity Rating | Prerequisites |
 | --- | --- | --- | --- |
 | [IN PROGRESS: Set Flow variables via dashboard](./setFlowVariablesViaDashboard/readme.md) | | :star: | |
-| [TODO: Create dashboard for Fleet Manager](./createDashboardForFleetManager/readme.md) | | :star: | |
 | [TODO: Integrate external API](./integrateExternalApi/readme.md) | | :star: | |
-| [TODO: Dashboard with dynamic data layer](./dynamicDashboards/readme.md) | | :star: :star: | |
+| [TODO: Dashboard with dynamic data layer](README.md) | | :star: :star: | |
 
 You can add here your ideas or requests for further examples.
 
 ### Example template
-You want to create your own example? Just copy the [template flow-directory](./templateFlow/), adapt it and send us your pull request.
+You want to create your own example? Just copy the [template flow-directory](./x_templateFlow/), adapt it and send us your pull request.
 ## Remarks
 Please note that the screenshots show just the current state, when these examples have been created. They might differ to the latest software release.
 
 Each flow has to be adapted to your tenant. Ensure, that e.g. fixed tenant names or asset ids are adapted before/after you import the flow.
 
 ## Prerequisites
-All application examples shown in this repository require the MindSphere Application *Visual Flow Creator (VFC)*. 
+All application examples shown in this repository require the application *Visual Flow Creator (VFC)*. 
 
 To use them, ensure that
-- VFC is available in your MindSphere tenant ([VFC in MindSphere Store](https://www.dex.siemens.com/mindsphere/applications/visual-flow-creator))
-![image](./MindSphere_Launchpad_VFC.png)
-- you have *admin* or *user* access to VFC ([VFC user role settings](https://documentation.mindsphere.io/resources/html/visualflow-creator/en-US/108812512779.html))
+- VFC is available in your tenant ([VFC in Store](https://www.dex.siemens.com/mindsphere/applications/visual-flow-creator))
+![image](./Launchpad_VFC.png)
+- you have *admin* or *user* access to VFC ([VFC user role settings](https://documentation.mindsphere.io/MindSphere/apps/Visual-Flow-Creator/user-rights.html))
 ![image](./VFC_roles.png)
 
 If you can see Visual Flow Creator on your Launchpad, you're ready to start developments. 
@@ -81,7 +80,7 @@ If you can see Visual Flow Creator on your Launchpad, you're ready to start deve
 
 ## Questions and answers
 
-Feel free to ask your questions in the [MindSphere Developer Forum](https://community.sw.siemens.com/s/topic/0TO4O000000MihsWAC).
+Feel free to ask your questions in the [Developer Forum](https://community.sw.siemens.com/s/topic/0TO4O000000MihsWAC).
 
 Or open an [issue](https://github.com/mindsphere/vfc-examples/issues) if you find a bug in our examples.
 

@@ -28,7 +28,7 @@
         "type": "function",
         "z": "216044f1.bc512c",
         "name": "DeviceID and Command",
-        "func": "var deviceID = \"67342472\";\nvar command = \"my command from Visual Flow Creator\"\nvar description = \"Shell command received from MindSphere VFC\"\n\n\nmsg.payload = {\n  \"deviceId\" : deviceID,\n  \"c8y_Command\": {\n      \"text\": command\n  },\n  \"description\": description\n}\n\nreturn msg;",
+        "func": "var deviceID = \"67342472\";\nvar command = \"my command from Visual Flow Creator\"\nvar description = \"Shell command received from VFC\"\n\n\nmsg.payload = {\n  \"deviceId\" : deviceID,\n  \"c8y_Command\": {\n      \"text\": command\n  },\n  \"description\": description\n}\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "x": 590,
