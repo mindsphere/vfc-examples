@@ -1,10 +1,8 @@
-<!-- @format -->
+# Development License Agreement
 
-# MindSphere Development License Agreement
+April 2023
 
-December 2018
-
-This Development License Agreement (the “License”) stipulates the rights that Siemens AG, Germany (“Siemens”) grants to you (“you”) in receipt of certain development material in relation to MindSphere (the “Platform”). This material may include software, sample code, scripts, libraries, software development kits, technology, documentation, and other proprietary material or information (collectively, the “Licensed Material”).
+This Development License Agreement (the “License”) stipulates the rights that Siemens AG, Germany (“Siemens”) grants to you (“you”) in receipt of certain development material in relation to Insights Hub and Industrial IoT offerings (the "Platform"). This material may include software, sample code, scripts, libraries, software development kits, technology, documentation, and other proprietary material or information (collectively, the “Licensed Material”).
 Siemens retains the right to utilize its affiliated companies in pursuing any of its rights and fulfilling any of its obligations under this License. Therefore, the term “Siemens” as used herein may also refer to affiliated companies that are directly or indirectly owned or controlled by the ultimate parent company of Siemens AG and who have been authorized by Siemens AG to distribute the Licensed Material.
 
 ## 1. Proprietary Rights in the Licensed Material
@@ -17,17 +15,17 @@ If you have entered a separate commercial license agreement with Siemens that co
 You must accept this License to use the Licensed Material. If you use the Licensed Material, any such use shall constitute acceptance of this License. The Licensed Material is licensed, not sold.
 Subject to the terms and conditions of this License, Siemens grants you a non-exclusive, worldwide, royalty-free, non-transferable right to:
 
--   publish, modify and create derivative works of small source code examples (no longer than 50 lines of code) contained in Licensed Material,
--   integrate and publish Licensed Material in software that interoperates with the Platform, e.g. by transmission of data between applications, devices, systems or equipment and the Platform (hereinafter referred as “Customizations”), and license such Customizations to third parties to enable your offering of services relating to the Platform,
--   use, run and copy Licensed Material for your own internal use, and
--   sublicense Licensed Material to a service provider for the purposes of this section.
+* publish, modify and create derivative works of small source code examples (no longer than 50 lines of code) contained in Licensed Material,
+* integrate and publish Licensed Material in software that interoperates with the Platform, e.g. by transmission of data between applications, devices, systems or equipment and the Platform (hereinafter referred as “Customizations”), and license such Customizations to third parties to enable your offering of services relating to the Platform,
+* use, run and copy Licensed Material for your own internal use, and
+* sublicense Licensed Material to a service provider for the purposes of this section.
 
 You shall not:
 
--   use the Licensed Material for any other technology than the Platform, or
--   use the Licensed Material to abuse the Platform, or to compromise its integrity or security, or
--   disassemble or reverse-engineer any Licenses Material provided in object-code format, unless such action is permitted by an applicable Open Source license or the law that applies to you, or
--   remove or modify Siemens copyright, patent, trademark or attribution notices in the Licensed Material.
+* use the Licensed Material for any other technology than the Platform, or
+* use the Licensed Material to abuse the Platform, or to compromise its integrity or security, or
+* disassemble or reverse-engineer any Licenses Material provided in object-code format, unless such action is permitted by an applicable Open Source license or the law that applies to you, or
+* remove or modify Siemens copyright, patent, trademark or attribution notices in the Licensed Material.
 
 ## 3. Feedback
 

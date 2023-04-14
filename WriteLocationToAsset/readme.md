@@ -20,4 +20,4 @@ https://user-images.githubusercontent.com/90254123/166235568-542ba4b4-f1ab-4f04-
 
 You do not have to write all information (e.g. postal code, street address, country, ...) for the map to be functional. Writing longitude and latitude is sufficient. However, if you only sent longitude and latitude information, Asset Manager will show *now location available*. The Asset Map is still functional.
 
-> Take a look at the [MindSphere Documentation](https://documentation.mindsphere.io/MindSphere/apis/advanced-assetmanagement/api-assetmanagement-api.html) if you want to know more about the Asset Management API.
+> Take a look at the [Insights Hub Documentation](https://documentation.mindsphere.io/MindSphere/apis/advanced-assetmanagement/api-assetmanagement-api.html) if you want to know more about the Asset Management API.

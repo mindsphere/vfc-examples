@@ -1,24 +1,24 @@
 # Command device via MindConnect MQTT
 
-This flow demonstrates how you can use Visual Flow Creator to trigger sending of a command to a device connected to MindSphere via [MindConnect MQTT](https://documentation.mindsphere.io/MindSphere/howto/howto-mindconnectmqtt-commanding.html) protocol.  
+This flow demonstrates how you can use Visual Flow Creator to trigger sending of a command to a device connected to Insights Hub via [MindConnect MQTT](https://documentation.mindsphere.io/MindSphere/howto/howto-mindconnectmqtt-commanding.html) protocol.  
 Every time the flow is triggered, the command specified in the payload is send to the device linked using the client-ID of the connect MQTT client.  
 ![image](./doc/commandMqttDevice_MC.png)
 
 ## Prerequisites
 - Access to Visual Flow Creator
-- a device connected to MindSphere via MindConnect MQTT
+- a device connected via MindConnect MQTT
 
 ## Setup & Configuration
 
 ### Setup your MQTT device
-Creation and connection of a device via MindConnect MQTT is not further described in this document. The core element to do so, are to be found on the MindSphere Developer Website.  
+Creation and connection of a device via MindConnect MQTT is not further described in this document. The core element to do so, are to be found on the Insights Hub Documentation website.  
 In order to use this feature, make sure you have successfully completed step 1 - 3. 
   1) [Onboarding MindConnect MQTT Agent](https://documentation.mindsphere.io/MindSphere/howto/howto-onboard-mindconnect-mqtt.html)
   2) [Creating Data Model from MQTT Agent](https://documentation.mindsphere.io/MindSphere/howto/howto-create-data-model-mqtt-agent.html)
   3) [Sending Data from MindConnect MQTT Agent](https://documentation.mindsphere.io/MindSphere/howto/howto-send-data-from-mqtt-agent.html)
 
 ### Usage of commanding
-Once your device is connected to MindSphere, you can start using the [MindConnect MQTT Commanding](https://documentation.mindsphere.io/MindSphere/howto/howto-mindconnectmqtt-commanding.html) feature.  
+Once your device is connected, you can start using the [MindConnect MQTT Commanding](https://documentation.mindsphere.io/MindSphere/howto/howto-mindconnectmqtt-commanding.html) feature.  
 Commanding can be initiated via a dedicated API. Here we will use VFC to initiate the API call and request the commanding. 
 
 ### Setup in Visual Flow Creator
@@ -66,8 +66,8 @@ The following is received at the device on the subscribed topic, given the follo
 ![image](./doc/receive_command_MC.png)
 
 ## See also
-- [MindSphere MindConnect MQTT Broker - API specs](https://documentation.mindsphere.io/MindSphere/concepts/concept-mindsphere-mqtt-broker.html)
-- [MindSphere MindConnect MQTT Broker - How To section](https://documentation.mindsphere.io/MindSphere/concepts/concept-mindsphere-mqtt-broker.html)
+- [MindConnect MQTT Broker - API specs](https://documentation.mindsphere.io/MindSphere/concepts/concept-mindsphere-mqtt-broker.html)
+- [MindConnect MQTT Broker - How To section](https://documentation.mindsphere.io/MindSphere/concepts/concept-mindsphere-mqtt-broker.html)
   
 
 
