@@ -1,5 +1,5 @@
 # VFC Dashboard - A Getting Started Example:
-This example will guide you step by step through the VFC Dahsboard functionalities. You will create a simple but interactive dashboard that shows the status of your three (simulated) machines that you already connected to MindSphere. You will learn the essential nodes for dashboarding with the VFC and will be able to extend your dashboard according to your own needs. The Dashboard you create will look like this:
+This example will guide you step by step through the VFC Dahsboard functionalities. You will create a simple but interactive dashboard that shows the status of your three (simulated) machines that you already connected to Insights Hub. You will learn the essential nodes for dashboarding with the VFC and will be able to extend your dashboard according to your own needs. The Dashboard you create will look like this:
 
 ![dashboard_image](./doc/overview.png)
 
@@ -10,7 +10,7 @@ This tutorial is meant to start from scratch. You will set up your Assets, gener
 - Visual Flow Creator
 - Asset Manager
 - basic Javascript knowledge is helpful, but not required
-> All required applications and resources are part of a [Start for free](https://siemens.mindsphere.io/en/start) tenant. You can follow this tutorial along regardless of your MindSphere package.
+> All required applications and resources are part of a [Start for free](https://siemens.mindsphere.io/en/start) tenant. You can follow this tutorial along regardless of your Insights Hub package.
 
 > This tutorial is designed for beginners. However, some fundamental knowledge about the VFC will make your learning journey more enjoyable. Learn the basics [Here](https://documentation.mindsphere.io/resources/html/visualflow-creator/en-US/index.html).
 
@@ -20,7 +20,7 @@ We will simulate three different versions of an industrial machine:
 - Performance
 - Eco
 
-This step requires you to be familiar with MindSphere's asset structure and that you can create new aspects, assets and asset types. If this sounds like a big headache to you, please visit the [Asset Manager Tutorial](https://siemens.mindsphere.io/en/docs/tutorials/asset-manager) first.
+This step requires you to be familiar with Insights Hub's asset structure and that you can create new aspects, assets and asset types. If this sounds like a big headache to you, please visit the [Asset Manager Tutorial](https://siemens.mindsphere.io/en/docs/tutorials/asset-manager) first.
 
 If not, please follow the [Setup Instructions](./Setup/readme.md) and come back once you completed the process.
 
@@ -227,7 +227,7 @@ Try these new functionalities in your own dashboard. If you click on a machine, 
 
 https://user-images.githubusercontent.com/90254123/166253526-9b203cf0-5e0d-42ab-9dd6-360943efe8bd.mp4
 
-Let's take a short summary. As a VFC user you have already visualized your three assets, their location and status. Now you want to take things to the next level. Imagine beeing a machine Operator, who wants to report a critical machine failure as quickly as possible directly from the dashboard. Furthermore, you want to be able to navigate to your machine and see what happened. MindSphere offers a functionality that supports our idea, it' called **events**. So let's implement events in our dashboard. But we have to do something else first. The logic of our flow needs to know which machine is actually selected. We need to store some kind of indicator which machine is selected and we can do it in two different ways:
+Let's take a short summary. As a VFC user you have already visualized your three assets, their location and status. Now you want to take things to the next level. Imagine beeing a machine Operator, who wants to report a critical machine failure as quickly as possible directly from the dashboard. Furthermore, you want to be able to navigate to your machine and see what happened. Insights Hub offers a functionality that supports our idea, it' called **events**. So let's implement events in our dashboard. But we have to do something else first. The logic of our flow needs to know which machine is actually selected. We need to store some kind of indicator which machine is selected and we can do it in two different ways:
 1. By sending the machine directly as *msg.payload* or as a *msg.xxxxx* property
 2. By setting up a flow variable
 When you are declaring variables in a *function* node, they are of course only valid and accessible in the respective function. Flow variables however are stored on flow level and can be used to store some data and read it again later in the flow without the need to send it in the *msg*. We now want to store our selected machine in a flow variable called *ActiveAsset*. Drop three *change* nodes and one *store ctx* node into your flow.
@@ -285,7 +285,7 @@ And the whole bottom part of your flow should look like this:
 
 But what exactly are these nodes doing? If a machine is selected and you click on the button *Report emergency* you create an event for this machine, which is saved and bound to your asset, so you can see and use this event in the future or execute other commands dependent of the event severity. At the same time, a notification pops out in the right corner of your browser to inform you that the event was successfully created.
 
-Now let's get this getting-started dashboard finished and implement one last feature: we want to see our events for a machine on our detail dashboard. MindSphere offers the pre build *event table* node exactly for this purpose. Go to your *Detail* tab and create a new group called *Events* with a width of 26. Then drop the *event table* node from the *MDSP Dashboard* section in your flow and assign it to the *Events* group. Give the node a *Size* of 26 x 12. We want it to be big, to see al the details of the events. Choose the *Basic* machine in the Asset field and check these columns to show:
+Now let's get this getting-started dashboard finished and implement one last feature: we want to see our events for a machine on our detail dashboard. Insights Hub offers the pre build *event table* node exactly for this purpose. Go to your *Detail* tab and create a new group called *Events* with a width of 26. Then drop the *event table* node from the *MDSP Dashboard* section in your flow and assign it to the *Events* group. Give the node a *Size* of 26 x 12. We want it to be big, to see al the details of the events. Choose the *Basic* machine in the Asset field and check these columns to show:
 - [x] Severity
 - [x] EntityId
 - [x] Timestamp
@@ -332,7 +332,7 @@ You can extend this dashboard in many ways. See it as a starting point and add t
 - . . .
 
 # Questions and Answers
-Feel free to ask your questions in the [MindSphere Developer Forum](https://community.sw.siemens.com/s/topic/0TO4O000000MihsWAC).
+Feel free to ask your questions in the [Insights Hub Developer Forum](https://community.sw.siemens.com/s/topic/0TO4O000000MihsWAC).
 
 Or open an [issue](https://github.com/mindsphere/vfc-examples/issues) if you find a bug in our examples.
 

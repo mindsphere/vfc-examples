@@ -6,67 +6,80 @@
         "name": "MindConnect MQTT - commading of a device",
         "info": "- sends a command to a device which is connected via MindConnect MQTT",
         "sticky": 1,
-        "x": 360,
-        "y": 1720,
-        "wires": [],
-        "readOnly": false,
-        "userName": "CloudFoxUser",
-        "tenant": "presiot"
+        "x": 320,
+        "y": 1920,
+        "wires": []
+    },
+    {
+        "id": "daff595.58e3ea8",
+        "type": "group",
+        "z": "cba45765.fb58c8",
+        "name": "manual setup of the API call for commanding // not recommended",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "5d4d2d1e.1be5f4",
+            "6dadce05.535e5",
+            "100131f0.458a6e",
+            "21c0aab9.b71656",
+            "8bd21774.9b5778"
+        ],
+        "x": 55,
+        "y": 2161,
+        "w": 1010,
+        "h": 159
     },
     {
         "id": "5d4d2d1e.1be5f4",
         "type": "comment",
         "z": "cba45765.fb58c8",
+        "g": "daff595.58e3ea8",
         "name": "adjust here:",
         "info": "- MQTT clientID(s)\n- commanding payload (data) for device",
         "sticky": 1,
-        "x": 460,
-        "y": 1820,
-        "wires": [],
-        "readOnly": false,
-        "userName": "CloudFoxUser",
-        "tenant": "presiot"
+        "x": 440,
+        "y": 2220,
+        "wires": []
     },
     {
         "id": "6dadce05.535e5",
         "type": "debug",
         "z": "cba45765.fb58c8",
+        "g": "daff595.58e3ea8",
         "name": "",
         "active": true,
         "console": "false",
         "xaxis": "_time",
         "complete": "payload",
-        "x": 970,
-        "y": 1880,
-        "wires": [],
-        "readOnly": false,
-        "userName": "CloudFoxUser",
-        "tenant": "presiot"
+        "x": 950,
+        "y": 2280,
+        "wires": []
     },
     {
         "id": "100131f0.458a6e",
         "type": "function",
         "z": "cba45765.fb58c8",
+        "g": "daff595.58e3ea8",
         "name": "edit clientID and data",
         "func": "/**in the body of the request, specify \n    - clientID(s) which should received the command. Can be one or multiple clients\n    - in the 'data' section, specify the command-payload to be send to the device. \n      This will be received on the device at the command-subscription topic. \n      \nExample: \n- tenant:           presiot\n- device name:      CloudFox-Laptop\n- clientID:         presiot_CloudFox-Laptop\n- commanding topic: tc/presiot/presiot_CloudFox-Laptop/i/cmd_v3/c\n\n**/\nvar name = \"a commanding information for my device\";\nvar clientIDs = [\"presiot_CloudFox-Laptop\"]; \nvar commandingData = {\n    \"configuration\": \"sample config v1.4.3\",\n    \"data\": \"hello world\",\n    \"INTvalue\": 5,\n    \"light-status\": true,\n    \"motor_rpm_setpoint\": 1200.5\n  }\n\n//setup body for commanding request\nmsg.payload = {\n  \"name\": name,\n  \"clientIds\": clientIDs,\n  \"data\": commandingData\n}\nreturn msg;",
         "outputs": 1,
         "language": "javascript",
         "noerr": 0,
-        "x": 400,
-        "y": 1880,
+        "x": 380,
+        "y": 2280,
         "wires": [
             [
                 "21c0aab9.b71656"
             ]
         ],
-        "readOnly": false,
-        "userName": "CloudFoxUser",
-        "tenant": "presiot"
+        "_type": "node"
     },
     {
         "id": "21c0aab9.b71656",
         "type": "http request",
         "z": "cba45765.fb58c8",
+        "g": "daff595.58e3ea8",
         "name": "command to device",
         "method": "POST",
         "ret": "txt",
@@ -75,23 +88,20 @@
         "mindspherePath": "/api/commanding/v3/deliveryJobs",
         "useMindsphereAuth": true,
         "isAdmin": false,
-        "userSecrets": "",
         "secretHeaders": "",
-        "x": 770,
-        "y": 1880,
+        "x": 686,
+        "y": 2280,
         "wires": [
             [
                 "6dadce05.535e5"
             ]
-        ],
-        "readOnly": false,
-        "userName": "CloudFoxUser",
-        "tenant": "presiot"
+        ]
     },
     {
         "id": "8bd21774.9b5778",
         "type": "inject",
         "z": "cba45765.fb58c8",
+        "g": "daff595.58e3ea8",
         "name": "",
         "topic": "",
         "payload": "",
@@ -105,18 +115,142 @@
         "properties": "",
         "timezone": "utc",
         "betweentimesunit": "m",
-        "enableRuleEngine": false,
         "showNextExecution": false,
         "powerMode": false,
-        "x": 180,
-        "y": 1880,
+        "x": 160,
+        "y": 2280,
         "wires": [
             [
                 "100131f0.458a6e"
             ]
+        ]
+    },
+    {
+        "id": "21c0892b.577e66",
+        "type": "group",
+        "z": "cba45765.fb58c8",
+        "name": "Commanding MindConnect MQTT Agents",
+        "style": {
+            "stroke": "#92d04f",
+            "label": true,
+            "color": "#92d04f"
+        },
+        "nodes": [
+            "ab1fc976.a28a08",
+            "db2569e5.5bdc58",
+            "1e8fa7.7bd4f05a",
+            "1d379f8d.7f5c1",
+            "ff1099c4.d74328",
+            "3e55db85.3ac6c4"
         ],
-        "readOnly": false,
-        "userName": "CloudFoxUser",
-        "tenant": "presiot"
+        "x": 55,
+        "y": 1971,
+        "w": 1010,
+        "h": 149
+    },
+    {
+        "id": "ab1fc976.a28a08",
+        "type": "command mindconnect",
+        "z": "cba45765.fb58c8",
+        "g": "21c0892b.577e66",
+        "name": "",
+        "mindconnectMqttId": "",
+        "mindconnectTopic": "",
+        "mindconnectTopicData": "",
+        "x": 670,
+        "y": 2080,
+        "wires": [
+            [
+                "1d379f8d.7f5c1"
+            ]
+        ],
+        "_type": "node"
+    },
+    {
+        "id": "db2569e5.5bdc58",
+        "type": "function",
+        "z": "cba45765.fb58c8",
+        "g": "21c0892b.577e66",
+        "name": "edit data",
+        "func": "/**in the body of the request, specify \n    - in the 'data' section, specify the command-payload to be send to the device. \n      This will be received on the device at the command-subscription topic. \n      \n**/\n\nvar commandingData = {\n    \"configuration\": \"sample config v1.4.3\",\n    \"data\": \"hello world\",\n    \"INTvalue\": 5,\n    \"light-status\": true,\n    \"motor_rpm_setpoint\": 1200.5\n  }\n\n//setup body for commanding request\nmsg.payload = commandingData;\n\nreturn msg;",
+        "outputs": 1,
+        "language": "javascript",
+        "noerr": 0,
+        "x": 320,
+        "y": 2080,
+        "wires": [
+            [
+                "ab1fc976.a28a08"
+            ]
+        ],
+        "_type": "node"
+    },
+    {
+        "id": "1e8fa7.7bd4f05a",
+        "type": "inject",
+        "z": "cba45765.fb58c8",
+        "g": "21c0892b.577e66",
+        "name": "",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "repeatEnd": "0",
+        "endTime": "0",
+        "crontab": "",
+        "offset": "NaN",
+        "once": false,
+        "properties": "",
+        "timezone": "utc",
+        "betweentimesunit": "m",
+        "showNextExecution": false,
+        "powerMode": false,
+        "x": 160,
+        "y": 2080,
+        "wires": [
+            [
+                "db2569e5.5bdc58"
+            ]
+        ]
+    },
+    {
+        "id": "1d379f8d.7f5c1",
+        "type": "debug",
+        "z": "cba45765.fb58c8",
+        "g": "21c0892b.577e66",
+        "name": "",
+        "active": true,
+        "console": "false",
+        "xaxis": "_time",
+        "complete": "payload",
+        "x": 950,
+        "y": 2080,
+        "wires": []
+    },
+    {
+        "id": "ff1099c4.d74328",
+        "type": "comment",
+        "z": "cba45765.fb58c8",
+        "g": "21c0892b.577e66",
+        "name": "adjust here:",
+        "info": "- commanding data) for device",
+        "sticky": 1,
+        "x": 370,
+        "y": 2020,
+        "wires": [],
+        "_type": "node"
+    },
+    {
+        "id": "3e55db85.3ac6c4",
+        "type": "comment",
+        "z": "cba45765.fb58c8",
+        "g": "21c0892b.577e66",
+        "name": "adjust here:",
+        "info": "- select device(s)",
+        "sticky": 1,
+        "x": 650,
+        "y": 2020,
+        "wires": [],
+        "_type": "node"
     }
 ]

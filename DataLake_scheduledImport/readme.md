@@ -36,7 +36,6 @@ The IDL Explorer helps to browse the file structures.
 ## See also
 - [:shopping_cart: MindSphere Store: Integrated Data Lake](https://www.dex.siemens.com/mindsphere/mindaccess/integrated-data-lake-essential)
 - [Developer Documentation: Integrated Data Lake Service](https://developer.mindsphere.io/apis/iot-integrated-data-lake/api-integrated-data-lake-overview.html)
-)
 
 
 

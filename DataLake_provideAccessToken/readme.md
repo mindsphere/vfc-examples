@@ -1,6 +1,6 @@
 # Provide Access Token for Integrated Data Lake via API
 <!-- (mandatory) Insert a description for the example flow. Describe the use case or its specialty. -->
-This small flow triggers sets up an API endpoint which can be called from external system to get an access token to MindSpheres' Integrated Data Lake. 
+This small flow triggers sets up an API endpoint which can be called from external system to get an access token to Insights Hubs' Integrated Data Lake. 
 
 <!-- Insert an example image -->
 ![image](./doc/example.png)
@@ -32,9 +32,9 @@ In this example, calling the full API endpoint https://presiot-visualflowcreator
 
 
 ## See also
-- [:shopping_cart: MindSphere Store: Integrated Data Lake](https://www.dex.siemens.com/mindsphere/mindaccess/integrated-data-lake-essential)
+- [:shopping_cart: Insights Hub Store: Integrated Data Lake](https://www.dex.siemens.com/mindsphere/mindaccess/integrated-data-lake-essential)
 - [Developer Documentation: Integrated Data Lake Service](https://developer.mindsphere.io/apis/iot-integrated-data-lake/api-integrated-data-lake-overview.html)
-)
+
 
 
 
