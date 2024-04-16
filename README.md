@@ -1,6 +1,5 @@
 # Insights Hub Visual Flow Creator Examples
 
-[![The MDL License](https://img.shields.io/badge/license-MDL-009999.svg?style=flat)](./LICENSE.md)
 [![Documentation](https://img.shields.io/badge/mindsphere-documentation-%23009999.svg)](https://opensource.mindsphere.io/docs/mindconnect-nodejs/index.html)
 [![Forum](https://img.shields.io/badge/mindsphere-community-%23009999.svg)](https://community.plm.automation.siemens.com/t5/Developer-Space/bd-p/MindSphere-platform-forum)
 
@@ -40,17 +39,12 @@ Please note, that the json-files are exported from another tenant. So their migh
 | [Virtual machine simulator](./virtualMachineSimulator/readme.md) | | :star: | - |
 | [Write location data to your Asset](./WriteLocationToAsset/readme.md) | Write locational information directly to your Asset using the Asset Management API | :star: | - |
 | [VFC Dashboard - Getting Started Guide](./Dashboard_getting_started/readme.md) | Create a dynamic Dashboard completely from scratch and learn the basics of VFC Dashboarding | :star: | - |
-
-### Examples which have to be added:
-| Name | Description | Complexity Rating | Prerequisites |
-| --- | --- | --- | --- |
-| [TODO: Integrate external API](./integrateExternalApi/readme.md) | | :star: | |
-| [TODO: Dashboard with dynamic data layer](./dynamicDashboards/readme.md) | | :star: :star: | |
+| [Integrate external API](./integrateExternalApi/readme.md) | | :star: | |
 
 You can add here your ideas or requests for further examples.
 
 ### Example template
-You want to create your own example? Just copy the [template flow-directory](./templateFlow/), adapt it and send us your pull request.
+You want to create your own example? Just copy an existing folder, adapt it and send us your pull request.
 ## Remarks
 Please note that the screenshots show just the current state, when these examples have been created. They might differ to the latest software release.
 
