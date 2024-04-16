@@ -18,9 +18,9 @@ Your business case may require to use external services over HTTP. Visual Flow C
 
  - The inject node passes the `CITY` and `API_KEY` information to HTTP Request node through `msg` object.
  - (**Get Weather**) node is the HTTP Request node and it contains the URL with query parameters.
- - This node performs the substitution of variables with the values it recieves from the inject node.
+ - This node performs the substitution of variables with the values it receives from the inject node.
  - Then HTTP request node fetches the data synchronously from Openweather service endpoint.
- - It converts the recieved response to JSON format and sets it as value for the payload field of the msg object.
+ - It converts the received response to JSON format and sets it as value for the payload field of the msg object.
  - Debug node in the end displays the contents of payload field to the debug window. 
  
 

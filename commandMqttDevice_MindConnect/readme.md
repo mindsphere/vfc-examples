@@ -27,7 +27,7 @@ Commanding can be initiated via a dedicated API. Here we will use VFC to initiat
 A dedicated commanding node was added to the standard nodes of Visual Flow Creator.  
 https://documentation.mindsphere.io/MindSphere/apps/visual-flow-creator/mindconnect-nodes.html#command-mindconnect
 
-Manual confuguration towards the API endpoint for commanding is no longer needed but still shown in depth in the description below. 
+Manual configuration towards the API endpoint for commanding is no longer needed but still shown in depth in the description below. 
 With "MindConnect" nodes, you can send a command to MindConnect MQTT device and check the status of the sent command. For more information about MindConnect Elements, refer to [Connectivity](https://documentation.mindsphere.io/MindSphere/connectivity/overview.html).
 
 

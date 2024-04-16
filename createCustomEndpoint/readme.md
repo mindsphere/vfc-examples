@@ -7,7 +7,7 @@ The example shows how you can
 - choose who has access to this endpoint (only users of the flow, all users on the tenant, public access)
 - develop the API functionality using VFC nodes
 
-This flow demonstrates a simple getting-started example on how to provide machine data via an API for external access of the last 15min intervall of machine data as JSON object. 
+This flow demonstrates a simple getting-started example on how to provide machine data via an API for external access of the last 15min interval of machine data as JSON object. 
 ![image](./doc/createCustomEndpoint.png)
 
 
@@ -20,7 +20,7 @@ This flow demonstrates a simple getting-started example on how to provide machin
     - generate key in case of public API access
     - the URL shown in the node setup is the direct URL to access the service
     ![image](./doc/setup_KeyGeneration.png)
-3. Selet an Asset / Aspect / Variable(s) where you want to read the time series data from (yellow node)
+3. Select an Asset / Aspect / Variable(s) where you want to read the time series data from (yellow node)
 ![image](./doc/setup_selectAssetToRead.png)
 4.  Save the flow 
 
@@ -31,7 +31,7 @@ https://[TenantName]-visualflowcreatorhttp.eu1.mindsphere.io/public/presiot/mach
 
 ## Result
 
-When querying the service URL e.g. via a Browser/Postman/Pyhton/... the JSON-object with the timeseries data will be received. 
+When querying the service URL e.g. via a Browser/Postman/Python/... the JSON-object with the timeseries data will be received. 
 ![image](./doc/result.png)
 
 

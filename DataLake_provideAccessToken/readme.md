@@ -25,8 +25,9 @@ This small flow triggers sets up an API endpoint which can be called from extern
 The function delivers the body for the API request against the `/api/datalake/v3/generateAccessToken` endpoint. From here, the Access Token is provided and feedback to the user via the `http`-Node
 
 ## Result
-Once the API endpoint is accessed, the user is presented with a JSON respose containing the Access Token for IDL.  
-This can then be used in native S3-Tools to be worked with and connect to the IDL: 
+Once the API endpoint is accessed, the user is presented with a JSON response containing the Access Token for IDL.  
+This can then be used in native S3-Tools to be worked with and connect to the IDL:
+<!-- markdown-link-check-disable-next-line -->
 In this example, calling the full API endpoint https://presiot-visualflowcreatorhttp.eu1.mindsphere.io/public/presiot/getAccessTokenForIDL?key=1a03090a3cc44d56c57d5cd7d545899219523b5127079317fcc2c637b3a0cab23cc1fcadce75196b36f761428e6ee80dacc64e4349928b23a2cf8e0e6495b897 results in a JSON response like shown below.
 ![image](./doc/result_IDL_AccessToken.png)
 
