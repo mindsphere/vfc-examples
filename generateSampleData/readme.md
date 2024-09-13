@@ -9,7 +9,7 @@ With this example you are able to do that.
 ![image](./doc/generateSampleData.png)
 
 - Import the flow in Visual Flow Creator
-- Selet an asset / aspect / variable where you want to write time series data
-- Doubleclick on the datatype node like `Integer` and rename the `Parameter out` value with the name of your data variable
+- Select an asset / aspect / variable where you want to write time series data
+- Double click on the datatype node like `Integer` and rename the `Parameter out` value with the name of your data variable
 - Save the flow
 - Trigger the flow

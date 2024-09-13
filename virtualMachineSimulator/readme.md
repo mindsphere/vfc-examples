@@ -8,7 +8,7 @@ It can be used if no physical assets are available or to learn about the feature
 ![image](./doc/virtualMachineSimulator.png)
 
 ## Prerequisites
-- access to Asset-Managment 
+- access to Asset-Management 
 
 ## Setup & Configuration
 ### Setup machine asset
@@ -27,23 +27,15 @@ e.g. `my virtual machine`
 2. Open the settings for the **upper** write-timeseries node select the previously generated asset instance `my virtual machine` and aspect `machine_states`. Do not select any variables. 
     ![image](./doc/VFC_setup_Asset-Aspect.png)
 4. Repeat this for the **lower** write-timeseries node and select `my virtual machine` -> `product_counter`. Do not select any variables.  
-5. Adjust the execution intervall for the simulation as desired in the link-in node.
+5. Adjust the execution interval for the simulation as desired in the link-in node.
 6. Save the flow 
 
 :cloud: :heavy_check_mark: You're done, your machine simulation is now running - enjoy!
 
 
 ## Result
-After saving the flow, the output of the simulation is written to the asset and you can monitor the results e.g. in Fleet Manager. Based on this you can also now start calculating the machine KPIs (OEE, Availability, Quality, ...) using the VFC or other apps. 
+After saving the flow, the output of the simulation is written to the asset and you can monitor the results e.g. in Insights Hub Monitor. Based on this you can also now start calculating the machine KPIs (OEE, Availability, Quality, ...) using the VFC or other apps. 
 ![image](./doc/FleetManager_Results.png)
 
 ## See also
 - [Asset Manager Documentation](https://documentation.mindsphere.io/resources/html/asset-manager/en-US/index.html)
-
-
-
-
-
-
-
-
