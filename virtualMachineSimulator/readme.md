@@ -3,7 +3,7 @@ Using this flow, you can generate virtual machine data consisting of both a simu
 - machine states
 - product counter
 
-It can be used if no physical assets are available or to learn about the features on MindSphere to explore VFC and other apps using the data stored in the Asset Management. The data generated can also be used further to calculate the machine OEE, Availability or Quality of the virtual products produced. 
+It can be used if no physical assets are available or to learn about the features on Insights Hub to explore VFC and other apps using the data stored in the Asset Management. The data generated can also be used further to calculate the machine OEE, Availability or Quality of the virtual products produced. 
 
 ![image](./doc/virtualMachineSimulator.png)
 

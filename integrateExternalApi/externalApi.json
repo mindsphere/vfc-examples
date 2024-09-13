@@ -1,55 +1,104 @@
 [
     {
-        "id": "9b3d196c.670518",
-        "type": "comment",
-        "z": "f91e2e34.2ae5d",
-        "name": "Procedure",
-        "info": "Double click the City node. Pick a city name for which weather information is available.\nCreate an account in https://openweathermap.org/ for free. \nThen create API Key from https://home.openweathermap.org/api_keys.\nThis example uses Current Weather API documented at: 'https://openweathermap.org/current'.",
-        "sticky": 1,
-        "x": 490,
-        "y": 380,
-        "wires": []
+        "id": "27d9cd3.b828732",
+        "type": "group",
+        "z": "216044f1.bc512c",
+        "name": "Get weather data from external service",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "c0346697.e8ead8",
+            "c5938bad.c5fa38",
+            "ad0608a8.b597a8",
+            "8ae6a14c.c24fd",
+            "ad0dfb26.1fd928",
+            "b50d362b.e41418",
+            "99cd1a17.a81548"
+        ],
+        "x": 75,
+        "y": 581,
+        "w": 1170,
+        "h": 418
     },
     {
-        "id": "e4ded4eb.b27c98",
-        "type": "debug",
-        "z": "f91e2e34.2ae5d",
-        "name": "",
-        "active": true,
-        "console": "false",
-        "xaxis": "_time",
-        "complete": "false",
-        "x": 650,
-        "y": 460,
-        "wires": []
-    },
-    {
-        "id": "ae6137a3.572a98",
-        "type": "http request",
-        "z": "f91e2e34.2ae5d",
-        "name": "Get Weather",
-        "method": "GET",
-        "ret": "txt",
-        "url": "https://api.openweathermap.org/data/2.5/weather?q={{CITY}}&appid={{API_KEY}}",
-        "timeout": "",
-        "mindspherePath": "",
-        "useMindsphereAuth": false,
-        "isAdmin": false,
-        "secretHeaders": "",
-        "x": 450,
-        "y": 460,
+        "id": "c0346697.e8ead8",
+        "type": "function",
+        "z": "216044f1.bc512c",
+        "g": "27d9cd3.b828732",
+        "name": "parse for desired data",
+        "func": "const data = msg.payload;\n\nmsg.topic = \"5f634f70df3d484baabbbc361f5b9b9e/weather_data\";\n\nmsg.payload = {\n    temperature:    data.main.temp,\n    pressure:       data.main.pressure,\n    humidity:       data.main.humidity,\n    wind_speed:     data.wind.speed,\n    wind_direction: data.wind.deg\n    }\n\nreturn msg;",
+        "outputs": 1,
+        "language": "javascript",
+        "noerr": 0,
+        "x": 700,
+        "y": 780,
         "wires": [
             [
-                "e4ded4eb.b27c98"
+                "c5938bad.c5fa38"
             ]
         ],
         "_type": "node"
     },
     {
-        "id": "c6c9622d.3aa6b",
+        "id": "c5938bad.c5fa38",
+        "type": "write timeseries",
+        "z": "216044f1.bc512c",
+        "g": "27d9cd3.b828732",
+        "name": "",
+        "topic": "",
+        "topicData": "",
+        "topicLabel": "",
+        "assetName": "",
+        "aspectName": "",
+        "useMerging": false,
+        "x": 1160,
+        "y": 780,
+        "wires": []
+    },
+    {
+        "id": "ad0608a8.b597a8",
+        "type": "comment",
+        "z": "216044f1.bc512c",
+        "g": "27d9cd3.b828732",
+        "name": "Parses data from WeatherAPI",
+        "info": "...just some metrics and forwards to write TS node\n+ temperature\n+ pressure\n+ humidity\n+ wind_speed\n+ wind_direction",
+        "sticky": 1,
+        "x": 790,
+        "y": 900,
+        "wires": [],
+        "_type": "node"
+    },
+    {
+        "id": "8ae6a14c.c24fd",
+        "type": "http request",
+        "z": "216044f1.bc512c",
+        "g": "27d9cd3.b828732",
+        "name": "Get Weather",
+        "method": "GET",
+        "ret": "obj",
+        "url": "https://api.openweathermap.org/data/2.5/weather?q={{CITY}}&appid={{API_KEY}}&units=metric",
+        "timeout": "",
+        "mindspherePath": "",
+        "useMindsphereAuth": false,
+        "isAdmin": false,
+        "secretHeaders": "",
+        "x": 430,
+        "y": 780,
+        "wires": [
+            [
+                "b50d362b.e41418",
+                "c0346697.e8ead8"
+            ]
+        ],
+        "_type": "node"
+    },
+    {
+        "id": "ad0dfb26.1fd928",
         "type": "inject",
-        "z": "f91e2e34.2ae5d",
-        "name": "City",
+        "z": "216044f1.bc512c",
+        "g": "27d9cd3.b828732",
+        "name": "Config: CITY & API_KEY",
         "topic": "",
         "payload": "",
         "payloadType": "date",
@@ -57,19 +106,48 @@
         "repeatEnd": "0",
         "endTime": "0",
         "crontab": "",
+        "offset": "NaN",
         "once": false,
-        "properties": "[{\"name\":\"CITY\",\"value\":\"Erlangen\"},{\"name\":\"API_KEY\",\"value\":\"Replace this with API KEY\"}]",
+        "properties": "[{\"name\":\"CITY\",\"value\":\"Erlangen\"},{\"name\":\"API_KEY\",\"value\":\"<put-your-API_KEY-here>\"}]",
         "timezone": "utc",
         "betweentimesunit": "m",
-        "enableRuleEngine": false,
         "showNextExecution": false,
-        "x": 250,
-        "y": 460,
+        "powerMode": false,
+        "x": 220,
+        "y": 780,
         "wires": [
             [
-                "ae6137a3.572a98"
+                "8ae6a14c.c24fd"
             ]
         ],
+        "_type": "node"
+    },
+    {
+        "id": "b50d362b.e41418",
+        "type": "debug",
+        "z": "216044f1.bc512c",
+        "g": "27d9cd3.b828732",
+        "name": "",
+        "active": true,
+        "console": "false",
+        "xaxis": "_time",
+        "complete": "payload",
+        "x": 670,
+        "y": 740,
+        "wires": [],
+        "_type": "node"
+    },
+    {
+        "id": "99cd1a17.a81548",
+        "type": "comment",
+        "z": "216044f1.bc512c",
+        "g": "27d9cd3.b828732",
+        "name": "Get weather data from OpenWeather.org // Procedure",
+        "info": "Double click the City node. Pick a city name for which weather information is available.\nCreate an account in https://openweathermap.org/ for free. \nThen create API Key from https://home.openweathermap.org/api_keys.\nThis example uses Current Weather API documented at: 'https://openweathermap.org/current'.",
+        "sticky": 1,
+        "x": 490,
+        "y": 660,
+        "wires": [],
         "_type": "node"
     }
 ]
