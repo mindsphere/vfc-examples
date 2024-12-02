@@ -18,6 +18,7 @@ If you execute the flow, your location is written directly to your assets static
 
 https://user-images.githubusercontent.com/90254123/166235568-542ba4b4-f1ab-4f04-8ea0-b8f044007429.mp4
 
-You do not have to write all information (e.g. postal code, street address, country, ...) for the map to be functional. Writing longitude and latitude is sufficient. However, if you only sent longitude and latitude information, Asset Manager will show *now location available*. The Asset Map is still functional.
+You do not have to write all information (e.g. postal code, street address, country, ...) for the map to be functional. Writing longitude and latitude is sufficient.However, if you only sent longitude and latitude information, Asset Manager will show *now location available*. The Asset Map is still functional.
+**Please keep in mind that if you only provide latitude and longitude, the request will override all existend location data with *null* values**
 
 > Take a look at the [Insights Hub Documentation](https://documentation.mindsphere.io/MindSphere/apis/advanced-assetmanagement/api-assetmanagement-api.html) if you want to know more about the Asset Management API.
