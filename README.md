@@ -29,7 +29,7 @@ Please note, that the json-files are exported from another tenant. So their migh
 
 | Name | Description | Complexity Rating | Prerequisites |
 | --- | --- | --- | --- |
-| [Create custom API endpoints](./createCustomEndpoint/readme.md) | | :star: | - |
+| [Create custom API endpoints](./createCustomAPI_endpoint//readme.md) | | :star: | - |
 | [Integrate external API](./integrateExternalApi/readme.md) | | :star: | |
 | [Create rule for asset type](./createRuleForAssetType/readme.md) | Create a rule for all assets of this type | :star: | - |
 | [Data Lake - timeseries import](./DataLake_scheduledImport/readme.md) | Setup scheduled trigger to start import of data from timeseries storage to Integrated Data Lake | :star: | Integrated Data Lake |
@@ -58,7 +58,7 @@ To use them, ensure that
 - VFC is available in your Insights Hub tenant ([VFC in Insights Hub Store](https://www.dex.siemens.com/mindsphere/applications/visual-flow-creator))
 ![image](./docs/Launchpad_VFC.png)
 - you have *admin* or *user* access to VFC ([VFC user role settings](https://documentation.mindsphere.io/resources/html/visualflow-creator/en-US/108812512779.html))
-![image](./VFC_roles.png)
+![image](./docs/VFC_roles.png)
 
 If you can see Visual Flow Creator on your Launchpad, you're ready to start developments. 
 
@@ -68,7 +68,7 @@ If you can see Visual Flow Creator on your Launchpad, you're ready to start deve
 - In the menu, select *Import* and paste the JSON template as found in the application examples. 
 - Drop the nodes in the editor and save the just imported flow.
 
-![image](./How_To_Import.gif)
+![image](./docs/How_To_Import.gif)
 
 ## Questions and answers
 
