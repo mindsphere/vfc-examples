@@ -1,7 +1,7 @@
 # Insights Hub Visual Flow Creator Examples
 
-[![Documentation](https://img.shields.io/badge/mindsphere-documentation-%23009999.svg)](https://opensource.mindsphere.io/docs/mindconnect-nodejs/index.html)
-[![Forum](https://img.shields.io/badge/mindsphere-community-%23009999.svg)](https://community.plm.automation.siemens.com/t5/Developer-Space/bd-p/MindSphere-platform-forum)
+[![Documentation](https://img.shields.io/badge/insightshub-documentation-00D7A0?style=flat&labelColor=000028)](https://documentation.mindsphere.io/MindSphere/index.html)
+[![Forum](https://img.shields.io/badge/insightshub-community-00D7A0?style=flat&labelColor=000028)](https://community.sw.siemens.com/s/topic/0TO4O000000MihsWAC/insights-hub)
 
 # Welcome
 * You are interested in Insights Hub?
@@ -25,21 +25,22 @@ Please note, that the json-files are exported from another tenant. So their migh
 
 ## Example Overview
 
-### Current examples in this repository for Visual Flow Creator (VFC):
+### Current examples in this repository for Visual Flow Creator:
 
 | Name | Description | Complexity Rating | Prerequisites |
 | --- | --- | --- | --- |
-| [Command MQTT devices connected via MindConnect](./commandMqttDevice_MindConnect/readme.md) | Send commands back to a device via MindConnect MQTT | :star: | MindConnect MQTT connected device |
 | [Create custom API endpoints](./createCustomEndpoint/readme.md) | | :star: | - |
+| [Integrate external API](./integrateExternalApi/readme.md) | | :star: | |
 | [Create rule for asset type](./createRuleForAssetType/readme.md) | Create a rule for all assets of this type | :star: | - |
 | [Data Lake - timeseries import](./DataLake_scheduledImport/readme.md) | Setup scheduled trigger to start import of data from timeseries storage to Integrated Data Lake | :star: | Integrated Data Lake |
 | [Data Lake - generate access token](./DataLake_provideAccessToken/readme.md) | Provides an API endpoint which feedbacks an access token for IDL data | :star: | Integrated Data Lake |
+| [24h sample data scenario replay](./data_simulation_24h//readme.md) | Simulate demo data by continuously replaying 24-hour reference data  | :star: | - |
 | [Generate sample data](./generateSampleData/readme.md) | Demo data for different data types in Insights Hub | :star: | - |
 | [Send SMS notifications](./sendSmsNotifications/readme.md) | Send SMS notifications and dynamically specify recipient | :star: | - |
 | [Virtual machine simulator](./virtualMachineSimulator/readme.md) | | :star: | - |
 | [Write location data to your Asset](./WriteLocationToAsset/readme.md) | Write locational information directly to your Asset using the Asset Management API | :star: | - |
+| [Command MQTT devices connected via MindConnect](./commandMqttDevice_MindConnect/readme.md) | Send commands back to a device via MindConnect MQTT | :star: | MindConnect MQTT connected device |
 | [VFC Dashboard - Getting Started Guide](./Dashboard_getting_started/readme.md) | Create a dynamic Dashboard completely from scratch and learn the basics of VFC Dashboarding | :star: | - |
-| [Integrate external API](./integrateExternalApi/readme.md) | | :star: | |
 
 You can add here your ideas or requests for further examples.
 
@@ -55,7 +56,7 @@ All application examples shown in this repository require the Insights Hub Appli
 
 To use them, ensure that
 - VFC is available in your Insights Hub tenant ([VFC in Insights Hub Store](https://www.dex.siemens.com/mindsphere/applications/visual-flow-creator))
-![image](./MindSphere_Launchpad_VFC.png)
+![image](./docs/Launchpad_VFC.png)
 - you have *admin* or *user* access to VFC ([VFC user role settings](https://documentation.mindsphere.io/resources/html/visualflow-creator/en-US/108812512779.html))
 ![image](./VFC_roles.png)
 
