@@ -28,7 +28,7 @@ This flow monitors and tracks user login activities by collecting last login tim
    - Update the `assetId` variable with your created asset's ID
    - Update the `aspectName` variable if you used a custom aspect name
 
-4. Save the flow 
+4. Save the flow  
 
 
 ### Additional Setup Information

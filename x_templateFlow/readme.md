@@ -11,7 +11,7 @@
 ## Setup & Configuration
 <!-- (mandatory) Describe the necessary steps to get this flow running -->
 
-1. Import the flow in Visual Flow Creator
+1. Import the flow in Visual Flow Creator using the [Flow Tempalte](template.json)
 2. ...
    
 3.  Save the flow 
