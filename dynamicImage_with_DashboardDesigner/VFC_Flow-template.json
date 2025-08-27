@@ -1,0 +1,205 @@
+[
+    {
+        "id": "74088854.44f2",
+        "type": "group",
+        "z": "f16bdd03.e10b3",
+        "name": "create signed URL for IDL object download",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "d52ee2b5.49feb",
+            "cb726090.7ab7c",
+            "5e9f0c82.286464",
+            "6f572ff6.04bad8",
+            "3283f407.651b24",
+            "90bf7fac.d781c",
+            "2a6e979e.87b5a",
+            "479881fb.4ad0d",
+            "d4323573.b3f9c",
+            "567fd6a8.e37f98"
+        ],
+        "x": 235,
+        "y": 411,
+        "w": 1190,
+        "h": 509
+    },
+    {
+        "id": "d52ee2b5.49feb",
+        "type": "debug",
+        "z": "f16bdd03.e10b3",
+        "g": "74088854.44f2",
+        "name": "",
+        "active": true,
+        "console": "false",
+        "xaxis": "_time",
+        "complete": "true",
+        "x": 1330,
+        "y": 780,
+        "wires": []
+    },
+    {
+        "id": "cb726090.7ab7c",
+        "type": "debug",
+        "z": "f16bdd03.e10b3",
+        "g": "74088854.44f2",
+        "name": "",
+        "active": true,
+        "console": "false",
+        "xaxis": "_time",
+        "complete": "true",
+        "x": 590,
+        "y": 780,
+        "wires": []
+    },
+    {
+        "id": "5e9f0c82.286464",
+        "type": "debug",
+        "z": "f16bdd03.e10b3",
+        "g": "74088854.44f2",
+        "name": "",
+        "active": true,
+        "console": "false",
+        "xaxis": "_time",
+        "complete": "false",
+        "x": 830,
+        "y": 780,
+        "wires": []
+    },
+    {
+        "id": "6f572ff6.04bad8",
+        "type": "function",
+        "z": "f16bdd03.e10b3",
+        "g": "74088854.44f2",
+        "name": "parse signedUrl to response",
+        "func": "// Ensure msg.payload exists and has the expected structure\nif (msg.payload && msg.payload.objectUrls && msg.payload.objectUrls.length > 0 && msg.payload.objectUrls[0].signedUrl) {\n    // Extract the signedUrl\n    const signedUrl = msg.payload.objectUrls[0].signedUrl;\n\n    // Create a new JSON object with the extracted signedUrl\n    const newPayload = [{\n        \"signedUrl\": signedUrl\n    }];\n\n    // Assign the new JSON object to msg.payload\n    msg.payload = newPayload;\n\n    // Log the output for debugging\n    node.warn(\"Generated JSON payload: \" + JSON.stringify(msg.payload));\n\n} else {\n    // Handle cases where the expected data structure is not found\n    node.error(\"Invalid payload structure. Expected msg.payload.objectUrls[0].signedUrl\");\n    // You can set msg.payload to an error object, null, or an empty object\n    msg.payload = { error: \"Invalid data structure for signed URL\" };\n}\n\nreturn msg;",
+        "outputs": 1,
+        "language": "javascript",
+        "noerr": 0,
+        "x": 1120,
+        "y": 840,
+        "wires": [
+            [
+                "479881fb.4ad0d",
+                "d52ee2b5.49feb"
+            ]
+        ]
+    },
+    {
+        "id": "3283f407.651b24",
+        "type": "function",
+        "z": "f16bdd03.e10b3",
+        "g": "74088854.44f2",
+        "name": "configure file-path",
+        "func": "\n/** NOTE:\nLeading path information \"data/ten=<yourTenantName>\" does NOT have to be included in the request. \nExample\nfull path: \"data/ten=mytenant/MyFirstFolder/MySecondFolder/my_cool_file.csv\"\n>> path: \"/MyFirstFolder/MySecondFolder/my_cool_file.csv\" for the request\n**/\n\nconst dynamicPathfromPara = msg.req.query.imgPath\n\n\nmsg.payload=\n{\n    \"paths\":[\n        {\"path\": dynamicPathfromPara}\n    ]\n} \n\nreturn msg;\n\n\n",
+        "outputs": 1,
+        "language": "javascript",
+        "noerr": 0,
+        "x": 630,
+        "y": 840,
+        "wires": [
+            [
+                "2a6e979e.87b5a",
+                "5e9f0c82.286464"
+            ]
+        ],
+        "_type": "node"
+    },
+    {
+        "id": "90bf7fac.d781c",
+        "type": "http in",
+        "z": "f16bdd03.e10b3",
+        "g": "74088854.44f2",
+        "name": "[GET] /dynamicImageUrl",
+        "endpoint": "/dynamicImageUrl",
+        "method": "get",
+        "upload": false,
+        "access": "key",
+        "key": "2f27dd6dd120e513bf7443552c6922b4df95bb742b17c89ebe658d9660f1331cf094fa62e174ab4cdc6f92ba0e46c1ce8ac74553b49059167f333412090ba350",
+        "users": "",
+        "powerMode": false,
+        "x": 380,
+        "y": 840,
+        "wires": [
+            [
+                "3283f407.651b24",
+                "cb726090.7ab7c"
+            ]
+        ],
+        "_type": "node"
+    },
+    {
+        "id": "2a6e979e.87b5a",
+        "type": "http request",
+        "z": "f16bdd03.e10b3",
+        "g": "74088854.44f2",
+        "name": "generate Download URL",
+        "method": "POST",
+        "ret": "obj",
+        "url": "",
+        "timeout": "",
+        "mindspherePath": "/api/datalake/v3/generateDownloadObjectUrls",
+        "useMindsphereAuth": true,
+        "isAdmin": false,
+        "secretHeaders": "",
+        "x": 870,
+        "y": 840,
+        "wires": [
+            [
+                "6f572ff6.04bad8"
+            ]
+        ]
+    },
+    {
+        "id": "479881fb.4ad0d",
+        "type": "http response",
+        "z": "f16bdd03.e10b3",
+        "g": "74088854.44f2",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 1330,
+        "y": 840,
+        "wires": []
+    },
+    {
+        "id": "d4323573.b3f9c",
+        "type": "inject",
+        "z": "f16bdd03.e10b3",
+        "g": "74088854.44f2",
+        "name": "",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "repeatEnd": "0",
+        "endTime": "0",
+        "crontab": "",
+        "offset": "0",
+        "once": false,
+        "properties": "",
+        "timezone": "utc",
+        "betweentimesunit": "m",
+        "showNextExecution": false,
+        "powerMode": false,
+        "x": 420,
+        "y": 880,
+        "wires": [
+            [
+                "3283f407.651b24"
+            ]
+        ]
+    },
+    {
+        "id": "567fd6a8.e37f98",
+        "type": "comment",
+        "z": "f16bdd03.e10b3",
+        "g": "74088854.44f2",
+        "name": "Signed URL with path parameter in GET request",
+        "info": "This flow creates the signedURL for an object located in IDL. \nIt needs to get the 'imgPath' parameter via the URL. \nThis should be the full path to the object in the data lake.\n\n- Flow builds Body for IDL API call \n- POST this request to the generate Download URL endpoint\n- parses the received signedURL as output for further processing\n\nIn this example, the image is passed to Dashboard Designer for visualization. \nUsing this, you can pass an image-path variable from Dashboard Designer dynamically to this flow and then view the image in Dashboard Designer.\n\ndate: 2025-08-26",
+        "sticky": 1,
+        "x": 760,
+        "y": 580,
+        "wires": []
+    }
+]
